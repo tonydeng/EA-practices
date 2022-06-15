@@ -1,0 +1,9 @@
+[book]
+title = "企业架构设计方法与实践"
+authors = ["Tony Deng"]
+language = "zh-CN"
+multilingual = false
+src = "."
+
+[build]
+build-dir = "_book"
