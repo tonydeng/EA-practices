@@ -5,5 +5,9 @@ language = "zh-CN"
 multilingual = false
 src = "."
 
+[output.html]
+additional-css = ["theme/simple-lightbox.css", "theme/theme.css"]
+additional-js = ["theme/simple-lightbox.min.js","theme/theme.js"]
+
 [build]
 build-dir = "_book"

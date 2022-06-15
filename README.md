@@ -2,6 +2,8 @@
 
 企业架构设计方法与实践（Enterprise Architecture Design Methods and Practices）
 
+![企业架构整体结构](images/Overview.png)
+
 数字化转型是企业架构设计的重要环节，在数字化转型过程中，企业架构设计方法与实践是必不可少的。
 
 数字化转型的关键是驱动企业从业务、架构、技术、组织等方面全面且系统的改造升级。
