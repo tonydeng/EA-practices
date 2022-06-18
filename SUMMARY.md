@@ -10,9 +10,9 @@
 
 * [企业架构理论](ea-theory/README.md)
   * [Zachman](ea-theory/zachman.md)
-  * [TOGAF](ea-theroy/togaf.md)
-  * [FEAF](ea-theroy/feaf.md)
-  * [DoDAF](ea-theroy/dodaf.md)
+  * [TOGAF](ea-theory/togaf.md)
+  * [FEAF](ea-theory/feaf.md)
+  * [DoDAF](ea-theory/dodaf.md)
   * [eTOM](ea-theory/etom.md)
   * [ArchiMate](ea-theory/archimate.md)
   * [Gartner](ea-theory/gartner.md)
