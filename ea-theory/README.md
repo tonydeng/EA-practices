@@ -4,7 +4,7 @@
   - [企业架构的基本概念](#企业架构的基本概念)
   - [企业架构的发展](#企业架构的发展)
   - [企业架构框架理论](#企业架构框架理论)
-  - [企业架构矿机理论综合分析](#企业架构矿机理论综合分析)
+  - [企业架构框架理论综合分析](#企业架构框架理论综合分析)
   - [扩展阅读](#扩展阅读)
 
 本章首先讨论企业架构的基本概念；
@@ -74,13 +74,13 @@
 
 ## 企业架构框架理论
 
-## 企业架构矿机理论综合分析
+## 企业架构框架理论综合分析
 
 ## 扩展阅读
 
 - [C4ISR - 维基百科](https://zh.wikipedia.org/wiki/C4ISR)
-- [美国防部军事信息系统体系架构矿机(DODAF)概述和应用 - UML中国](http://www.uml.org.cn/qiyezjjs/202107162.asp)
-- [美国国防部架构矿机DoDAF2.0解读 - 知乎](https://zhuanlan.zhihu.com/p/466835525)
+- [美国防部军事信息系统体系架构框架(DODAF)概述和应用 - UML中国](http://www.uml.org.cn/qiyezjjs/202107162.asp)
+- [美国国防部架构框架DoDAF2.0解读 - 知乎](https://zhuanlan.zhihu.com/p/466835525)
 - [John Zachman - 维基百科](https://en.wikipedia.org/wiki/John_Zachman)
 - [Information systems architecture - 维基百科](https://en.wikipedia.org/wiki/Information_systems_architecture)
 - [1987 IBM Systems Journal- A Framework for Information Systems Architecture PDF - zachman.com](https://www.zachman.com/images/ZI_PIcs/ibmsj2603e.pdf)
