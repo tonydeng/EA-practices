@@ -2,12 +2,18 @@
 title = "企业架构设计方法与实践"
 authors = ["Tony Deng"]
 language = "zh-CN"
-multilingual = false
+multilingual = true
 src = "."
 
 [output.html]
 additional-css = ["theme/simple-lightbox.css", "theme/theme.css"]
 additional-js = ["theme/simple-lightbox.min.js","theme/theme.js"]
+git-repository-url = "https://github.com/tonydeng/EA-practices"
+git-repository-icon = "fa-github"
+
+[output.html.fold]
+enable = true
+level = 1
 
 [build]
 build-dir = "_book"
