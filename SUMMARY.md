@@ -44,3 +44,6 @@
 ## 第八部分 架构治理演进
 
 * [架构治理演进](governance/README.md)
+  * [架构评估方法](governance/assessment/README.md)
+    * [ATAM软件架构评估方法](governance/assessment/atam.md)
+  * [架构成熟度模型](governance/maturity-model/README.md)
