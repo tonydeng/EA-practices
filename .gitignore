@@ -639,4 +639,7 @@ MigrationBackup/
 
 **/*.ldb
 
+# Other
+model/BangBA**/**.*
+
 # End of https://www.gitignore.io/api/linux,macos,maven,windows,eclipse,jetbrains+all,visualstudio,visualstudiocode,gitbook,vim
