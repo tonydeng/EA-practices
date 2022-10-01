@@ -31,7 +31,7 @@
 
 ## 第五部分 数据架构设计
 
-* [数据架构设计](data-arhc/README.md)
+* [数据架构设计](data-arch/README.md)
 
 ## 第六部分 技术架构设计
 
