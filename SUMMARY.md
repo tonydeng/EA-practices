@@ -34,6 +34,16 @@
 ## 第四部分 应用架构设计
 
 * [应用架构设计](app-arch/README.md)
+  * [企业IT架构概述](app-arch/it-arch-overview.md)
+  * [应用架构概述](app-arch/overview.md)
+  * [应用架构设计框架](app-arch/framework.md)
+  * [应用架构常用模式](app-arch/patterns.md)
+  * [应用架构核心策略](app-arch/strategies.md)
+  * [领域驱动设计](app-arch/domain-driven-design.md)
+  * [应用架构的设计方法](app-arch/design-methods.md)
+  * [应用架构的设计原则](app-arch/design-principles.md)
+  * [应用架构与周边概念的关系](app-arch/relations.md)
+  * [应用架构参考设计](app-arch/reference-design.md)
 
 ## 第五部分 数据架构设计
 
