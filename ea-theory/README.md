@@ -71,10 +71,9 @@
 
 ## 企业架构框架理论综合分析
 
-
 ### 主流企业架构框架之对比
-    
-虽然企业架构框架理论所面对的问题都是同样的，但是由于他们出现的历史背景和研发团体都不相同，因而他们的适用范围和侧重角度都有较大的差异。本章将根据 《Comparison of the Top Four Enterprise Architecture Methodologies》所述对四种主流的企业架构框架理论（Zachman，FEA，Gartner，TOGAF）进行比较。需要注意的是，由于这篇文章应该完成于2007年，因而TOGAF还没有发布第9版，因而文章中关于TOGAF重视架构过程而没有架构内容的描述的论点在当前看是不准确的，在后面的内容中笔者将给予修正。
+
+虽然企业架构框架理论所面对的问题都是同样的，但是由于他们出现的历史背景和研发团体都不相同，因而他们的适用范围和侧重角度都有较大的差异。本章将根据 [《Comparison of the Top Four Enterprise Architecture Methodologies》](https://www.bcs.org/articles-opinion-and-research/a-comparison-of-the-top-four-enterprise-architecture-frameworks/)所述对四种主流的企业架构框架理论（[Zachman](#1-zachman特点)，[FEA](#2-fea特点)，[Gartner](#4-gartner特点)，[TOGAF](#3-togaf特点)）进行比较。
 
 #### 1. Zachman特点
 
@@ -168,6 +167,7 @@ TOGAF的核心是架构开发方法（ADM：Architecture Development Method）�
 - [C4ISR - 维基百科](https://zh.wikipedia.org/wiki/C4ISR)
 - [美国防部军事信息系统体系架构框架(DODAF)概述和应用 - UML中国](http://www.uml.org.cn/qiyezjjs/202107162.asp)
 - [美国国防部架构框架DoDAF2.0解读 - 知乎](https://zhuanlan.zhihu.com/p/466835525)
+- [A comparison of the top four enterprise architecture frameworks](https://www.bcs.org/articles-opinion-and-research/a-comparison-of-the-top-four-enterprise-architecture-frameworks/)
 - [John Zachman - 维基百科](https://en.wikipedia.org/wiki/John_Zachman)
 - [Information systems architecture - 维基百科](https://en.wikipedia.org/wiki/Information_systems_architecture)
 - [1987 IBM Systems Journal- A Framework for Information Systems Architecture PDF - zachman.com](https://www.zachman.com/images/ZI_PIcs/ibmsj2603e.pdf)
