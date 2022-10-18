@@ -30,6 +30,14 @@
 ## 第三部分 业务架构设计
 
 * [业务架构设计](biz-arch/README.md)
+  * [业务架构概述](biz-arch/overview.md)
+  * [业务架构的理论参考](biz-arch/theory.md)
+  * [业务架构的内容框架](biz-arch/framework.md)
+  * [业务架构的价值](biz-arch/value.md)
+  * [业务架构的关键要素](biz-arch/elements.md)
+  * [业务架构的设计方法](biz-arch/methods.md)
+  * [业务架构的设计关键点](biz-arch/points.md)
+  * [业务架构的参考设计](biz-arch/reference.md)
 
 ## 第四部分 应用架构设计
 
