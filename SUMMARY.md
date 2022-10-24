@@ -80,3 +80,9 @@
   * [架构评估方法](governance/assessment/README.md)
     * [ATAM软件架构评估方法](governance/assessment/atam.md)
   * [架构成熟度模型](governance/maturity-model/README.md)
+
+## 附录
+
+* [附录](appendix/README.md)
+  * [什么是架构](appendix/what-is-architecture.md)
+  * [架构设计原则](appendix/architecture-principles.md)
