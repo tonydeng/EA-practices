@@ -214,9 +214,13 @@ DDD在构建领域模型的过程中，涉及比较多的概念。这里着重�
 
 ### 小结
 
-![DDD核心概念](images/DDD-core-concepts.png)
+![DDD核心概念总结](images/DDD-core-concepts.png)
 
-> 图例：DDD核心概念
+> 图例：DDD核心概念总结
+
+![DDD核心概念职责与关系](images/DDD-StereoType-boundary.png)
+
+> 图例：DDD核心概念职责与关系
 
 ## DDD常用的分析方法
 
