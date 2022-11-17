@@ -69,6 +69,14 @@
 ## 第六部分 技术架构设计
 
 * [技术架构设计](tech-arch/README.md)
+  * [技术架构概述](tech-arch/overview.md)
+  * [技术架构设计框架](tech-arch/framework.md)
+  * [技术架构常用模式](tech-arch/patterns.md)
+  * [技术架构设计原则](tech-arch/principles.md)
+  * [技术架构制图](tech-arch/diagram.md)
+  * [技术基础设施上云](tech-arch/cloud.md)
+  * [技术架构典型技术选型](tech-arch/technology.md)
+  * [技术架构最佳实践](tech-arch/best-practice.md)
 
 ## 第七部分 企业架构实践
 
