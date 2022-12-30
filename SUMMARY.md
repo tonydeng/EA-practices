@@ -85,9 +85,20 @@
 ## 第八部分 架构治理演进
 
 * [架构治理演进](governance/README.md)
+  * [项目实施管理](governance/project/README.md)
+  * [架构运营治理](governance/arch-governance/README.md)
   * [架构评估方法](governance/assessment/README.md)
     * [ATAM软件架构评估方法](governance/assessment/atam.md)
   * [架构成熟度模型](governance/maturity-model/README.md)
+  * [架构治理模型](governance/governance-model/README.md)
+  * [组织架构](governance/org-arch/README.md)
+
+* [架构师的自我成长](architect/README.md)
+  * [什么是架构师](architect/what-is-architect.md)
+  * [架构师的特质](architect/character.md)
+  * [企业架构师的能力](architect/capability.md)
+  * [架构师的成长建议](architect/growth.md)
+  * [架构师的思维模式](architect/mindset.md)
 
 ## 附录
 
