@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ATAM软件架构评估方法 - 企业架构设计方法与实践</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="关于如何进行企业架构设计的一些方法和实践">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/simple-lightbox.css">
+        <link rel="stylesheet" href="../../theme/theme.css">
+        <link rel="stylesheet" href="../../theme/pagetoc.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 企业架构设计方法与实践</a></li><li class="chapter-item "><a href="introduction.html"><strong aria-hidden="true">2.</strong> 前言</a></li><li class="chapter-item "><a href="ea-theory/index.html"><strong aria-hidden="true">3.</strong> 企业架构理论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-theory/zachman.html"><strong aria-hidden="true">3.1.</strong> Zachman</a></li><li class="chapter-item "><a href="ea-theory/togaf.html"><strong aria-hidden="true">3.2.</strong> TOGAF</a></li><li class="chapter-item "><a href="ea-theory/feaf.html"><strong aria-hidden="true">3.3.</strong> FEAF</a></li><li class="chapter-item "><a href="ea-theory/dodaf.html"><strong aria-hidden="true">3.4.</strong> DoDAF</a></li><li class="chapter-item "><a href="ea-theory/etom.html"><strong aria-hidden="true">3.5.</strong> eTOM</a></li><li class="chapter-item "><a href="ea-theory/archimate.html"><strong aria-hidden="true">3.6.</strong> ArchiMate</a></li><li class="chapter-item "><a href="ea-theory/gartner.html"><strong aria-hidden="true">3.7.</strong> Gartner</a></li></ol></li><li class="chapter-item "><a href="ea-methods/index.html"><strong aria-hidden="true">4.</strong> 企业架构方法论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-methods/overview.html"><strong aria-hidden="true">4.1.</strong> 企业架构方法论概述</a></li><li class="chapter-item "><a href="ea-methods/strategical-planning.html"><strong aria-hidden="true">4.2.</strong> 企业战略计划</a></li><li class="chapter-item "><a href="ea-methods/ea-planning.html"><strong aria-hidden="true">4.3.</strong> 企业架构规划</a></li><li class="chapter-item "><a href="ea-methods/project-management.html"><strong aria-hidden="true">4.4.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="ea-methods/ea-governance.html"><strong aria-hidden="true">4.5.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="ea-methods/ea-implementation.html"><strong aria-hidden="true">4.6.</strong> 企业架构实施参考</a></li></ol></li><li class="chapter-item "><a href="biz-arch/index.html"><strong aria-hidden="true">5.</strong> 业务架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="biz-arch/overview.html"><strong aria-hidden="true">5.1.</strong> 业务架构概述</a></li><li class="chapter-item "><a href="biz-arch/theory.html"><strong aria-hidden="true">5.2.</strong> 业务架构的理论参考</a></li><li class="chapter-item "><a href="biz-arch/framework.html"><strong aria-hidden="true">5.3.</strong> 业务架构的内容框架</a></li><li class="chapter-item "><a href="biz-arch/value.html"><strong aria-hidden="true">5.4.</strong> 业务架构的价值</a></li><li class="chapter-item "><a href="biz-arch/elements.html"><strong aria-hidden="true">5.5.</strong> 业务架构的关键要素</a></li><li class="chapter-item "><a href="biz-arch/methods.html"><strong aria-hidden="true">5.6.</strong> 业务架构的设计方法</a></li><li class="chapter-item "><a href="biz-arch/points.html"><strong aria-hidden="true">5.7.</strong> 业务架构的设计关键点</a></li><li class="chapter-item "><a href="biz-arch/reference.html"><strong aria-hidden="true">5.8.</strong> 业务架构的参考设计</a></li></ol></li><li class="chapter-item "><a href="app-arch/index.html"><strong aria-hidden="true">6.</strong> 应用架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="app-arch/it-arch-overview.html"><strong aria-hidden="true">6.1.</strong> 企业IT架构概述</a></li><li class="chapter-item "><a href="app-arch/overview.html"><strong aria-hidden="true">6.2.</strong> 应用架构概述</a></li><li class="chapter-item "><a href="app-arch/framework.html"><strong aria-hidden="true">6.3.</strong> 应用架构设计框架</a></li><li class="chapter-item "><a href="app-arch/patterns.html"><strong aria-hidden="true">6.4.</strong> 应用架构常用模式</a></li><li class="chapter-item "><a href="app-arch/strategies.html"><strong aria-hidden="true">6.5.</strong> 应用架构核心策略</a></li><li class="chapter-item "><a href="app-arch/domain-driven-design.html"><strong aria-hidden="true">6.6.</strong> 领域驱动设计</a></li><li class="chapter-item "><a href="app-arch/design-methods.html"><strong aria-hidden="true">6.7.</strong> 应用架构的设计方法</a></li><li class="chapter-item "><a href="app-arch/design-principles.html"><strong aria-hidden="true">6.8.</strong> 应用架构的设计原则</a></li><li class="chapter-item "><a href="app-arch/relations.html"><strong aria-hidden="true">6.9.</strong> 应用架构与周边概念的关系</a></li><li class="chapter-item "><a href="app-arch/reference-design.html"><strong aria-hidden="true">6.10.</strong> 应用架构参考设计</a></li></ol></li><li class="chapter-item "><a href="data-arch/index.html"><strong aria-hidden="true">7.</strong> 数据架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="data-arch/overview.html"><strong aria-hidden="true">7.1.</strong> 数据架构概述</a></li><li class="chapter-item "><a href="data-arch/framework.html"><strong aria-hidden="true">7.2.</strong> 数据架构的设计框架</a></li><li class="chapter-item "><a href="data-arch/planning.html"><strong aria-hidden="true">7.3.</strong> 数据架构规划</a></li><li class="chapter-item "><a href="data-arch/methods.html"><strong aria-hidden="true">7.4.</strong> 数据架构设计方法</a></li><li class="chapter-item "><a href="data-arch/steps.html"><strong aria-hidden="true">7.5.</strong> 数据架构设计步骤</a></li><li class="chapter-item "><a href="data-arch/technology.html"><strong aria-hidden="true">7.6.</strong> 数据架构技术</a></li><li class="chapter-item "><a href="data-arch/principle.html"><strong aria-hidden="true">7.7.</strong> 数据架构原则和规范</a></li><li class="chapter-item "><a href="data-arch/practice.html"><strong aria-hidden="true">7.8.</strong> 数据架构参考实践</a></li><li class="chapter-item "><a href="data-arch/cloud-native.html"><strong aria-hidden="true">7.9.</strong> 云原生时代的数据架构技术体系</a></li></ol></li><li class="chapter-item "><a href="tech-arch/index.html"><strong aria-hidden="true">8.</strong> 技术架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tech-arch/overview.html"><strong aria-hidden="true">8.1.</strong> 技术架构概述</a></li><li class="chapter-item "><a href="tech-arch/framework.html"><strong aria-hidden="true">8.2.</strong> 技术架构设计框架</a></li><li class="chapter-item "><a href="tech-arch/patterns.html"><strong aria-hidden="true">8.3.</strong> 技术架构常用模式</a></li><li class="chapter-item "><a href="tech-arch/principles.html"><strong aria-hidden="true">8.4.</strong> 技术架构设计原则</a></li><li class="chapter-item "><a href="tech-arch/diagram.html"><strong aria-hidden="true">8.5.</strong> 技术架构制图</a></li><li class="chapter-item "><a href="tech-arch/cloud.html"><strong aria-hidden="true">8.6.</strong> 技术基础设施上云</a></li><li class="chapter-item "><a href="tech-arch/technology.html"><strong aria-hidden="true">8.7.</strong> 技术架构典型技术选型</a></li><li class="chapter-item "><a href="tech-arch/best-practice.html"><strong aria-hidden="true">8.8.</strong> 技术架构最佳实践</a></li></ol></li><li class="chapter-item "><a href="ea-practice/index.html"><strong aria-hidden="true">9.</strong> 企业架构实践</a></li><li class="chapter-item "><a href="governance/index.html"><strong aria-hidden="true">10.</strong> 架构治理演进</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/project/index.html"><strong aria-hidden="true">10.1.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="governance/arch-governance/index.html"><strong aria-hidden="true">10.2.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="governance/assessment/index.html"><strong aria-hidden="true">10.3.</strong> 架构评估方法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/assessment/atam.html"><strong aria-hidden="true">10.3.1.</strong> ATAM软件架构评估方法</a></li></ol></li><li class="chapter-item "><a href="governance/maturity-model/index.html"><strong aria-hidden="true">10.4.</strong> 架构成熟度模型</a></li><li class="chapter-item "><a href="governance/governance-model/index.html"><strong aria-hidden="true">10.5.</strong> 架构治理模型</a></li><li class="chapter-item "><a href="governance/org-arch/index.html"><strong aria-hidden="true">10.6.</strong> 组织架构</a></li></ol></li><li class="chapter-item "><a href="architect/index.html"><strong aria-hidden="true">11.</strong> 架构师的自我成长</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="architect/what-is-architect.html"><strong aria-hidden="true">11.1.</strong> 什么是架构师</a></li><li class="chapter-item "><a href="architect/character.html"><strong aria-hidden="true">11.2.</strong> 架构师的特质</a></li><li class="chapter-item "><a href="architect/capability.html"><strong aria-hidden="true">11.3.</strong> 企业架构师的能力</a></li><li class="chapter-item "><a href="architect/growth.html"><strong aria-hidden="true">11.4.</strong> 架构师的成长建议</a></li><li class="chapter-item "><a href="architect/mindset.html"><strong aria-hidden="true">11.5.</strong> 架构师的思维模式</a></li></ol></li><li class="chapter-item "><a href="appendix/index.html"><strong aria-hidden="true">12.</strong> 附录</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/what-is-architecture.html"><strong aria-hidden="true">12.1.</strong> 什么是架构</a></li><li class="chapter-item "><a href="appendix/architecture-principles.html"><strong aria-hidden="true">12.2.</strong> 架构设计原则</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">企业架构设计方法与实践</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/tonydeng/EA-practices" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="atam软件架构评估方法"><a class="header" href="#atam软件架构评估方法"><code>ATAM</code>软件架构评估方法</a></h1>
+<h2 id="atam介绍"><a class="header" href="#atam介绍">ATAM介绍</a></h2>
+<p><code>ATAM</code>(<code>Architecture tradeoff Analysis Method</code>)是卡梅隆大学软件工程协会提出来的一套架构权衡分析方法。</p>
+<p><code>ATAM</code>的评估目的是<strong>根据系统的质量属性和商业需求评估设计决策的结果</strong>。</p>
+<p><code>ATAM</code>希望揭示出架构满足特定质量目标的情况，使我们更清楚的认识到<strong>质量目标之间的联系，即如何权衡多个质量目标</strong>。</p>
+<p><img src="images/ATAM-Activity.png" alt="atam activity package" /></p>
+<p><img src="images/Actors.png" alt="涉众" /></p>
+<p><img src="images/Usecase.png" alt="用例" /></p>
+<h2 id="atam评估过程详细描述"><a class="header" href="#atam评估过程详细描述"><code>ATAM</code>评估过程详细描述</a></h2>
+<p><img src="images/Activity.png" alt="架构评估活动" /></p>
+<p>ATAM评估方法的的阶段：</p>
+<p>第0阶段	建立评估小组， 建立评估组织和待评估组织间的合作关系
+第1阶段	以架构为中心，重点获取架构信息并对其进行分析。	评估阶段，上面的9 个步骤
+在这时完成</p>
+<p>第2阶段	以风险承担者中心，重点为获取风险承担者的观点，并对第1阶段的结果进行验证。
+第3阶段	后续阶段，形成最终报告，对后续活动做出规划，评估组织在此阶段实现文档和经验的更新。</p>
+<h3 id="策略阶段"><a class="header" href="#策略阶段">策略阶段</a></h3>
+<ul>
+<li><strong>参与者</strong>: 评估组长和关键的项⽬决策者</li>
+<li><strong>输⼊</strong>:架构文档</li>
+<li><strong>目标</strong>：确定评估的目标、计划、评估组成员</li>
+<li><strong>输出</strong>: 评估计划: 谁、什么时间、提供什么样子的评估报告</li>
+</ul>
+<h3 id="评估阶段"><a class="header" href="#评估阶段">评估阶段</a></h3>
+<ul>
+<li><strong>参与者</strong>:评估小组和项目设计决策者(肯定包括了项目经理和架构师)</li>
+<li><strong>输出</strong>: 架构简要展示、业务目标、质量属性和相关场景、效用树、风险和非风险点、敏感点、权衡点</li>
+</ul>
+<ol>
+<li>介绍<code>ATAM</code>方法(评估小组长)</li>
+<li>介绍商业动机(项目经理或系统客户)</li>
+<li>介绍架构(首席架构师)</li>
+<li>识别使用的架构方法(评估小组)</li>
+<li>生成质量属性效用树(评估小组和项目设计决策者) 决定性的一步</li>
+<li>分析架构方法(评估小组) 确保方法是正确的 获得风险点、非风险点、敏感点和权衡点列表</li>
+</ol>
+<h3 id="phase-2评估2"><a class="header" href="#phase-2评估2">Phase 2:评估(2)</a></h3>
+<ul>
+<li><strong>参与者</strong>: 评估小组、项目设计决策者和架构涉众</li>
+<li><strong>输出</strong>: 从涉众群体获得的一个优先级场景列表、风险主题和商业动机</li>
+</ul>
+<ol>
+<li>介绍<code>ATAM</code>方法和之前的结果(评估小组长) 重复以确保涉众也知道方法并回顾分享之前2~6步的结果</li>
+<li>头脑风暴、场景划分优先级(评估小组问涉众) 与质量属性效用树进行比对</li>
+<li>分析架构方法(评估小组、架构师) 使用新产生的优先级靠前的场景、架构师解释与之相关的架构决定</li>
+<li>展示结果(评估小组)</li>
+</ol>
+<h3 id="phase-3后续工作-follow-up"><a class="header" href="#phase-3后续工作-follow-up">Phase 3:后续工作 Follow up</a></h3>
+<ul>
+<li><strong>参与者</strong>:评估小组和主要涉众</li>
+<li><strong>输出</strong>:最终的评估报告</li>
+</ul>
+<h3 id="atam-输出"><a class="header" href="#atam-输出"><code>ATAM</code> 输出</a></h3>
+<ul>
+<li>架构简要介绍</li>
+<li>业务目标</li>
+<li>以质量属性场景表示的带优先级的质量属性需求</li>
+<li>效用树</li>
+<li>系列风险点和非风险点</li>
+<li>风险主题</li>
+<li>架构决定与质量需求之间的映射</li>
+<li>敏感点、权衡点</li>
+<li>最终评估报告</li>
+</ul>
+<h2 id="评估输出示例"><a class="header" href="#评估输出示例">评估输出示例</a></h2>
+<h3 id="业务目标分析结果表"><a class="header" href="#业务目标分析结果表">业务目标分析结果表</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">内容列表</th><th style="text-align: left">详细备注</th></tr></thead><tbody>
+<tr><td style="text-align: left">主要业务目标</td><td style="text-align: left">为企业的商业决策提供数据支持 </br> 大批量数据的并发接入、处理和分析</td></tr>
+<tr><td style="text-align: left">次要业务目标</td><td style="text-align: left">为外部应用开发的算法／应用程序提供支持 </br>数据的再次处理</td></tr>
+<tr><td style="text-align: left">其他业务目标</td><td style="text-align: left">采用自动化操作，以尽可能减少操作成本</td></tr>
+</tbody></table>
+</div>
+<h3 id="系统质量属性列表"><a class="header" href="#系统质量属性列表">系统质量属性列表</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">质量属性目标</th><th style="text-align: left">标识号（数字表示效用树中的子序号）</th><th style="text-align: left">针对质量属性的要求</th></tr></thead><tbody>
+<tr><td style="text-align: left">可维护性</td><td style="text-align: left">M1</td><td style="text-align: left">更改某个子系统时不要求改动其他子系统</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">M2</td><td style="text-align: left">把子系统的部署要求分别降到最低</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">M3</td><td style="text-align: left">把回归测试时间从5天减少到1天</td></tr>
+<tr><td style="text-align: left">可靠性</td><td style="text-align: left">R1</td><td style="text-align: left">不至于因为数据输入输出而导致某个系统资源崩溃或等待较长时间，如超过 10分钟</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">R2</td><td style="text-align: left">请求（输入出）中的某一部分数据错误不会妨碍其他部分的正常使用</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">R6</td><td style="text-align: left">因系统崩溃或备份造成的无法提供服务的时间不能超过1小时</td></tr>
+<tr><td style="text-align: left">可操作性</td><td style="text-align: left">O10</td><td style="text-align: left">系统应该能在20分钟内根据用户类型、数据类型、介质类型、目的地或用户对1000项定单重新设置优先级</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">O14</td><td style="text-align: left">应该能在不需要操作干涉的情况下，通过系统API网关为1000个并发请求提供服务</td></tr>
+<tr><td style="text-align: left">可扩展性</td><td style="text-align: left">S2</td><td style="text-align: left">能同时支持50个机构</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">S3</td><td style="text-align: left">能够支持来自100个数据源的输入</td></tr>
+<tr><td style="text-align: left">性能</td><td style="text-align: left">P1</td><td style="text-align: left">在某种查询算法下，可使响应速度能提高5倍</td></tr>
+</tbody></table>
+</div>
+<h3 id="带优先级的质量属性效用树"><a class="header" href="#带优先级的质量属性效用树">带优先级的质量属性效用树</a></h3>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">第1层：质量属性</th><th style="text-align: left">第2层：质量属性求精</th><th style="text-align: left">第3层：质量属性场景</th><th style="text-align: left">重要性</th><th style="text-align: left">难度</th><th style="text-align: left">累加和</th></tr></thead><tbody>
+<tr><td style="text-align: left">可维护性</td><td style="text-align: left">M1：对一个子系统的更改不要求改动其他子系统</td><td style="text-align: left">M1.1：部署下一个服务器版本，实现对当前版本的更新。升级应该在8小时以内完成，并且不应影响其他子系统及查找、浏览或预定功能的使用。</td><td style="text-align: left">30</td><td style="text-align: left">30</td><td style="text-align: left">60</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">M2：独立地回退子系统的部署</td><td style="text-align: left">M2.1：使服务器从M1回退</td><td style="text-align: left">20</td><td style="text-align: left">20</td><td style="text-align: left">40</td></tr>
+<tr><td style="text-align: left">可操作性</td><td style="text-align: left">O10：系统应该能在20分钟内根据用户类型、数据类型、介质类型、目的地或用户对1000项定单重新设置优先级</td><td style="text-align: left">O10.1：积压任务管理-- 在系统连续24小时不能正常工作后，应在30分钟内为所积压的任务设置优先级，以保证各任务能够按优先级来进行处理，并能够让正常的操作得以维持</td><td style="text-align: left">30</td><td style="text-align: left">20</td><td style="text-align: left">50</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">O14：应该能在不需要操作干涉的情况下，通过系统API网关为1000个并发请求提供服务</td><td style="text-align: left">O14.1：系统在连续24小时不能正常工作时，需要恢复2天内的请求并按优先级进行处理</td><td style="text-align: left">20</td><td style="text-align: left">20</td><td style="text-align: left">40</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left"></td><td style="text-align: left">O14.2：接收100个并发查询请求，不拒绝高优先级的请求，在性能允许的情况下完成处理，不使系统过载</td><td style="text-align: left">20</td><td style="text-align: left">20</td><td style="text-align: left">40</td></tr>
+<tr><td style="text-align: left">可靠性／可用性</td><td style="text-align: left">Ra1：系统中组件的失败的或挂起时间不能超过10分钟</td><td style="text-align: left">Ra1.1：系统定时（10s）检查每个组件的健康状态，当一个组件出现健康状态不正常，系统要将该组件重新拉起，让其能正常提供服务</td><td style="text-align: left">30</td><td style="text-align: left">10</td><td style="text-align: left">40</td></tr>
+<tr><td style="text-align: left">可扩展性</td><td style="text-align: left">Sc2：系统能够支持50个节点</td><td style="text-align: left">Sc2.1：跨节点订单可记录50个节点，跨5节点订单历时2分钟。</td><td style="text-align: left">20</td><td style="text-align: left">30</td><td style="text-align: left">50</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left"></td><td style="text-align: left">Sc2.2：跨节点用户注册在24个小时内经历50个节点。</td><td style="text-align: left">20</td><td style="text-align: left">30</td><td style="text-align: left">50</td></tr>
+</tbody></table>
+</div>
+<h2 id="场景分析表"><a class="header" href="#场景分析表">场景分析表</a></h2>
+<h3 id="场景描述示例"><a class="header" href="#场景描述示例">场景描述示例</a></h3>
+<h4 id="场景号-m11"><a class="header" href="#场景号-m11">场景号 M1.1</a></h4>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">要素</th><th style="text-align: left">描述</th></tr></thead><tbody>
+<tr><td style="text-align: left">场景（M1.1）</td><td style="text-align: left">部署下一个服务器版本，实现对当前版本的更新。升级应该在8小时以内完成，并且不应影响其他子系统及查找、浏览或预定功能的使用。</td></tr>
+<tr><td style="text-align: left">质量属性</td><td style="text-align: left">可维护性</td></tr>
+<tr><td style="text-align: left">环境</td><td style="text-align: left">常规维护</td></tr>
+<tr><td style="text-align: left">刺激</td><td style="text-align: left">部署下一个服务器版本，实现对当前版本的更新，并添加对经纬度的支持。</td></tr>
+<tr><td style="text-align: left">响应</td><td style="text-align: left">升级应该在8小时以内完成，并且不应影响其他子系统及查找、浏览或预定功能的使用。</td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../governance/assessment/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../governance/maturity-model/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../governance/assessment/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../governance/maturity-model/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../../theme/simple-lightbox.min.js"></script>
+        <script type="text/javascript" src="../../theme/theme.js"></script>
+        <script type="text/javascript" src="../../theme/pagetoc.js"></script>
+
+
+    </body>
+</html>

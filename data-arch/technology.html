@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>数据架构技术 - 企业架构设计方法与实践</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="关于如何进行企业架构设计的一些方法和实践">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/simple-lightbox.css">
+        <link rel="stylesheet" href="../theme/theme.css">
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 企业架构设计方法与实践</a></li><li class="chapter-item "><a href="introduction.html"><strong aria-hidden="true">2.</strong> 前言</a></li><li class="chapter-item "><a href="ea-theory/index.html"><strong aria-hidden="true">3.</strong> 企业架构理论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-theory/zachman.html"><strong aria-hidden="true">3.1.</strong> Zachman</a></li><li class="chapter-item "><a href="ea-theory/togaf.html"><strong aria-hidden="true">3.2.</strong> TOGAF</a></li><li class="chapter-item "><a href="ea-theory/feaf.html"><strong aria-hidden="true">3.3.</strong> FEAF</a></li><li class="chapter-item "><a href="ea-theory/dodaf.html"><strong aria-hidden="true">3.4.</strong> DoDAF</a></li><li class="chapter-item "><a href="ea-theory/etom.html"><strong aria-hidden="true">3.5.</strong> eTOM</a></li><li class="chapter-item "><a href="ea-theory/archimate.html"><strong aria-hidden="true">3.6.</strong> ArchiMate</a></li><li class="chapter-item "><a href="ea-theory/gartner.html"><strong aria-hidden="true">3.7.</strong> Gartner</a></li></ol></li><li class="chapter-item "><a href="ea-methods/index.html"><strong aria-hidden="true">4.</strong> 企业架构方法论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-methods/overview.html"><strong aria-hidden="true">4.1.</strong> 企业架构方法论概述</a></li><li class="chapter-item "><a href="ea-methods/strategical-planning.html"><strong aria-hidden="true">4.2.</strong> 企业战略计划</a></li><li class="chapter-item "><a href="ea-methods/ea-planning.html"><strong aria-hidden="true">4.3.</strong> 企业架构规划</a></li><li class="chapter-item "><a href="ea-methods/project-management.html"><strong aria-hidden="true">4.4.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="ea-methods/ea-governance.html"><strong aria-hidden="true">4.5.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="ea-methods/ea-implementation.html"><strong aria-hidden="true">4.6.</strong> 企业架构实施参考</a></li></ol></li><li class="chapter-item "><a href="biz-arch/index.html"><strong aria-hidden="true">5.</strong> 业务架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="biz-arch/overview.html"><strong aria-hidden="true">5.1.</strong> 业务架构概述</a></li><li class="chapter-item "><a href="biz-arch/theory.html"><strong aria-hidden="true">5.2.</strong> 业务架构的理论参考</a></li><li class="chapter-item "><a href="biz-arch/framework.html"><strong aria-hidden="true">5.3.</strong> 业务架构的内容框架</a></li><li class="chapter-item "><a href="biz-arch/value.html"><strong aria-hidden="true">5.4.</strong> 业务架构的价值</a></li><li class="chapter-item "><a href="biz-arch/elements.html"><strong aria-hidden="true">5.5.</strong> 业务架构的关键要素</a></li><li class="chapter-item "><a href="biz-arch/methods.html"><strong aria-hidden="true">5.6.</strong> 业务架构的设计方法</a></li><li class="chapter-item "><a href="biz-arch/points.html"><strong aria-hidden="true">5.7.</strong> 业务架构的设计关键点</a></li><li class="chapter-item "><a href="biz-arch/reference.html"><strong aria-hidden="true">5.8.</strong> 业务架构的参考设计</a></li></ol></li><li class="chapter-item "><a href="app-arch/index.html"><strong aria-hidden="true">6.</strong> 应用架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="app-arch/it-arch-overview.html"><strong aria-hidden="true">6.1.</strong> 企业IT架构概述</a></li><li class="chapter-item "><a href="app-arch/overview.html"><strong aria-hidden="true">6.2.</strong> 应用架构概述</a></li><li class="chapter-item "><a href="app-arch/framework.html"><strong aria-hidden="true">6.3.</strong> 应用架构设计框架</a></li><li class="chapter-item "><a href="app-arch/patterns.html"><strong aria-hidden="true">6.4.</strong> 应用架构常用模式</a></li><li class="chapter-item "><a href="app-arch/strategies.html"><strong aria-hidden="true">6.5.</strong> 应用架构核心策略</a></li><li class="chapter-item "><a href="app-arch/domain-driven-design.html"><strong aria-hidden="true">6.6.</strong> 领域驱动设计</a></li><li class="chapter-item "><a href="app-arch/design-methods.html"><strong aria-hidden="true">6.7.</strong> 应用架构的设计方法</a></li><li class="chapter-item "><a href="app-arch/design-principles.html"><strong aria-hidden="true">6.8.</strong> 应用架构的设计原则</a></li><li class="chapter-item "><a href="app-arch/relations.html"><strong aria-hidden="true">6.9.</strong> 应用架构与周边概念的关系</a></li><li class="chapter-item "><a href="app-arch/reference-design.html"><strong aria-hidden="true">6.10.</strong> 应用架构参考设计</a></li></ol></li><li class="chapter-item "><a href="data-arch/index.html"><strong aria-hidden="true">7.</strong> 数据架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="data-arch/overview.html"><strong aria-hidden="true">7.1.</strong> 数据架构概述</a></li><li class="chapter-item "><a href="data-arch/framework.html"><strong aria-hidden="true">7.2.</strong> 数据架构的设计框架</a></li><li class="chapter-item "><a href="data-arch/planning.html"><strong aria-hidden="true">7.3.</strong> 数据架构规划</a></li><li class="chapter-item "><a href="data-arch/methods.html"><strong aria-hidden="true">7.4.</strong> 数据架构设计方法</a></li><li class="chapter-item "><a href="data-arch/steps.html"><strong aria-hidden="true">7.5.</strong> 数据架构设计步骤</a></li><li class="chapter-item "><a href="data-arch/technology.html"><strong aria-hidden="true">7.6.</strong> 数据架构技术</a></li><li class="chapter-item "><a href="data-arch/principle.html"><strong aria-hidden="true">7.7.</strong> 数据架构原则和规范</a></li><li class="chapter-item "><a href="data-arch/practice.html"><strong aria-hidden="true">7.8.</strong> 数据架构参考实践</a></li><li class="chapter-item "><a href="data-arch/cloud-native.html"><strong aria-hidden="true">7.9.</strong> 云原生时代的数据架构技术体系</a></li></ol></li><li class="chapter-item "><a href="tech-arch/index.html"><strong aria-hidden="true">8.</strong> 技术架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tech-arch/overview.html"><strong aria-hidden="true">8.1.</strong> 技术架构概述</a></li><li class="chapter-item "><a href="tech-arch/framework.html"><strong aria-hidden="true">8.2.</strong> 技术架构设计框架</a></li><li class="chapter-item "><a href="tech-arch/patterns.html"><strong aria-hidden="true">8.3.</strong> 技术架构常用模式</a></li><li class="chapter-item "><a href="tech-arch/principles.html"><strong aria-hidden="true">8.4.</strong> 技术架构设计原则</a></li><li class="chapter-item "><a href="tech-arch/diagram.html"><strong aria-hidden="true">8.5.</strong> 技术架构制图</a></li><li class="chapter-item "><a href="tech-arch/cloud.html"><strong aria-hidden="true">8.6.</strong> 技术基础设施上云</a></li><li class="chapter-item "><a href="tech-arch/technology.html"><strong aria-hidden="true">8.7.</strong> 技术架构典型技术选型</a></li><li class="chapter-item "><a href="tech-arch/best-practice.html"><strong aria-hidden="true">8.8.</strong> 技术架构最佳实践</a></li></ol></li><li class="chapter-item "><a href="ea-practice/index.html"><strong aria-hidden="true">9.</strong> 企业架构实践</a></li><li class="chapter-item "><a href="governance/index.html"><strong aria-hidden="true">10.</strong> 架构治理演进</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/project/index.html"><strong aria-hidden="true">10.1.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="governance/arch-governance/index.html"><strong aria-hidden="true">10.2.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="governance/assessment/index.html"><strong aria-hidden="true">10.3.</strong> 架构评估方法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/assessment/atam.html"><strong aria-hidden="true">10.3.1.</strong> ATAM软件架构评估方法</a></li></ol></li><li class="chapter-item "><a href="governance/maturity-model/index.html"><strong aria-hidden="true">10.4.</strong> 架构成熟度模型</a></li><li class="chapter-item "><a href="governance/governance-model/index.html"><strong aria-hidden="true">10.5.</strong> 架构治理模型</a></li><li class="chapter-item "><a href="governance/org-arch/index.html"><strong aria-hidden="true">10.6.</strong> 组织架构</a></li></ol></li><li class="chapter-item "><a href="architect/index.html"><strong aria-hidden="true">11.</strong> 架构师的自我成长</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="architect/what-is-architect.html"><strong aria-hidden="true">11.1.</strong> 什么是架构师</a></li><li class="chapter-item "><a href="architect/character.html"><strong aria-hidden="true">11.2.</strong> 架构师的特质</a></li><li class="chapter-item "><a href="architect/capability.html"><strong aria-hidden="true">11.3.</strong> 企业架构师的能力</a></li><li class="chapter-item "><a href="architect/growth.html"><strong aria-hidden="true">11.4.</strong> 架构师的成长建议</a></li><li class="chapter-item "><a href="architect/mindset.html"><strong aria-hidden="true">11.5.</strong> 架构师的思维模式</a></li></ol></li><li class="chapter-item "><a href="appendix/index.html"><strong aria-hidden="true">12.</strong> 附录</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/what-is-architecture.html"><strong aria-hidden="true">12.1.</strong> 什么是架构</a></li><li class="chapter-item "><a href="appendix/architecture-principles.html"><strong aria-hidden="true">12.2.</strong> 架构设计原则</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">企业架构设计方法与实践</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/tonydeng/EA-practices" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="数据架构技术"><a class="header" href="#数据架构技术">数据架构技术</a></h1>
+<p>数据架构的核心技术与数据库和存储技术相关，近年来随着技术的发展，越来越多的数据存储技术可以支持多种数据类型。即使使用同一类型的数据存储技术，不同技术的功能及适用的场景也不尽相同。大部分数据存储的引擎都内置存储、查询、处理数据的基础功能，也有部分数据存储的处理和存储功能分离，提供的对外API能力也不相同。下面我们分别来看看数据库技术和存储技术。</p>
+<h2 id="数据库的发展历史"><a class="header" href="#数据库的发展历史">数据库的发展历史</a></h2>
+<p>数据库已经发展了几十年，下面简要回顾一下数据库的发展历史。</p>
+<p>1980—1990年，数据库属于商业起步阶段，此时Oracle、IBM DB2、Sybase，以及SQL Server和Informix等OLTP（Online Transaction Processing）数据库开始出现。</p>
+<p>1990—2000年，开源数据库兴起，出现了MySQL、PostgreSQL等；同时出现了一些OLAP（Online Analytical Processing）数据库，来应对大量的数据分析诉求，如Teradata、Sybase IQ、Greenplum等。</p>
+<p>2000—2010年，以Google为代表的互联网公司逐渐推出了NoSQL数据库，比如GFS（Google File System）、Google Bigtable、Google MapReduce“三大件”。GFS解决了分布式文件系统问题，Google Bigtable解决了分布式KV（Key-Value）存储的问题，Google MapReduce解决了在分布式文件系统和分布式KV存储进行分布式计算和分析的问题；三大件的核心是通过分布式技术对数据的强一致性需求进行弱化，通过集群的水平扩展来处理，进而衍生了NoSQL数据库来应对非结构化和半结构化的海量数据处理，比如现在的一些典型NoSQL代表如文档数据MongoDB、缓存Redis等。</p>
+<p>在2010年以后，出现了AWS Aurora、Redshift、Azure SQL Database、Google Spanner、阿里云的PolarDB和AnalyticDB，它们的特点是具有云服务、云原生、一体化分布式、多模和HTAP能力。</p>
+<p>总体来说，数据库的演进经历了从结构化数据在线处理到海量数据分析，从关系型数据库到数据仓库，再到如今异构、多源云原生的发展历程，在此过程中，License传统方式逐步淡出舞台，数据库开源及云上数据库逐步成为主流方式。</p>
+<h2 id="数据库的分类"><a class="header" href="#数据库的分类">数据库的分类</a></h2>
+<p>数据库主要分为四类，即OLTP数据库、NoSQL数据库、OLAP数据库及数据库服务和管理类工具，这也是云数据库厂商发力的四个方向。</p>
+<ul>
+<li><strong>OLTP数据库</strong>：传统的关系型数据库，用于事务处理的结构化数据库，典型例子是银行的转账记账、订单下单、商品库存管理等。其面临的核心挑战是高并发、高可用及高性能下的数据正确性和一致性。典型的云数据库代表是AWS RDS、Azure SQL Database、阿里云的RDS和PolarDB。</li>
+<li><strong>NoSQL数据库</strong>：存储和处理非结构化或半结构化数据（如文档、图、时序、时空、KV），不强调数据的一致性，以此换来系统水平拓展、吞吐能力的提升。典型的云数据库代表是AWS DynamoDB、AWS ElasticCache、Azure Cosmos DB，以及阿里云的MongoDB、Redis等。</li>
+<li><strong>OLAP数据库</strong>：应用场景是海量的在线实时分析数据、数据类型复杂及分析条件复杂的情况，能够支持深度智能化分析。其面临的挑战主要是高性能、分析深度、与TP数据库的联动及与NoSQL数据库的联动。典型的云数据库代表是AWS的Redshift、阿里云的AnalyticDB等。</li>
+<li><strong>数据库服务和管理类工具</strong>：比如数据传输、数据备份、数据管理、管控平台等，以简单的形式提供给DBA及数据库开发者。典型的云数据库代表有AWS和Azure的Database Migration Service，阿里云的数据传输服务（Data Transmission Service，DTS）。</li>
+</ul>
+<p>接下来，我们分析一下典型的数据库类型。</p>
+<h3 id="关系型数据库"><a class="header" href="#关系型数据库">关系型数据库</a></h3>
+<p>关系型数据库即传统的<code>OLTP</code>，全称是<code>Relational Database Management System（RDMS）</code>。大部分<code>RDMS</code>都提供结构化查询语言（<code>SQL</code>）用于检索和管理数据。一个或者一系列数据库的操作可以构成一个事务（<code>Transaction</code>）。<code>RDMS</code>的数据结构（<code>Schema</code>）通常需要提前定义，所有的读写操作都要遵循<code>Schema</code>。</p>
+<p>关系型数据库可以被分成三个基本的模块，包括:</p>
+<ul>
+<li><strong>关系模型</strong>，即表格、索引、外键、范式等；</li>
+<li><strong>事务处理（ACID）</strong>，即原子性（<code>Atomicity</code>）、一致性（<code>Consistency</code>）、隔离性（<code>Isolation</code>）、持久性（<code>Durability</code>）；</li>
+<li><strong>查询优化</strong>，即SQL的解析、改写、优化、执行等。</li>
+</ul>
+<p>关系型数据库的典型代表是MySQL、PostgreSQL，以及阿里云的RDS、PorlarDB等。</p>
+<p>关系型数据库适用于频繁创建和更新记录，对数据结构需要强制约束，需要高度规范化的数据，不过单个数据条目数据量不大；数据具有高度完整性，追求最终一致性；索引和关系可以被准确地维护。</p>
+<p>关系型数据库适用于库存管理、交易管理、报表管理、财务管理等。</p>
+<h3 id="key-value数据库"><a class="header" href="#key-value数据库">Key-Value数据库</a></h3>
+<p>Key-Value（KV）数据库是NoSQL的一种，键作为唯一标识符，键和值可以是任何内容，我们可以将任意数据存储为一组键值，并通过键来检索存储值。在大多数情况下，键值存储仅支持简单的查询、插入和删除操作，读取或写入单个值都是原子性操作。键值存储模型对简单查找操作进行了深度优化，查询非常快速。因为键值存储可以在多个节点之间轻松分配数据，所以具有非常强的可伸缩性。如果需要修改某个值，无论是修改部分还是修改全部，应用程序都必须覆盖重写这个值的所有数据，因此键值存储更新效率较低。</p>
+<p>常见的KV数据库有以下几种。</p>
+<ul>
+<li><code>Redis</code>：最流行的键值对存储数据库，是一个使用ANSIC编写的开源、支持网络、基于内存、可选持久性的键值对存储数据库。</li>
+<li><code>Cassandra</code>：开源分布式NoSQL数据库系统，集Google BigTable的数据模型与Amazon Dynamo的完全分布式架构于一身，是一种流行的分布式结构化数据存储方案。</li>
+<li><code>LevelDB</code>：由Google所研发的KV嵌入式数据库管理系统编程库，以开源的BSD许可证发布。</li>
+</ul>
+<p>KV数据库非常适合不涉及过多数据关系和业务关系的数据，同时能有效地减少读写磁盘的次数，比关系型数据库存储拥有更高的读写性能，不过<strong>数据的特点是非结构化和不可预知的</strong>。</p>
+<p>以Redis为例，KV数据库的优点主要体现在：</p>
+<ul>
+<li><strong>性能极高</strong>（Redis支持每秒10万次以上的事务数）；</li>
+<li><strong>丰富的数据类型</strong>（Redis支持String、Hash、List、Set、Sorted Set、Bitmap和Hyperloglog）；</li>
+<li><strong>丰富的特性</strong>（Redis支持Publish/Subscribe、通知、Key过期等）。</li>
+</ul>
+<p>KV数据库Redis的缺点也比较明显，<strong>主要是不支持强一致性</strong>，Redis不能完全保证原子性，发生故障时不可以进行回滚，</p>
+<p>所以在使用Redis时，需要根据业务场景进行设计，因为并不是所有场景都需要强ACID原则，比如视频直播、电商秒杀等场景。</p>
+<h3 id="文档数据库"><a class="header" href="#文档数据库">文档数据库</a></h3>
+<p>文档数据库通常使用类似JSON或XML的格式存储文档，每个文档都包括命名字段和数据。数据既可以是简单的值，也可以是列表、子集合这样的复杂元素，通过唯一的键来进行查询。通常，文档中包含单个实体的数据，如一名用户或者一个订单的数据。一个文档中含有的数据，在RDMS中可能分布在不同的表中，可以解决关系型数据库数据结构扩展不方便的问题。</p>
+<p>典型的文档数据库是MongoDB，这是一种面向文档的数据库管理系统，由C++ 撰写而成，以此来解决应用程序开发社区中的大量现实问题。2007年，MongoDB由10gen团队所发展，并于2009年正式对外推出。</p>
+<p>文档数据库的优点是可以频繁进行插入和更新操作，数据不需要规范化，新增字段简单，可以兼容历史数据，容易存储复杂数据；文档数据库的缺点和KV数据库类似，对事务的支持较弱，也不支持复杂查询（如Join查询）。文档数据库适用于对读写分离的应用、社交网络、游戏等高频访问业务，以及对数据结构要求不高的业务。</p>
+<h3 id="图形数据库"><a class="header" href="#图形数据库">图形数据库</a></h3>
+<p>图形数据库是一种<code>NoSQL</code>数据库，基于图论来存储实体之间的关系信息。图形数据库由两种元素组成：节点和关系。每个节点可以代表一个实体（如人、地点、事物），关系则用于描述节点之间是如何关联起来的。图形数据库可以非常高效地查询社交网络等一系列互相具备关系的节点数据，并分析节点之间的关系。</p>
+<p>常见图形数据库如下所示。</p>
+<ul>
+<li><code>Neo4j</code>：是由<code>Neo4j</code>公司开发的，具有原生图存储和处理数据的符合<code>ACID</code>的事务数据库。根据<code>DB-Engines</code>排名，<code>Neo4j</code>是最流行的图形数据库。</li>
+<li><code>ArangoDB</code>：是由<code>triAGENS GmbH</code>开发的原生多模型数据库系统。该数据库系统支持三个重要的数据模型（键/值、文档、图形），其中包含一个数据库核心和统一查询语言。</li>
+<li><code>Titan</code>：是一个可扩展的图形数据库，用于存储和查询包含分布在多机群集中的数百亿个顶点和边缘的图形，并且支持事务。</li>
+</ul>
+<p>图形数据库适用于具有多种复杂关系且动态随时间变化的数据类型，具有基于图论的设计灵活性、开发敏捷性，并且支持事务。图形数据库的缺点是节点等有数据的限制，并且对拆分不太支持。其适应的场景包括社交网络、推荐引擎、知识图谱和IT运营等。</p>
+<h3 id="列式数据库"><a class="header" href="#列式数据库">列式数据库</a></h3>
+<p>在列式数据库中，数据是按列而非行存储的。列式是经常需要一起访问的相关数据分组，而行把许多列数据与本行的行键（<code>Row Key</code>）关联起来。同一个列式的数据会存储在一起，同一个属性的所有值会被存储在一起。当查询时可以仅对需要查询的列进行处理，这样可以大幅降低I/O，提升性能，支持大量并发用户查询，其适用于海量数据查询场景。另外，列式中任意给定对象的行都可以动态变化。</p>
+<p>常见的列式数据库如下所示。</p>
+<ul>
+<li><code>HBase</code>：<code>Apache</code>的<code>Hadoop</code>生态中的一员，运行于<code>HDFS</code>文件系统之上，为<code>Hadoop</code>提供类似于<code>BigTable</code>规模的服务。同时，<code>MapReduce</code>这个计算框架在<code>HBase</code>之上提供了高性能的计算能力，以处理海量数据。HBase的基本概念包括<code>Rowkey</code>（行键）、<code>Column Family</code>（列族）、<code>Column</code>（列）、<code>Version Number</code>（版本号）、<code>Cell</code>（单元格）。</li>
+<li><code>BigTable</code>：是一种压缩的、高性能的、高可扩展性的，基于Google文件系统（GFS）的数据存储系统，用于存储大规模结构化数据，适用于云端计算。</li>
+</ul>
+<p>列式数据库主要适用于批量数据处理和即时查询，有高效的存储空间利用率，普通的行式数据库一般压缩率在3∶1至5∶1，而列式数据库的压缩率一般在8∶1至30∶1，同时查询效率高。列式数据库的缺点是不适合扫描小量数据，不适合随机更新，不适合执行含有删除和更新的实时操作，不支持事务的正常回滚。</p>
+<p>列式数据库的适用场景为大数据量且有快速随机访问的需求，写密集型且对性能和可靠性要求非常高的应用，不需要复杂查询条件来查询数据的应用，比如大数据场景、广告营销场景等。</p>
+<h3 id="分析型数据库"><a class="header" href="#分析型数据库">分析型数据库</a></h3>
+<p>分析型数据库是面向在线统计分析、即席查询等发掘信息数据价值的数据库。数据分布在多个服务器上，最大限度地提升可伸缩性和可扩展性。分析型数据库可以轻松处理CSV、parquet、ORC等格式的文件。分析型数据库的优势在于超强的实时数据分析能力、高可用和可扩展性、广泛的生态。</p>
+<p>OLAP数据库的典型代表是阿里云的<code>AnalyticDB</code>，可以支持海量数据实时高并发在线分析，具备行列混存引擎，能够支持高吞吐写入和高并发查询，并且支持海量数据处理，支持多表、中文及复杂分析；利用向量化技术，支持结构化数据和非结构化数据的融合处理。
+分析型数据库适用于企业BI任务，以及高并发实时数据分析任务。分析型数据库适用的场景包括数据仓库服务、大数据分析及ETL离线数据处理、数据湖分析、在线高性能查询、多模数据分析及异构数据源联合分析等。</p>
+<h3 id="搜索引擎数据库"><a class="header" href="#搜索引擎数据库">搜索引擎数据库</a></h3>
+<p>搜索引擎数据库可以让应用程序搜索到保存在外部数据存储中的数据，支持为体量巨大的数据创建索引，并提供对这些索引的实时访问。这些索引是基于多个维度的，用于支持对超大文本数据的自由搜索。</p>
+<p>搜索引擎数据库的典型代表如下所示。</p>
+<ul>
+<li><code>Elasticsearch</code>：是一个基于<code>Lucene</code>的搜索引擎。它提供了一个分布式多用户能力的全文搜索引擎，基于<code>RESTful Web</code>接口，能够实现实时搜索，稳定、可靠、快速、安装方便。</li>
+<li><code>Solr</code>：是<code>Apache Lucene</code>项目的开源企业搜索平台。其主要功能包括全文检索、命中标示、分面搜索、动态聚类、数据库集成及富文本处理。</li>
+</ul>
+<p><strong>搜索引擎数据库适用于基于多个数据源和服务构建的数据索引，并且查询效率高，可扩展</strong>。</p>
+<p>搜索引擎数据库的缺点是对事务型支持不足，不支持事务的正常回滚，更新性能较低，内存占用大。搜索引擎数据库适用的场景包括分布式的搜索引擎、数据分析引擎、全文检索、结构化检索、复杂的即席查询、对海量数据进行近实时的处理。</p>
+<h3 id="服务和管理类工具"><a class="header" href="#服务和管理类工具">服务和管理类工具</a></h3>
+<p>这里主要介绍一些通用的服务和管理类工具。</p>
+<ul>
+<li>常用的数据分类方法有决策树法、<code>KNN</code>法、<code>SVM</code>法、<code>Bayes</code>法和神经网络。</li>
+<li>通用的数据建模工具有<code>E-R</code>图、<code>CASE</code>工具、<code>UML</code>、<code>Oracle Designer</code>等。</li>
+</ul>
+<p>对于数据传输的迁移，可以采用阿里云的<code>DTS</code>，它支持多种数据源间的数据传输，支持集数据迁移、数据订阅及数据实时同步，并支持公共云、混合云场景，可以解决远距离、毫秒级异步数据传输难题。</p>
+<p>另外，在云数据库类型中，各大云服务厂商也提供了其他工具能力，如数据库备份、数据库管控平台、数据库<code>SQL</code>监控和分析等。</p>
+<h2 id="存储技术"><a class="header" href="#存储技术">存储技术</a></h2>
+<p>除数据库之外，数据架构还要考虑数据的存储问题，这里主要介绍以下几个方面。</p>
+<ul>
+<li><strong>对象存储</strong>：主要用于存储离散单元（对象）。每个对象都在一个被称作存储桶的扁平地址空间的同一级别里，一个对象不会从属于另一个对象。对象存储适合存储和检索较大的二进制对象，如图像、视频、音频、大型文档，以及CSV、Parquet和ORC等格式的常用于大数据场景的文件。对象存储可以用于管理和存放海量非结构化数据。
+<ul>
+<li>典型的云存储服务有AWS的S3、Azure的Blob Storage、阿里云的OSS。</li>
+</ul>
+</li>
+<li><strong>块存储</strong>：可以像使用物理硬盘一样格式化及建立文件系统，具有高性能和低时延的特点，支持随机读写。
+<ul>
+<li>典型的云存储服务有AWS的EBS、Azure的Managed Disks、阿里云的块存储。</li>
+</ul>
+</li>
+<li><strong>共享文件</strong>：可共享访问、弹性扩展、具有高可靠性及高性能的分布式文件系统，提供共享访问。
+<ul>
+<li>典型的云存储服务有AWS的Elastic File System、Azure的Files、阿里云的文件存储。</li>
+</ul>
+</li>
+<li><strong>归档和备份</strong>：存储和归档不常访问且长期存在的数据，以及备份和恢复云上文件。
+<ul>
+<li>典型的云存储服务有AWS的S3 Glacier、Azure的Storage Archive Access Tier、阿里云OSS的归档存储。</li>
+</ul>
+</li>
+<li><strong>批量离线数据传输</strong>：PB级别端到端的离线数据迁移服务，能够使用安全设备将大量数据传入或传出云端。
+<ul>
+<li>典型的云存储服务有AWS的Snoball Edge、Azure的Data Box、阿里云的闪电立方。</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../data-arch/steps.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../data-arch/principle.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../data-arch/steps.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../data-arch/principle.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/simple-lightbox.min.js"></script>
+        <script type="text/javascript" src="../theme/theme.js"></script>
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+
+
+    </body>
+</html>

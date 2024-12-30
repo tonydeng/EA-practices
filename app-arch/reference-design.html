@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>应用架构参考设计 - 企业架构设计方法与实践</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="关于如何进行企业架构设计的一些方法和实践">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/simple-lightbox.css">
+        <link rel="stylesheet" href="../theme/theme.css">
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 企业架构设计方法与实践</a></li><li class="chapter-item "><a href="introduction.html"><strong aria-hidden="true">2.</strong> 前言</a></li><li class="chapter-item "><a href="ea-theory/index.html"><strong aria-hidden="true">3.</strong> 企业架构理论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-theory/zachman.html"><strong aria-hidden="true">3.1.</strong> Zachman</a></li><li class="chapter-item "><a href="ea-theory/togaf.html"><strong aria-hidden="true">3.2.</strong> TOGAF</a></li><li class="chapter-item "><a href="ea-theory/feaf.html"><strong aria-hidden="true">3.3.</strong> FEAF</a></li><li class="chapter-item "><a href="ea-theory/dodaf.html"><strong aria-hidden="true">3.4.</strong> DoDAF</a></li><li class="chapter-item "><a href="ea-theory/etom.html"><strong aria-hidden="true">3.5.</strong> eTOM</a></li><li class="chapter-item "><a href="ea-theory/archimate.html"><strong aria-hidden="true">3.6.</strong> ArchiMate</a></li><li class="chapter-item "><a href="ea-theory/gartner.html"><strong aria-hidden="true">3.7.</strong> Gartner</a></li></ol></li><li class="chapter-item "><a href="ea-methods/index.html"><strong aria-hidden="true">4.</strong> 企业架构方法论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-methods/overview.html"><strong aria-hidden="true">4.1.</strong> 企业架构方法论概述</a></li><li class="chapter-item "><a href="ea-methods/strategical-planning.html"><strong aria-hidden="true">4.2.</strong> 企业战略计划</a></li><li class="chapter-item "><a href="ea-methods/ea-planning.html"><strong aria-hidden="true">4.3.</strong> 企业架构规划</a></li><li class="chapter-item "><a href="ea-methods/project-management.html"><strong aria-hidden="true">4.4.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="ea-methods/ea-governance.html"><strong aria-hidden="true">4.5.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="ea-methods/ea-implementation.html"><strong aria-hidden="true">4.6.</strong> 企业架构实施参考</a></li></ol></li><li class="chapter-item "><a href="biz-arch/index.html"><strong aria-hidden="true">5.</strong> 业务架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="biz-arch/overview.html"><strong aria-hidden="true">5.1.</strong> 业务架构概述</a></li><li class="chapter-item "><a href="biz-arch/theory.html"><strong aria-hidden="true">5.2.</strong> 业务架构的理论参考</a></li><li class="chapter-item "><a href="biz-arch/framework.html"><strong aria-hidden="true">5.3.</strong> 业务架构的内容框架</a></li><li class="chapter-item "><a href="biz-arch/value.html"><strong aria-hidden="true">5.4.</strong> 业务架构的价值</a></li><li class="chapter-item "><a href="biz-arch/elements.html"><strong aria-hidden="true">5.5.</strong> 业务架构的关键要素</a></li><li class="chapter-item "><a href="biz-arch/methods.html"><strong aria-hidden="true">5.6.</strong> 业务架构的设计方法</a></li><li class="chapter-item "><a href="biz-arch/points.html"><strong aria-hidden="true">5.7.</strong> 业务架构的设计关键点</a></li><li class="chapter-item "><a href="biz-arch/reference.html"><strong aria-hidden="true">5.8.</strong> 业务架构的参考设计</a></li></ol></li><li class="chapter-item "><a href="app-arch/index.html"><strong aria-hidden="true">6.</strong> 应用架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="app-arch/it-arch-overview.html"><strong aria-hidden="true">6.1.</strong> 企业IT架构概述</a></li><li class="chapter-item "><a href="app-arch/overview.html"><strong aria-hidden="true">6.2.</strong> 应用架构概述</a></li><li class="chapter-item "><a href="app-arch/framework.html"><strong aria-hidden="true">6.3.</strong> 应用架构设计框架</a></li><li class="chapter-item "><a href="app-arch/patterns.html"><strong aria-hidden="true">6.4.</strong> 应用架构常用模式</a></li><li class="chapter-item "><a href="app-arch/strategies.html"><strong aria-hidden="true">6.5.</strong> 应用架构核心策略</a></li><li class="chapter-item "><a href="app-arch/domain-driven-design.html"><strong aria-hidden="true">6.6.</strong> 领域驱动设计</a></li><li class="chapter-item "><a href="app-arch/design-methods.html"><strong aria-hidden="true">6.7.</strong> 应用架构的设计方法</a></li><li class="chapter-item "><a href="app-arch/design-principles.html"><strong aria-hidden="true">6.8.</strong> 应用架构的设计原则</a></li><li class="chapter-item "><a href="app-arch/relations.html"><strong aria-hidden="true">6.9.</strong> 应用架构与周边概念的关系</a></li><li class="chapter-item "><a href="app-arch/reference-design.html"><strong aria-hidden="true">6.10.</strong> 应用架构参考设计</a></li></ol></li><li class="chapter-item "><a href="data-arch/index.html"><strong aria-hidden="true">7.</strong> 数据架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="data-arch/overview.html"><strong aria-hidden="true">7.1.</strong> 数据架构概述</a></li><li class="chapter-item "><a href="data-arch/framework.html"><strong aria-hidden="true">7.2.</strong> 数据架构的设计框架</a></li><li class="chapter-item "><a href="data-arch/planning.html"><strong aria-hidden="true">7.3.</strong> 数据架构规划</a></li><li class="chapter-item "><a href="data-arch/methods.html"><strong aria-hidden="true">7.4.</strong> 数据架构设计方法</a></li><li class="chapter-item "><a href="data-arch/steps.html"><strong aria-hidden="true">7.5.</strong> 数据架构设计步骤</a></li><li class="chapter-item "><a href="data-arch/technology.html"><strong aria-hidden="true">7.6.</strong> 数据架构技术</a></li><li class="chapter-item "><a href="data-arch/principle.html"><strong aria-hidden="true">7.7.</strong> 数据架构原则和规范</a></li><li class="chapter-item "><a href="data-arch/practice.html"><strong aria-hidden="true">7.8.</strong> 数据架构参考实践</a></li><li class="chapter-item "><a href="data-arch/cloud-native.html"><strong aria-hidden="true">7.9.</strong> 云原生时代的数据架构技术体系</a></li></ol></li><li class="chapter-item "><a href="tech-arch/index.html"><strong aria-hidden="true">8.</strong> 技术架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tech-arch/overview.html"><strong aria-hidden="true">8.1.</strong> 技术架构概述</a></li><li class="chapter-item "><a href="tech-arch/framework.html"><strong aria-hidden="true">8.2.</strong> 技术架构设计框架</a></li><li class="chapter-item "><a href="tech-arch/patterns.html"><strong aria-hidden="true">8.3.</strong> 技术架构常用模式</a></li><li class="chapter-item "><a href="tech-arch/principles.html"><strong aria-hidden="true">8.4.</strong> 技术架构设计原则</a></li><li class="chapter-item "><a href="tech-arch/diagram.html"><strong aria-hidden="true">8.5.</strong> 技术架构制图</a></li><li class="chapter-item "><a href="tech-arch/cloud.html"><strong aria-hidden="true">8.6.</strong> 技术基础设施上云</a></li><li class="chapter-item "><a href="tech-arch/technology.html"><strong aria-hidden="true">8.7.</strong> 技术架构典型技术选型</a></li><li class="chapter-item "><a href="tech-arch/best-practice.html"><strong aria-hidden="true">8.8.</strong> 技术架构最佳实践</a></li></ol></li><li class="chapter-item "><a href="ea-practice/index.html"><strong aria-hidden="true">9.</strong> 企业架构实践</a></li><li class="chapter-item "><a href="governance/index.html"><strong aria-hidden="true">10.</strong> 架构治理演进</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/project/index.html"><strong aria-hidden="true">10.1.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="governance/arch-governance/index.html"><strong aria-hidden="true">10.2.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="governance/assessment/index.html"><strong aria-hidden="true">10.3.</strong> 架构评估方法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/assessment/atam.html"><strong aria-hidden="true">10.3.1.</strong> ATAM软件架构评估方法</a></li></ol></li><li class="chapter-item "><a href="governance/maturity-model/index.html"><strong aria-hidden="true">10.4.</strong> 架构成熟度模型</a></li><li class="chapter-item "><a href="governance/governance-model/index.html"><strong aria-hidden="true">10.5.</strong> 架构治理模型</a></li><li class="chapter-item "><a href="governance/org-arch/index.html"><strong aria-hidden="true">10.6.</strong> 组织架构</a></li></ol></li><li class="chapter-item "><a href="architect/index.html"><strong aria-hidden="true">11.</strong> 架构师的自我成长</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="architect/what-is-architect.html"><strong aria-hidden="true">11.1.</strong> 什么是架构师</a></li><li class="chapter-item "><a href="architect/character.html"><strong aria-hidden="true">11.2.</strong> 架构师的特质</a></li><li class="chapter-item "><a href="architect/capability.html"><strong aria-hidden="true">11.3.</strong> 企业架构师的能力</a></li><li class="chapter-item "><a href="architect/growth.html"><strong aria-hidden="true">11.4.</strong> 架构师的成长建议</a></li><li class="chapter-item "><a href="architect/mindset.html"><strong aria-hidden="true">11.5.</strong> 架构师的思维模式</a></li></ol></li><li class="chapter-item "><a href="appendix/index.html"><strong aria-hidden="true">12.</strong> 附录</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/what-is-architecture.html"><strong aria-hidden="true">12.1.</strong> 什么是架构</a></li><li class="chapter-item "><a href="appendix/architecture-principles.html"><strong aria-hidden="true">12.2.</strong> 架构设计原则</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">企业架构设计方法与实践</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/tonydeng/EA-practices" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="应用架构参考设计"><a class="header" href="#应用架构参考设计">应用架构参考设计</a></h1>
+<h2 id="tam应用架构参考"><a class="header" href="#tam应用架构参考">TAM应用架构参考</a></h2>
+<p>TM Forum理论提供了一个关于<a href="http://www.ilsa.kz/etom/main/diagram212bd3bc1d9811db9063000802da1ce2.htm">The Application Framework（TAM）的企业应用架构的参考</a>。</p>
+<blockquote>
+<p>TAM是TM Forum中开放数字化架构框架的一部分，为企业应用架构框架提供了一个通用的方法。</p>
+</blockquote>
+<p>TAM涵盖产品、运营、服务、保障等纵向业务，以及市场销售域、产品管理域、客户管理域、服务管理域、资源管理域、供应商/合作伙伴域、企业管理域等多领域需要的应用功能参考，这些多维的应用功能地图为定义和复杂的应用系统提供了一个范例。</p>
+<p>TAM这个模型既没有根据DDD给出分析的过程，也没有给出具体的领域模型和服务，但从整体上给出了一个企业在不同域中需要考虑的核心应用功能，有比较高的参考价值。</p>
+<p><img src="images/TAM-Application-Framework.png" alt="TAM应用架构参考" /></p>
+<blockquote>
+<p>图例：TAM应用架构参考</p>
+</blockquote>
+<h2 id="企业abc应用架构参考"><a class="header" href="#企业abc应用架构参考">企业ABC应用架构参考</a></h2>
+<p>新零售应用需要的功能和服务多样，接着业务架构章节提到的<a href="../biz-arch/reference.html">鞋服企业ABC案例</a>，我们来看看应用架构如何进一步结合业务架构落地。在业务架构部分，<a href="../biz-arch/reference.html#%E5%88%86%E6%9E%90%E4%B8%9A%E5%8A%A1%E8%83%BD%E5%8A%9B">一些业务能力</a>，如商品流转能力、库存平衡能力、订单寻源能力、分润结算能力、会员营销能力等，同时伴随着<a href="../biz-arch/reference.html#%E6%A2%B3%E7%90%86%E4%B8%9A%E5%8A%A1%E6%B5%81%E7%A8%8B">很细致的业务流程</a>。应用架构为了承载这些业务能力和业务需求，需要进行应用与服务的构建。大体把应用分为四层（其中业务能力承载自业务架构，这里先不包含进来）。</p>
+<ul>
+<li><strong>前台应用</strong>：面向不同的用户的前端触点应用，这些应用<strong>直接面向最终用户，是业务能力和业务流程的入口</strong>。比如，面向线下门店店员的POS系统，面向线上营销人员的自营电商、第三方电商，以及多种多媒体营销渠道（如微信、微博、抖音），或者一些直播、微分销平台等。</li>
+<li><strong>核心应用</strong>：<strong>支撑业务的核心能力，形成企业的共享复用能力，支撑业务能力和业务流程的沉淀，通过核心的领域服务进行承载</strong>，可能涉及企业的多个方面，如商品系统、渠道系统、库存系统、交易系统、用户系统、会员系统、营销系统、结算系统等。</li>
+<li><strong>后台应用</strong>：企业<strong>内部的稳态的管理系统，更多需要和核心应用及前端进行对接，提供企业内部管理的方方面面</strong>，如生产管理、物流管理、仓储管理、财务管理、人力资源管理、行政管理、物料生产管理、其他资源管理等。</li>
+<li><strong>基础设施</strong>：<strong>支持这些系统的基础设施</strong>，如计算设施、存储设施、网络、中间件、安全设施、云原生等。</li>
+</ul>
+<p><img src="images/Enterprise-ABC-Application-architecture-reference.png" alt="企业ABC应用架构参考" /></p>
+<blockquote>
+<p>图例：企业ABC应用架构参考</p>
+</blockquote>
+<h3 id="企业abc的核心领域模型"><a class="header" href="#企业abc的核心领域模型">企业ABC的核心领域模型</a></h3>
+<p>企业ABC在具体的核心应用系统设计中，进一步可以聚焦相关的主要能力、领域模型及领域服务，建模过程可以参考<a href="./domain-driven-design.html">DDD</a>及<a href="./design-methods.html">相关的应用架构设计方法</a>，进而可以得到领域模型。</p>
+<p>整个设计过程的内容比较多，这里只做简要说明，这里仅展示几个核心的领域，比如用户域、会员域、营销域、订单域、商品域、库存域，里面的实体、值对象、领域服务及领域事件等仅展示部分内容。</p>
+<p>企业ABC对不同的核心领域进行应用系统建设，为了方便开发和管理，每个领域对应一个应用系统，这里简单总结一下这些应用系统的主要能力、核心模型（包括聚合、实体、值对象等）和核心服务（包括领域服务、领域事件等）。</p>
+<p><img src="images/Enterprise-ABC-core-domain-model.png" alt="企业ABC的核心领域模型" /></p>
+<blockquote>
+<p>图例：企业ABC的核心领域模型</p>
+</blockquote>
+<h3 id="商品系统"><a class="header" href="#商品系统">商品系统</a></h3>
+<ul>
+<li><strong>主要能力</strong>：建立和维护统一的商品库，并提供商品的管理和运营能力，为上层业务提供简单、统一的商品与服务。</li>
+<li><strong>核心模型</strong>：商品、类目、品牌、价格、属性、产品SPU、SKU、商品详情等。</li>
+<li><strong>核心服务</strong>：基础数据管理，包括品类管理、产品SPU管理、SKU管理、属性管理等；品牌类目管理，包括商品品牌的维护与查询，商品类目的维护与管理；商品发布管理，包括商品上架和下架管理、商品发布与编辑等；价格管理，包括销售价、批发价、零售价，以及价格生效/失效时间；商品组合管理，包括组合SKU、临时组合等；评价管理，包括商品评价、回复管理等；产品管理，包括对产品模板的创建、编辑、查询、禁用等。</li>
+</ul>
+<h3 id="渠道系统"><a class="header" href="#渠道系统">渠道系统</a></h3>
+<ul>
+<li><strong>主要能力</strong>：建立和维护统一的上游和下游组织网络渠道，并提供地区、门店、店铺、供应商、经销商等管理和运营能力，为上层业务提供简单、统一的渠道与服务。</li>
+<li><strong>核心模型</strong>：门店、店铺、供应商、经销商、类目、地区等。</li>
+<li><strong>核心服务</strong>：渠道数据管理，包括对渠道的创建、编辑、查询、停用等；渠道关系管理，包括渠道与仓库的关系、渠道与组织的关系、供应商与组织的关系等；店铺管理，包括商户管理、店铺会员管理、店铺装修、店铺开通等；其他服务，如门店管理、供应商管理、经销商管理等。</li>
+</ul>
+<h3 id="库存系统"><a class="header" href="#库存系统">库存系统</a></h3>
+<ul>
+<li><strong>主要能力</strong>：对仓库统一管理，管理所有的物理仓、门店仓、电商仓，提供统一库存管理模型和算法，支持多渠道库存实时共享，基于虚拟库存模型实现库存共享和自动调配。</li>
+<li><strong>核心模型</strong>：实体库存、逻辑库存、共享库存、渠道库存、出入库单据、出入库单据明细、出入库通知等。</li>
+<li><strong>核心服务</strong>：库存管理，包括库存寻源、库存占用、库存共享、自动调配等；库存状态管理，包括可用、在途、占用、共享等；仓库管理，包括逻辑仓、实体仓、渠道仓的管理；货品管理，包括货品出入库、调拨、盘点等；库存同步，包括渠道仓库、逻辑仓库、实体仓库之间的同步。</li>
+</ul>
+<h3 id="交易系统"><a class="header" href="#交易系统">交易系统</a></h3>
+<ul>
+<li><strong>主要能力</strong>：交易系统也可以叫订单系统，新零售应用主要围绕订单来进行，负责企业业务交易订单的整个生命周期管理，包括订单生成、合并拆分、流转、发货、退换货等，涉及企业多种业务模式，如线下门店自提、线上销售、O2O等，特别是通过订单的不同交易节点进行流程编排和配置化等。</li>
+<li><strong>核心模型</strong>：主订单、子订单、订单状态、订单明细、订单日志、退货单、换货单、物流单。</li>
+<li><strong>核心服务</strong>：购物车管理，包括购物车商品添加、编辑、查询等；正向交易管理，包括交易订单生成、订单转换、发货通知等；逆向交易管理，包括商品换货、退货、退款等；订单数据管理，包括交易订单记录等；订单管理，包括订单拆分合并、订单寻源等；订单状态管理，包括已加购、待付款、待发货、已收货、售后中、退货中、退款中等。</li>
+</ul>
+<h3 id="用户系统"><a class="header" href="#用户系统">用户系统</a></h3>
+<ul>
+<li><strong>主要能力</strong>：存储和维护统一的用户和组织库，并提供人员信息、组织机构、用户信息的管理和运营能力，为上层业务提供统一的用户与服务。</li>
+<li><strong>核心模型</strong>：用户、员工、组织、角色、权限、账号等。</li>
+<li><strong>核心服务</strong>：组织管理，包括对组织级别、组织属性及属性组管理；人员管理，包括人员添加、查询、角色权限配置等；账号管理，包括系统账号、密码管理等。</li>
+</ul>
+<h3 id="会员系统"><a class="header" href="#会员系统">会员系统</a></h3>
+<ul>
+<li><strong>主要能力</strong>：统一会员生命周期管理，促进用户购物、提高用户黏性，提高AIPL转化，关注拉新转化、复购、客单价等。支持多个品牌会员体系，以及会员权益发放与兑换，会员积分、等级权益的服务，通过会员系统收集和分析会员的消费行为和画像；支持多种业务场景，如社交营销、消费即会员、无感积分等。</li>
+<li><strong>核心模型</strong>：会员、等级、权益、积分、成长值、画像、付费会员、会员标签等。</li>
+<li><strong>核心服务</strong>：会员运营管理，包括会员注册、个人信息维护、会员卡办理等；会员体系管理，包括会员体系的创建、积分规则、成长值规则、等级、权益等；会员积分管理，包括积分获取、核销、清零、兑换等；基础信息服务，包括成长等级、审核认证、行为触点服务、积分活动等。</li>
+</ul>
+<h3 id="营销系统"><a class="header" href="#营销系统">营销系统</a></h3>
+<ul>
+<li><strong>主要能力</strong>：提供营销体系，如活动支持满减、满赠、满折、特价、抽奖、红包等，支持营销活动规则的制定和发布，支持多渠道优惠券、折扣券的管理、发券及核销。</li>
+<li><strong>核心模型</strong>：活动模板、营销活动、活动规则、营销工具、优惠券等。</li>
+<li><strong>核心服务</strong>：活动模板管理，包括营销活动的策略类型、策略模板、规则配置、动作模板等；活动管理，包括基本信息、店铺圈选、商品管理、活动频次、触发条件，活动发布等；优惠券管理，包括优惠券的发放、领取、查询、使用、核销等。</li>
+</ul>
+<h3 id="结算系统"><a class="header" href="#结算系统">结算系统</a></h3>
+<ul>
+<li><strong>主要能力</strong>：提供企业核心财务结算管理，提供业务规则、结算规则、业务结算、财务对账等服务能力。</li>
+<li><strong>核心模型</strong>：资金账户、支付渠道、结算类型、结算主体、结算单、支付网关等。</li>
+<li><strong>核心服务</strong>：结算主体管理，包括经销商主体、企业多主体管理等；结算规则管理，包括结算来源、转换规则、支付方式等；资金账户管理，包括经销商资金账户、信贷维护和审批等；财务结算管理，包括采购结算、经销商结算、商场结算、O2O结算、跨企业主体结算、财务对账、结算风险管理等。</li>
+</ul>
+<p>上面提到的众多系统都可以通过<a href="design-methods.html">应用架构设计方法</a>来进行设计，这里我们以渠道系统中的一个子系统——店铺系统为例，进一步看看通过领域建模方法构建应用架构中核心的领域模型和领域服务的过程。</p>
+<p><img src="images/Example-of-store-sub-application-system.png" alt="店铺子应用系统示例" /></p>
+<blockquote>
+<p>图例：店铺子应用系统示例</p>
+</blockquote>
+<p>首先，我们做准备工作，从业务架构的业务流程和业务能力出发。</p>
+<p>店铺系统是电商平台的一部分，主要面向买家、卖家及平台运营者。这里对卖家进行分析，可以看到主要涉及注册、开店、店铺装修、店铺营销及店铺推广，同时我们从业务能力中识别了一些关键的业务活动，如注册时提交资质审核资料，开店时创建店铺等。</p>
+<p>其次，我们初步分析出一些领域，包括店铺域、商品域、库存域、营销域等。</p>
+<p>再次，我们进行领域模型的设计，结合DDD等方法，可以得出店铺基本信息、店铺类目、店铺库存、店铺商品、店铺装修、店铺运营等基本领域实体，并且建立它们之间及它们与其他领域模型的关系。</p>
+<p>最后，我们根据DDD的上下文，对店铺域和其他域（如商品域、装修域、营销域）进行上下文分析，并建立各自的领域服务及彼此之间的交互关系。</p>
+<p>在完成店铺应用系统的核心设计后，我们可以按照这个思路来构建其他应用，并逐步构建整体的企业应用架构。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../app-arch/relations.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../data-arch/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../app-arch/relations.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../data-arch/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/simple-lightbox.min.js"></script>
+        <script type="text/javascript" src="../theme/theme.js"></script>
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+
+
+    </body>
+</html>

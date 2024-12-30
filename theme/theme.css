@@ -1,0 +1,7 @@
+/* 默认样式间距过大，显得过于紧凑 */
+table {
+  width: 100%;
+}
+table tbody td, table thead th {
+  padding: 6px 20px;
+}

@@ -1,0 +1,555 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>领域驱动设计 - 企业架构设计方法与实践</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="关于如何进行企业架构设计的一些方法和实践">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/simple-lightbox.css">
+        <link rel="stylesheet" href="../theme/theme.css">
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 企业架构设计方法与实践</a></li><li class="chapter-item "><a href="introduction.html"><strong aria-hidden="true">2.</strong> 前言</a></li><li class="chapter-item "><a href="ea-theory/index.html"><strong aria-hidden="true">3.</strong> 企业架构理论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-theory/zachman.html"><strong aria-hidden="true">3.1.</strong> Zachman</a></li><li class="chapter-item "><a href="ea-theory/togaf.html"><strong aria-hidden="true">3.2.</strong> TOGAF</a></li><li class="chapter-item "><a href="ea-theory/feaf.html"><strong aria-hidden="true">3.3.</strong> FEAF</a></li><li class="chapter-item "><a href="ea-theory/dodaf.html"><strong aria-hidden="true">3.4.</strong> DoDAF</a></li><li class="chapter-item "><a href="ea-theory/etom.html"><strong aria-hidden="true">3.5.</strong> eTOM</a></li><li class="chapter-item "><a href="ea-theory/archimate.html"><strong aria-hidden="true">3.6.</strong> ArchiMate</a></li><li class="chapter-item "><a href="ea-theory/gartner.html"><strong aria-hidden="true">3.7.</strong> Gartner</a></li></ol></li><li class="chapter-item "><a href="ea-methods/index.html"><strong aria-hidden="true">4.</strong> 企业架构方法论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-methods/overview.html"><strong aria-hidden="true">4.1.</strong> 企业架构方法论概述</a></li><li class="chapter-item "><a href="ea-methods/strategical-planning.html"><strong aria-hidden="true">4.2.</strong> 企业战略计划</a></li><li class="chapter-item "><a href="ea-methods/ea-planning.html"><strong aria-hidden="true">4.3.</strong> 企业架构规划</a></li><li class="chapter-item "><a href="ea-methods/project-management.html"><strong aria-hidden="true">4.4.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="ea-methods/ea-governance.html"><strong aria-hidden="true">4.5.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="ea-methods/ea-implementation.html"><strong aria-hidden="true">4.6.</strong> 企业架构实施参考</a></li></ol></li><li class="chapter-item "><a href="biz-arch/index.html"><strong aria-hidden="true">5.</strong> 业务架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="biz-arch/overview.html"><strong aria-hidden="true">5.1.</strong> 业务架构概述</a></li><li class="chapter-item "><a href="biz-arch/theory.html"><strong aria-hidden="true">5.2.</strong> 业务架构的理论参考</a></li><li class="chapter-item "><a href="biz-arch/framework.html"><strong aria-hidden="true">5.3.</strong> 业务架构的内容框架</a></li><li class="chapter-item "><a href="biz-arch/value.html"><strong aria-hidden="true">5.4.</strong> 业务架构的价值</a></li><li class="chapter-item "><a href="biz-arch/elements.html"><strong aria-hidden="true">5.5.</strong> 业务架构的关键要素</a></li><li class="chapter-item "><a href="biz-arch/methods.html"><strong aria-hidden="true">5.6.</strong> 业务架构的设计方法</a></li><li class="chapter-item "><a href="biz-arch/points.html"><strong aria-hidden="true">5.7.</strong> 业务架构的设计关键点</a></li><li class="chapter-item "><a href="biz-arch/reference.html"><strong aria-hidden="true">5.8.</strong> 业务架构的参考设计</a></li></ol></li><li class="chapter-item "><a href="app-arch/index.html"><strong aria-hidden="true">6.</strong> 应用架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="app-arch/it-arch-overview.html"><strong aria-hidden="true">6.1.</strong> 企业IT架构概述</a></li><li class="chapter-item "><a href="app-arch/overview.html"><strong aria-hidden="true">6.2.</strong> 应用架构概述</a></li><li class="chapter-item "><a href="app-arch/framework.html"><strong aria-hidden="true">6.3.</strong> 应用架构设计框架</a></li><li class="chapter-item "><a href="app-arch/patterns.html"><strong aria-hidden="true">6.4.</strong> 应用架构常用模式</a></li><li class="chapter-item "><a href="app-arch/strategies.html"><strong aria-hidden="true">6.5.</strong> 应用架构核心策略</a></li><li class="chapter-item "><a href="app-arch/domain-driven-design.html"><strong aria-hidden="true">6.6.</strong> 领域驱动设计</a></li><li class="chapter-item "><a href="app-arch/design-methods.html"><strong aria-hidden="true">6.7.</strong> 应用架构的设计方法</a></li><li class="chapter-item "><a href="app-arch/design-principles.html"><strong aria-hidden="true">6.8.</strong> 应用架构的设计原则</a></li><li class="chapter-item "><a href="app-arch/relations.html"><strong aria-hidden="true">6.9.</strong> 应用架构与周边概念的关系</a></li><li class="chapter-item "><a href="app-arch/reference-design.html"><strong aria-hidden="true">6.10.</strong> 应用架构参考设计</a></li></ol></li><li class="chapter-item "><a href="data-arch/index.html"><strong aria-hidden="true">7.</strong> 数据架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="data-arch/overview.html"><strong aria-hidden="true">7.1.</strong> 数据架构概述</a></li><li class="chapter-item "><a href="data-arch/framework.html"><strong aria-hidden="true">7.2.</strong> 数据架构的设计框架</a></li><li class="chapter-item "><a href="data-arch/planning.html"><strong aria-hidden="true">7.3.</strong> 数据架构规划</a></li><li class="chapter-item "><a href="data-arch/methods.html"><strong aria-hidden="true">7.4.</strong> 数据架构设计方法</a></li><li class="chapter-item "><a href="data-arch/steps.html"><strong aria-hidden="true">7.5.</strong> 数据架构设计步骤</a></li><li class="chapter-item "><a href="data-arch/technology.html"><strong aria-hidden="true">7.6.</strong> 数据架构技术</a></li><li class="chapter-item "><a href="data-arch/principle.html"><strong aria-hidden="true">7.7.</strong> 数据架构原则和规范</a></li><li class="chapter-item "><a href="data-arch/practice.html"><strong aria-hidden="true">7.8.</strong> 数据架构参考实践</a></li><li class="chapter-item "><a href="data-arch/cloud-native.html"><strong aria-hidden="true">7.9.</strong> 云原生时代的数据架构技术体系</a></li></ol></li><li class="chapter-item "><a href="tech-arch/index.html"><strong aria-hidden="true">8.</strong> 技术架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tech-arch/overview.html"><strong aria-hidden="true">8.1.</strong> 技术架构概述</a></li><li class="chapter-item "><a href="tech-arch/framework.html"><strong aria-hidden="true">8.2.</strong> 技术架构设计框架</a></li><li class="chapter-item "><a href="tech-arch/patterns.html"><strong aria-hidden="true">8.3.</strong> 技术架构常用模式</a></li><li class="chapter-item "><a href="tech-arch/principles.html"><strong aria-hidden="true">8.4.</strong> 技术架构设计原则</a></li><li class="chapter-item "><a href="tech-arch/diagram.html"><strong aria-hidden="true">8.5.</strong> 技术架构制图</a></li><li class="chapter-item "><a href="tech-arch/cloud.html"><strong aria-hidden="true">8.6.</strong> 技术基础设施上云</a></li><li class="chapter-item "><a href="tech-arch/technology.html"><strong aria-hidden="true">8.7.</strong> 技术架构典型技术选型</a></li><li class="chapter-item "><a href="tech-arch/best-practice.html"><strong aria-hidden="true">8.8.</strong> 技术架构最佳实践</a></li></ol></li><li class="chapter-item "><a href="ea-practice/index.html"><strong aria-hidden="true">9.</strong> 企业架构实践</a></li><li class="chapter-item "><a href="governance/index.html"><strong aria-hidden="true">10.</strong> 架构治理演进</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/project/index.html"><strong aria-hidden="true">10.1.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="governance/arch-governance/index.html"><strong aria-hidden="true">10.2.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="governance/assessment/index.html"><strong aria-hidden="true">10.3.</strong> 架构评估方法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/assessment/atam.html"><strong aria-hidden="true">10.3.1.</strong> ATAM软件架构评估方法</a></li></ol></li><li class="chapter-item "><a href="governance/maturity-model/index.html"><strong aria-hidden="true">10.4.</strong> 架构成熟度模型</a></li><li class="chapter-item "><a href="governance/governance-model/index.html"><strong aria-hidden="true">10.5.</strong> 架构治理模型</a></li><li class="chapter-item "><a href="governance/org-arch/index.html"><strong aria-hidden="true">10.6.</strong> 组织架构</a></li></ol></li><li class="chapter-item "><a href="architect/index.html"><strong aria-hidden="true">11.</strong> 架构师的自我成长</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="architect/what-is-architect.html"><strong aria-hidden="true">11.1.</strong> 什么是架构师</a></li><li class="chapter-item "><a href="architect/character.html"><strong aria-hidden="true">11.2.</strong> 架构师的特质</a></li><li class="chapter-item "><a href="architect/capability.html"><strong aria-hidden="true">11.3.</strong> 企业架构师的能力</a></li><li class="chapter-item "><a href="architect/growth.html"><strong aria-hidden="true">11.4.</strong> 架构师的成长建议</a></li><li class="chapter-item "><a href="architect/mindset.html"><strong aria-hidden="true">11.5.</strong> 架构师的思维模式</a></li></ol></li><li class="chapter-item "><a href="appendix/index.html"><strong aria-hidden="true">12.</strong> 附录</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/what-is-architecture.html"><strong aria-hidden="true">12.1.</strong> 什么是架构</a></li><li class="chapter-item "><a href="appendix/architecture-principles.html"><strong aria-hidden="true">12.2.</strong> 架构设计原则</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">企业架构设计方法与实践</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/tonydeng/EA-practices" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="领域驱动设计"><a class="header" href="#领域驱动设计">领域驱动设计</a></h1>
+<p>在应用架构的设计中，领域驱动设计（<code>Domain Driven Design</code>，<code>DDD</code>）占据着非常重要的位置，可以说<code>DDD</code>是应用架构设计的核心。</p>
+<p><code>DDD</code>为我们提供了一种架构设计方法，既面向业务，又面向技术，从业务需求到领域建模，从领域服务到技术转化，强调开发人员与领域专家协同。<code>DDD</code>是埃里克·埃文斯（Eric Evans）在2003年出版的《领域驱动设计：软件核心复杂性应对之道》（<code>Domain Driven Design: Tackling Complexity in the Heart of Software</code>）一书中提出的具有划时代意义的重要概念，不过这种领域建模和设计的思想其实早在20世纪就有很多设计人员重视起来。<code>DDD</code>通过统一语言、领域模型、领域划分和服务划分等一系列手段来降低软件复杂度。</p>
+<p><code>DDD</code>的核心思想是业务与技术相结合的一种过程，既强调业务的理解，又强调应用领域建模方法的使用。<code>DDD</code>本质上是面向对象分析的扩展和延伸，它基于面向对象分析技术进行了分层规划，同时对其中的核心概念和划分做了详细的指引。</p>
+<h2 id="ddd的价值"><a class="header" href="#ddd的价值">DDD的价值</a></h2>
+<p>DDD对应用架构设计有非常大的指导作用，具体如下所示。</p>
+<ul>
+<li><strong>统一语言</strong>：团队成员会在有界的上下文中有意识地形成统一语言，便于沟通，减少分歧，以一种所有干系人都能理解的通用语言为相互交流的工具，在交流的过程中形成领域概念，然后将这些概念设计成领域模型。</li>
+<li><strong>业务知识沉淀</strong>：DDD不以人为中心，而<strong>以业务为中心</strong>，通过承接业务架构的业务流程和业务能力，并且通过领域知识进行转化，进而反哺业务架构和应用架构。</li>
+<li><strong>边界清晰的应用服务划分</strong>：用领域模型划分<strong>边界来界定哪些需求是合理的</strong>，一些需求应该在什么地方实现，不断拉齐团队成员对需求的认知，让设计更加清晰和规范，分而治之，控制规模。</li>
+<li><strong>关注点分离</strong>：<strong>领域模型与数据模型分离，业务复杂度与技术复杂度分离</strong>，保持结构清晰，以应对不可预测性挑战。</li>
+<li><strong>团队协同</strong>：<strong>业务人员和设计人员共同参与</strong>，这样有助于创建大家都能理解的通用模型，并用该模型来沟通业务需求、数据实体和过程模型。</li>
+<li><strong>模型可扩展</strong>：很好地对业务需求进行了到领域服务的转化，同时是微服务及项目落地开发的纽带，领域模型是可扩展且易维护的，也提高了相应的可重用性和可测试性。</li>
+</ul>
+<p>当然DDD也不是万能的，在采用DDD之前，我们<strong>需要考虑是否真正需要</strong>，思考以下几个问题可以帮助我们做出判断。</p>
+<ul>
+<li>是否以数据为中心，所有操作都是数据库CRUD？</li>
+<li>业务逻辑是否只是少量的业务场景和用例？</li>
+<li>应用功能是否稳定？</li>
+<li>是否已经对业务领域足够了解？</li>
+</ul>
+<p>如果以上问题的答案基本都是“<strong>是</strong>”，说明系统并没有复杂的业务逻辑，则可以用一般的面向数据的架构或者事务脚本等模式。但<strong>如果业务逻辑复杂、变化频繁、团队对该领域还缺乏一定的认知，需要进行领域模型和服务的梳理，那么DDD会帮助我们抽象和解决问题。</strong></p>
+<h2 id="ddd的设计理念"><a class="header" href="#ddd的设计理念">DDD的设计理念</a></h2>
+<p>DDD大体的分析过程中，其中比较关键的几个切入点是通用语言、领域、限界上下文。</p>
+<p><img src="images/DDD-analysis-process-schematic.png" alt="DDD分析过程" /></p>
+<blockquote>
+<p>图例：DDD分析过程</p>
+</blockquote>
+<h3 id="通用语言ubiquitous-language"><a class="header" href="#通用语言ubiquitous-language">通用语言（Ubiquitous Language）</a></h3>
+<p>业务人员和技术人员在协作过程中，如何讲同一种语言？在DDD中用通用语言来解决。<strong>通用语言是理解业务需求和梳理领域知识的过程，也是团队中各个角色就系统目标、范围与具体功能达成一致的过程</strong>。通用语言可以定义公共术语，减少概念混淆，消除歧义和理解偏差，提升需求和知识消化的效率，<strong>达到概念和代码的统一</strong>，使得虚拟概念和具体实现一致。</p>
+<p>通用语言可能由团队所有相关角色参加，如业务代表、产品经理、业务架构师、技术架构师、开发人员。同时，领域专家也非常关键，领域专家需要对业务领域非常了解，或者能够跟领域专业人员学习到足够的领域知识。</p>
+<p>通用语言建立的过程并不容易，因为技术人员和领域专家在沟通过程中存在“天然屏障”：</p>
+<ul>
+<li>技术人员考虑的是类、方法、算法、继承、封装、代码等</li>
+<li>领域专家考虑的是订单流程、库存状态、商品类目等</li>
+</ul>
+<p>因此，<strong>在建立领域知识的时候，双方必须交换知识，彼此深度参与，才可能得出领域模型</strong>。知识的范围涉及领域模型的各个元素，如果一方感到困惑，那么应该立刻换一种方式，直到双方能够理解一致。</p>
+<h2 id="领域domain"><a class="header" href="#领域domain">领域（Domain）</a></h2>
+<p>领域是用于确定范围和边界的，DDD将业务上的问题限定归属在特定的边界内，而这些边界就可以叫作领域。为了降低业务理解和系统实现的复杂度，DDD会将领域进一步划分为更细粒度，也就是子域。子域根据自身的重要程度和功能属性又可以划分为三类子域。</p>
+<ul>
+<li><strong>核心域</strong>：<strong>决定应用和系统核心竞争力，它是决定业务是否成功的主要因素</strong>，比如电商系统中关注的会员、商品、订单、交易、库存、营销等。</li>
+<li><strong>通用域</strong>：<strong>没有太多个性化的诉求，同时被多个子域使用的通用功能子域是通用域</strong>，比如统一的认证和权限管理系统。</li>
+<li><strong>支撑域</strong>：<strong>既不包含核心竞争力的功能，又不包含通用功能的子域，但该功能子域又是必需的，也就是支撑域</strong>，比如某个特定领域的数据字典。</li>
+</ul>
+<p><img src="images/DDD-conceptual-design-schematic.png" alt="DDD子域结构示例" /></p>
+<blockquote>
+<p>图例：DDD子域结构示例</p>
+</blockquote>
+<p>领域中的核心是领域模型（Domain Model），<strong>领域模型具备自己的属性行为状态，并与现实世界的业务对象相映射，领域模型之间具备明确的职责划分，领域对象元素之间通过聚合和引用来关联相应的业务规则，同时反映通用语言中的领域知识</strong>。</p>
+<p><strong>领域模型通过提炼领域对象，定义领域对象之间的关系、属性和行为，属于DDD的核心产物</strong>。</p>
+<h2 id="限界上下文bounded-context"><a class="header" href="#限界上下文bounded-context">限界上下文（Bounded Context）</a></h2>
+<p>领域帮助我们对系统进行拆分，而限界上下文帮助回答各领域之间的边界及它们如何交互。</p>
+<blockquote>
+<p>DDD中有一个形象的比喻，“<strong>细胞之所以会存在，是因为细胞膜定义了什么在细胞内、什么在细胞外，并且确定了什么物质可以通过细胞膜</strong>”。</p>
+</blockquote>
+<p>这个“细胞膜”就是对限界上下文很形象的举例。</p>
+<blockquote>
+<p>再举个例子，我们在平时的人际沟通中，为了避免同样的词语产生歧义，我们会把这个词语带入语言上下文中去理解其语义。比如，当谈到“苹果”时，有的人可能想到平时吃的水果，而有的人可能想到苹果手机。
+￼
+<img src="images/DDD-domain-and-bounded-context.png" alt="DDD领域与限界上下文" />
+图例：DDD领域与限界上下文</p>
+</blockquote>
+<p>限界上下文是一个显式的边界，领域模型便存在于这个边界之内，通用语言必须限制在这个限界上下文之中。在微服务设计中，一般一个限界上下文理论上就可以设计为一个微服务。限界上下文对应用的边界交互有重要作用，可以帮助我们保持模型的一致性，避免边界之外问题的混淆。这一点很重要，因为在大多数组织中，某些术语在不同的业务领域或团队中有不同的含义。</p>
+<p>在限界上下文中，通过上下文映射图（Context Map）确立上下文之间的关系，通过上下游来表达依赖，最后形成限界上下文如何在应用程序中相互配合的全局视图。上下文的交互方法有多种，在实际工作中，目前使用比较广的是防腐层和统一协议。</p>
+<ul>
+<li><strong>已发布的语言（Published Language）</strong>：两个上下文使用共同的语言，比如SOA服务总线定义了一堆XML模型，或者基于共享的文件或数据库，上下文可以基于此进行直接交互。</li>
+<li><strong>开放主机服务（Open Host）</strong>：又叫统一协议，为上下文之间的服务定义一套包含标准化数据结构在内的协议，比如基于HTTP风格的RESTful接口协议。</li>
+<li><strong>共享内核（Shared Kernel）</strong>：两个上下文使用一个共同的代码内核作为通用语言，比如两个工程使用同一个Bean基础模型库。</li>
+<li><strong>客户/供应商（Customer/Supplier）</strong>：一个上下文使用另一个上下文的服务，有显著的上下游依赖关系，比如基于RPC的服务交互方式。</li>
+<li><strong>顺从者（Conformist）</strong>：一个上下文使用另一个上下文的服务，但彼此之间的关系并不紧密，比如基于消息传递机制的交互模式。</li>
+<li><strong>防腐层（Anti-Corruption Layer，ACL）</strong>：使用一层适配层来协助上下文的交互，隔离业务逻辑，比如在商品子域和采购子域之间提供防腐层，将商品的变更进行收口，隔离子域内的后端业务实现。</li>
+</ul>
+<p>这里先就领域和限界上下文举一个简单的例子，此处举一个关于购物车订单支付下单的例子。</p>
+<p><img src="images/DDD-domain-and-bounds-context-example.png" alt="DDD领域与界限上下文示例" /></p>
+<blockquote>
+<p>图例：DDD领域与界限上下文示例</p>
+</blockquote>
+<p>购物车进行在线的支付授权，订单处理下单过程，并触发支付域的付款结算。</p>
+<p>这里我们简化整个建模的过程，假设已经抽象出购物车域、支付域、订单域（通常购物车域也可以被包含在订单域内），核心的<code>Cart</code>、<code>Payment</code>、<code>Order</code>。</p>
+<p><strong>领域之间通过限界上下文进行交互</strong>，因为购物车域和支付域密切相关，需要等待支付授权，我们通过<code>ACL</code>进行关联；而订单下单和付款动作相对解耦，通过领域事件在订单已下单后，触发支付域的付款动作。</p>
+<h2 id="ddd的核心概念"><a class="header" href="#ddd的核心概念">DDD的核心概念</a></h2>
+<p>DDD在构建领域模型的过程中，涉及比较多的概念。这里着重解读一下以下几个。
+￼
+<img src="images/DDD-StereoType.png" alt="DDD的核心概念" /></p>
+<blockquote>
+<p>图例：DDD的核心概念</p>
+</blockquote>
+<h3 id="实体entity"><a class="header" href="#实体entity">实体（Entity）</a></h3>
+<p><strong>实体是一个具有唯一身份标识的对象，并且可以在相当长的一段时间内持续变化</strong>。</p>
+<p>我们可以对实体进行多次修改，一个实体对象可能和它先前的对象大不相同，但<strong>拥有相同的身份标识，即依然是同一个实体</strong>。</p>
+<p>对实体而言，<strong>重要的不是其属性，而是其延续性和身份标识</strong>。一般实体的唯一标识有两种生成方式。</p>
+<ol>
+<li>应用可以<strong>自动为实体生成唯一标识</strong>，比如JDK自带的UUID、数据库的自增序列</li>
+<li>有时也需要<strong>综合业务语义来考虑</strong>，比如通过业务属性、时间、IP等因素生成</li>
+</ol>
+<p>另外，<strong>实体具有可变性</strong>，这里需要引出两个概念：</p>
+<ul>
+<li><strong>贫血模型</strong>：贫血模型与Bean或者DO对象类似，一般只有Getter和Setter方法，只作为保存状态或者传递状态，不包含业务逻辑，<strong>这种只有数据没有行为的对象不是真正的领域对象</strong></li>
+<li><strong>充血模型</strong>：<strong>DDD中的实体属于充血模型</strong>，会封装包含这个实体相关的所有业务逻辑，它既是多个业务属性的载体，又是操作或行为的载体。</li>
+</ul>
+<blockquote>
+<p>以订单（Order）为例，<strong>Order有下单、发货和退单等行为</strong>，<em><strong>而面向数据设计方式是将这些行为放到另一个服务OrderService中，而不是Order对象中</strong></em>。</p>
+</blockquote>
+<h3 id="值对象value-object"><a class="header" href="#值对象value-object">值对象（Value Object）</a></h3>
+<p><strong>值对象是只关心属性的对象，并且是一个没有标识符的对象</strong>。</p>
+<p><strong>值对象本质上是一个集合，这个集合中包含若干用于描述目的、具有整体概念和不可修改的属性</strong>。它可以避免属性零碎，使属性归类更加清晰，从概念理解上也更加完整。</p>
+<p>值对象在领域模型中是<strong>可以被共享的，它们应该是不可变的</strong>，当有其他地方需要用到值对象时，可以将它的副本作为参数传递。</p>
+<p>值对象与实体的区别在于：</p>
+<ul>
+<li><strong>值对象一般依附于实体而存在，是实体属性的一部分</strong>。</li>
+<li>值对象<strong>没有唯一标识</strong>，当任何属性发生变化时，都意味着新的值对象产生。</li>
+<li>值对象<strong>功能单一</strong>，一般是贫血模型。</li>
+</ul>
+<blockquote>
+<p>以Order为例，订单下的送货地址（Address）就是典型的值对象。<strong>Address并不随着Order的产生而产生，它相对不变，也不需要单独标识</strong>。</p>
+</blockquote>
+<h3 id="领域服务domain-service"><a class="header" href="#领域服务domain-service">领域服务（Domain Service）</a></h3>
+<p>领域中的一些概念不太适合建模为对象，它们<strong>本质上是一些操作、一些动作，代表领域中一个重要的行为</strong>。这些操作或动作往往<strong>涉及多个领域对象</strong>，并且需要协调这些领域对象<strong>共同完成这个操作或动作</strong>，这就是领域服务。</p>
+<p>领域服务有一个<strong>重要的功能就是可以避免领域逻辑泄露到应用层</strong>。如果没有领域服务，那么应用层会直接调用领域对象完成本该领域服务执行的操作。</p>
+<p><strong>领域服务体现的行为一定是不属于任何实体和值对象的，但它属于领域模型的范畴，同时领域服务应该是无状态的，应确保领域服务和通用语言是一致的</strong>。</p>
+<ul>
+<li>领域服务是<strong>无状态</strong>的</li>
+<li>领域对象是<strong>有状态</strong>的</li>
+</ul>
+<p>虽然服务本身也是对象，但它<strong>没有属性，只有行为</strong>，因此说它是无状态的。</p>
+<blockquote>
+<p>以订单发货（OrderDelivery）为例，需要Order和履约<strong>两种实体之间通过一定的业务逻辑，确保事务可以作为领域服务</strong>。</p>
+</blockquote>
+<h3 id="聚合aggregate"><a class="header" href="#聚合aggregate">聚合（Aggregate）</a></h3>
+<p>聚合的<strong>核心思想是将关联减至最少，这样有助于简化对象之间的遍历，使用一个抽象来封装模型中的引用</strong>。</p>
+<p>聚合由两部分组成：</p>
+<ul>
+<li>一部分称为根实体，是聚合中的特定实体。根实体是聚合中所包含的一个特定实体，是唯一允许外部对象保持对它的引用的元素。</li>
+<li>另一部分描述一个边界，定义聚合内部有什么。边界内部的对象之间可以互相引用。</li>
+</ul>
+<p>除根实体外的其他对象都有本地标识，但这些标识<strong>只有在聚合内部才需要加以区分，因为外部对象除根实体外看不到其他对象</strong>。</p>
+<p><strong>聚合行为被视为一个整体，在每个行为完成时，必须满足聚合内部所应用的固定规则的要求，即保证数据变化的一致性</strong>。</p>
+<p>根实体最终检查固定规则，如<em><strong>删除操作必须一次删除聚合边界之内的所有对象</strong></em>。</p>
+<blockquote>
+<p>过程中有一些最佳实践，比如<strong>可以设计一些小的聚合</strong>，通过唯一标识引用其他聚合，并且在边界之外考虑最终的一致性。</p>
+<p>比如，订单域可能有很多实体，如Order、子订单、订单明细、地址、物流信息、支付信息等，而在我们将它们聚合为订单域后，这些实体都聚焦在一起，并<strong>由Order这个实体作为聚合根对外交互</strong>。</p>
+</blockquote>
+<h3 id="工厂factory"><a class="header" href="#工厂factory">工厂（Factory）</a></h3>
+<p>当创建一个对象或创建整个聚合时，如果创建工作很复杂，或者暴露了过多的内部结构，则可以使用工厂来进行封装。也就是说，<strong>将创建复杂对象的实例和聚合的职责转移到一个单独的对象，这个对象本身在领域模型中可能没有职责，但它也是领域设计中的一部分</strong>。</p>
+<blockquote>
+<p>设计模式中的工厂类和工厂方法与领域模型中的工厂概念是相似的，其可以帮助我们封装复杂的对象创建过程。</p>
+</blockquote>
+<p>我们可以<strong>把工厂作为一种创建复杂对象和聚合的实现方式</strong>。工厂用来<strong>封装对象创建所必需的知识</strong>，它们对创建聚合很有帮助。当聚合的根建立时，所有聚合包含的对象将随之建立。</p>
+<h3 id="资源库repository"><a class="header" href="#资源库repository">资源库（Repository）</a></h3>
+<p>在DDD中，资源库作为对象的提供方，能够<strong>实现对象的持久化，解耦领域内业务逻辑与底层持久化</strong>。</p>
+<p>每个聚合类型可以对应一个资源库，过程中需要避免实体和值对象成为单纯的充血模型，我们需要资源库把ORM框架与领域模型隔离，以屏蔽数据访问的技术复杂度。资源库可以获取持久化对象，使应用程序和领域设计与持久化技术解耦，让我们始终聚焦于模型，并且将所有对象的存储和访问操作交给资源库来完成。在面向接口和依赖注入机制支持下，资源库也容易通过Mock等方式进行测试。</p>
+<p><img src="images/DDD-repository-mode.png" alt="DDD中资源库模式" /></p>
+<blockquote>
+<p>图例：DDD中资源库模式</p>
+</blockquote>
+<p>工厂和资源库之间存在一定的关系，它们都能<strong>帮助我们管理领域对象的生命周期</strong>。然而，<strong>工厂关注的是对象的创建</strong>，而<strong>资源库关心的是已经存在的对象</strong>。</p>
+<p>当一个新对象被添加到资源库时，它应该是先由工厂创建过的，再被传递到资源库，以便更好地保存它。</p>
+<p>另外，资源库和数据访问对象（<code>Data Access Object</code>，<code>DAO</code>）的作用类似，但也有所不同，<strong>资源库以“领域”为中心，所描述的是“领域语言”，不涉及数据库实现的细节</strong>；而DAO是比资源库<strong>更低的一层，其包含如何从数据库中提取数据的代码</strong>。</p>
+<h3 id="领域事件domain-event"><a class="header" href="#领域事件domain-event">领域事件（Domain Event）</a></h3>
+<p><strong>领域事件表示领域中所发生的重要事件，在事件发生后通常会导致进一步的业务操作，或者在系统其他地方引起反应</strong>。</p>
+<p>领域事件非常重要，我们在系统设计过程中经常需要解耦，技术人员一般通过MQ方式进行；架构人员可能采用<a href="patterns.html#%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E6%9E%B6%E6%9E%84">事件驱动架构（<code>Event Driven Architecture</code>，<code>EDA</code>）</a>的方式。<code>Serverless</code>架构中核心的就是基于事件编程，这一切的<strong>核心就是对领域事件的设计</strong>，不过当前大部分系统事件（<code>Event</code>）设计比较随性，从而导致<code>Event</code>滥用和无用情况发生，而领域事件是对我们很好的指引。</p>
+<blockquote>
+<p>比如，在订单的例子中，在订单下单后，会进行<em><strong>库存冻结、支付状态更新、物流同步</strong></em>等，这些都是对系统事件良好的解耦设计。</p>
+</blockquote>
+<ul>
+<li><strong>Event命名</strong>：<code>Domain Name</code> + 动词的过去式 + <code>Event</code>，如<code>OrderCreatedEvent</code>。</li>
+<li><strong>Event内容</strong>：<code>Enrichment</code>（<code>Payload</code>中放<code>Data</code>），<code>Query-Back</code>（通过回调拿到更多的<code>Data</code>）。</li>
+<li><strong>Event管理</strong>：通过<code>MQ</code>等保存所有的<code>Events</code>，并提供良好的<code>Event</code>查询和回溯。</li>
+<li><strong>Event处理</strong>：事件构建和发布、事件数据持久化、事件总线、消息中间件、事件接收和处理等。</li>
+</ul>
+<h3 id="小结"><a class="header" href="#小结">小结</a></h3>
+<p><img src="images/DDD-core-concepts.png" alt="DDD核心概念总结" /></p>
+<blockquote>
+<p>图例：DDD核心概念总结</p>
+</blockquote>
+<p><img src="images/DDD-StereoType-boundary.png" alt="DDD核心概念职责与关系" /></p>
+<blockquote>
+<p>图例：DDD核心概念职责与关系</p>
+</blockquote>
+<h2 id="ddd常用的分析方法"><a class="header" href="#ddd常用的分析方法">DDD常用的分析方法</a></h2>
+<p>DDD常用的分析方法主要有<strong>用例分析法</strong>、<strong>四色建模法</strong>和<strong>事件风暴法</strong>。</p>
+<h3 id="用例分析法"><a class="header" href="#用例分析法">用例分析法</a></h3>
+<p>用例分析是比较通用的领域建模方法，可以在<em><strong>比较传统的需求调研过程中结合领域模型的设计思路</strong></em>进行，核心是<strong>通过业务需求、场景流程等梳理用例，进而规划领域模型</strong>。</p>
+<p>用例分析的<strong>前提是业务架构的需求输入，其中核心是业务能力与业务流程</strong>。</p>
+<blockquote>
+<p>比如电商领域的订单寻源、库存锁定、商品价格计算、优惠券核销等业务能力，以及订单处理、分单和拆单、逆向退款等业务流程。</p>
+</blockquote>
+<p><strong>每个用例应该面向一个或多个场景</strong>，场景主要说明应用是如何和最终用户互动的，也就是谁可以使用应用做什么，从而<strong>获得一个明确的业务目标</strong>。</p>
+<p>编写用例时要避免使用技术术语，应该使用最终用户或者领域专家可以理解的语言，进而我们可以基于用例分析法，根据语义来整理用例，然后整理领域模型，大概步骤如下。</p>
+<p><img src="images/Usecase-analysis-process.png" alt="用例分析法过程" /></p>
+<blockquote>
+<p>图例：用例分析法过程</p>
+</blockquote>
+<ul>
+<li><strong>收集用例</strong>：从业务能力、业务流程、业务需求描述中进行提取，收集相应的名词、动词、形容词，以及对应的业务场景。</li>
+<li><strong>提取实体</strong>：从名词中定位出主要实体，如商品、SKU、品类等。</li>
+<li><strong>提取属性</strong>：从形容词中添加实体属性，如颜色、价格等。</li>
+<li><strong>添加关联</strong>：从动词或形容词中添加实体和实体之间的关联，如商品“包含”SKU，卖家“开设”“多家”店铺等。</li>
+<li><strong>完善模型</strong>：识别出初步模型，验证并迭代模型，同时补充用例验证模型、业务流程验证模型。</li>
+</ul>
+<blockquote>
+<p>举个关于电商的例子:</p>
+<p>假设有这样的需求描述：“会员使用代金券兑换了很多促销的商品。”</p>
+<p>我们先从<strong>名词“会员”“代金券”“商品”中提取实体</strong>，并<strong>从形容词“促销的”提取商品的属性</strong>，进而<strong>将动词“使用”“兑换”识别成关联</strong>，同时结合行业知识得知，代金券属于优惠券的一种，最终得出领域模型。</p>
+</blockquote>
+<p><img src="images/Usecase-analysis-model-example.png" alt="用例分析模型示例" /></p>
+<blockquote>
+<p>图例：用例分析模型示例</p>
+</blockquote>
+<h3 id="四色建模法"><a class="header" href="#四色建模法">四色建模法</a></h3>
+<p>四色建模法在实践中也比较常用，其包括以下几个核心概念。</p>
+<ul>
+<li><strong>时间记录（Moment-Interval）</strong>：具有<strong>可追溯性</strong>的记录运营或管理数据的时刻或时段对象（如<strong>用粉红色表示</strong>）。</li>
+<li><strong>人货场（Party-Place-Thing Archetype，PPT）</strong>：代表参与到流程中的参与方、地点、物（如<strong>用绿色表示</strong>）。</li>
+<li><strong>角色（Role）</strong>：在时间记录与PPT对象（通常是参与方）之间参与的角色（如<strong>用黄色表示</strong>）。</li>
+<li><strong>描述（Description）</strong>：对PPT对象的一种补充描述（如<strong>用蓝色表示</strong>）。</li>
+</ul>
+<p>简单地说，四色建模法关注的是，<strong>某个人（<code>Party</code>）的角色（<code>PartyRole</code>）在某个地点（<code>Place</code>）的角色（<code>PlaceRole</code>）用某个东西（<code>Thing</code>）的角色（<code>ThingRole</code>）做了某件事情（<code>Moment-Interval</code>）</strong>。</p>
+<blockquote>
+<p>下面以一个课程报名缴费的例子对四色建模法进行说明。</p>
+<p>报名人可以为学生进行报名，产生对应的报名登记记录和课程表，进而缴费人进行缴费，产生缴费记录。</p>
+<p>在这个过程中，“人”有学生和课程，对应的“角色”是报名人和缴费人，完成的“时间记录”是报名登记记录、课程表及缴费记录，再加上一些补充描述。</p>
+</blockquote>
+<p><img src="images/Four-color-modeling-method-example.png" alt="四色建模法示例" /></p>
+<blockquote>
+<p>图例：四色建模法示例</p>
+</blockquote>
+<h3 id="事件风暴法"><a class="header" href="#事件风暴法">事件风暴法</a></h3>
+<p><strong>事件风暴又称事件建模，与头脑风暴类似，可以快速分析复杂的业务领域，完成领域建模的目标</strong>。</p>
+<p>事件风暴是事件驱动设计的典型代表，是一种快速、轻量且未得到充分认可的群体建模技术，它<strong>对于加速开发团队非常适用</strong>。</p>
+<p>事件风暴法关注以下元素。</p>
+<ul>
+<li><strong>事件</strong>：发生了什么事情，产生了什么结果（如<strong>用橘黄色表示</strong>）。</li>
+<li><strong>属性</strong>：事件的输入、输出，是对时间的细化描述。</li>
+<li><strong>命令</strong>：某个动作的发起者，可能是人、外部事件、定时器等（如<strong>用蓝色表示</strong>）。</li>
+<li><strong>领域</strong>：领域的聚合、内聚、低耦合，聚合内部保证数据的一致性（如<strong>用黄色表示</strong>）。</li>
+</ul>
+<p>简单理解就是<strong>谁在何时基于什么（输入）做了什么（命令），产生了什么（输出），影响了什么（事件），最后聚合成了什么（领域）</strong>。</p>
+<p>事件风暴催化并加速整个建模过程，强调<strong>正确的人</strong>（业务人员、领域专家、技术人员、架构师、测试人员等关键角色都要参与其中）、<strong>开放空间</strong>（有足够的空间可以将事件流可视化，让人们可以交互讨论）、<strong>即时贴</strong>（至少三种颜色），关联的人<strong>充分讨论，集体决策，从价值角度来审视业务流程的合理性</strong>。领域事件容易<strong>促使业务人员和非业务人员达成共识</strong>。</p>
+<p>下面通过一个电商的例子说明事件风暴的主要过程。</p>
+<ol>
+<li>首先，我们<strong>基于业务流程和业务流程的输入</strong>，对事件进行头脑风暴，<strong>主要识别应用层面的主要状态结果</strong>。比如识别出“商品已创建”，“库存已扣减”，“订单已支付”等。</li>
+<li>其次，我们来<strong>识别命令，即什么人做什么事</strong>，可以识别出运营人员可以添加商品和编辑库存，用户可以创建订单，并伴随着对应的事件</li>
+<li>再次，我们来<strong>进行聚合，即将相关的实体聚合在一起</strong>，可以看到商品、库存、订单三个领域初步识别，并与相关的命令和事件结合在一起</li>
+<li>最后，我们对这些领域进行边界划分，<strong>识别出对应的限界上下文</strong>。</li>
+</ol>
+<p><img src="images/Event-storm-example.png" alt="事件风暴示例" /></p>
+<blockquote>
+<p>图例：事件风暴示例</p>
+</blockquote>
+<h2 id="ddd分层架构"><a class="header" href="#ddd分层架构">DDD分层架构</a></h2>
+<p>DDD在具体落地实施的过程中，强调四层分层结构，将核心概念进行有效的整合，各层的职能定义如下。</p>
+<p><img src="images/DDD-Layer-Node.png" alt="DDD分层架构" /></p>
+<blockquote>
+<p>图例：DDD分层架构</p>
+</blockquote>
+<ul>
+<li><strong>展示层（Facade Layer）</strong>：负责与不同用户和应用之间的交互协议和数据格式的转换，因此它又叫用户接口层。</li>
+<li><strong>应用层（Application Layer）</strong>：应用层是很薄的一层，<strong>负责展示层与领域层之间的协调，它是与其他系统的应用层进行交互的必要渠道</strong>，负责对领域层组件进行简单封装，例如事务、调用应用程序的任务。应用层要尽量简单，其服务及方法一般以用例为对应关系，通常一个用例对应到一个应用层的服务方法，方法中不包含业务规则或者知识，不保留业务对象的状态，只保留应用任务的进度状态，更注重业务能力或者业务流程的相关展示。主要通过调用领域层和基础设施层来完成协调。</li>
+<li><strong>领域层（Domain Layer）</strong>：领域层是DDD的核心，包含一些核心概念，如领域实体、值对象、领域服务、聚合，以及它们之间的关系。它主要负责表达业务概念、业务状态信息及业务规则，具体表现形式是领域模型。DDD提倡充血模型，即尽量将业务逻辑归属到领域对象上。</li>
+<li><strong>基础设施层（Infrastructure Layer）</strong>：基础设施层向其他层提供通用的技术能力，为应用层传递消息（如API网关等），为领域层提供持久化机制（如数据库资源、中间件交互等），屏蔽技术底座能力（如底层服务的健康度检查、配置参数等）及其他通用的工具类服务。</li>
+</ul>
+<p>除了比较经典的四层分层架构，DDD还有一种松散分层架构，即端口适配器架构。</p>
+<p><img src="images/Port-adapter-architecture.png" alt="端口适配器架构" /></p>
+<blockquote>
+<p>图例：端口适配器架构</p>
+</blockquote>
+<p>端口适配器架构通过划分内部和外部，系统由内而外围绕领域模型展开。领域部分位于最内层，应用程序包含领域模型和业务逻辑，对于外部而言，通过各种适配器进行上下文集成，包括数据持久化、第三方数据集成，同时基于依赖注入和Mock机制，适配器完成便捷的替换和模拟。</p>
+<p>不论哪种分层架构，都遵循以下几个通用的DDD分层原则。</p>
+<ul>
+<li><strong>无环依赖原则</strong>：组件的依赖关系中没有环路，如果出现，则需要打破循环依赖。</li>
+<li><strong>稳定依赖原则</strong>：被依赖者应该比依赖者更稳定，同时组件的抽象程度应该与其稳定程度保持一致。一个稳定的组件应该是抽象的，这样便于扩展。</li>
+<li><strong>依赖倒置原则</strong>：高层次的模块不应该依赖低层次的模块，它们都应该依赖抽象。抽象不应该依赖具体，具体应该依赖抽象。</li>
+</ul>
+<h2 id="ddd与周边概念的关系"><a class="header" href="#ddd与周边概念的关系">DDD与周边概念的关系</a></h2>
+<p>下面我们来看看DDD与一些周边概念的关系。</p>
+<h3 id="ddd与数据驱动设计的关系"><a class="header" href="#ddd与数据驱动设计的关系">DDD与数据驱动设计的关系</a></h3>
+<p>DDD给我们带来的是设计模式的改变。DDD的设计模式与传统的面向数据驱动的开发模式有明显的区别。</p>
+<p><img src="images/Domain-driven-design-VS-Data-driven-design.png" alt="DDD与数据驱动设计的关系" /></p>
+<ul>
+<li><strong>数据驱动设计从数据出发</strong>，先梳理E-R图（实体-联系图），设计数据库表结构，编写DAO，然后实现业务逻辑。<strong>数据驱动设计主要采用贫血模型，业务逻辑散落在大量的方法中，当系统越来越复杂时，开发时间将成倍增长，维护成本很高</strong>。</li>
+<li><strong>DDD从领域出发</strong>，分析领域内模型及它们之间的关系，并进行领域建模，设计核心业务逻辑，进而实现技术细节。<strong>通过DDD，定义领域模型，从而确定业务和应用的边界，保证业务与代码的一致性</strong>。</li>
+</ul>
+<p>在DDD中，领域模型和数据模型是解耦的，有时也不是一一对应的，因此<strong>在应用DDD进行设计时，一定要摆脱数据模型优先的束缚，不要让领域模型被数据模型“绑架”，设计出合理的领域模型是首要任务</strong>。</p>
+<h3 id="ddd与微服务的关系"><a class="header" href="#ddd与微服务的关系">DDD与微服务的关系</a></h3>
+<p><strong>微服务是技术层面的分布式技术架构模式，是技术实现和部署的范畴</strong>，它提倡将应用划分成更细粒度的服务，服务之间互相协调、互相配合，为用户提供最终价值。</p>
+<p>DDD根据限界上下文设计出的领域模型和领域服务，通过微服务进行落地，并结合微服务及其他分布式技术（如DevOps、CI/CD、秒杀、全链路压测等），加速系统的落地。<strong>一个域服务可由一个微服务来实现，也可根据DDD领域分析拆分为多个微服务，对外集合成统一的域服务</strong>。</p>
+<h3 id="ddd与企业架构的关系"><a class="header" href="#ddd与企业架构的关系">DDD与企业架构的关系</a></h3>
+<p>DDD在企业架构中扮演着重要的角色。<strong>DDD不仅是应用架构中领域建模重要的设计方法，同时在企业架构中承接业务架构，并对技术架构及具体落地时微服务等技术实现都有着重要的指导作用</strong>。更重要的是，<strong>DDD建立了共同语言，让企业的业务人员和技术人员可以高效地沟通</strong>。同时，有些企业强调共享能力中心的设计和沉淀，<strong>DDD可以作为其模型和服务建设方法</strong>，结合其他架构服务设计模式及相关的最佳实践，助力企业的架构设计与规划。</p>
+<h3 id="ddd与开发实施的关系"><a class="header" href="#ddd与开发实施的关系">DDD与开发实施的关系</a></h3>
+<p>DDD带来了很多好处，本质上是<strong>设计模式的改变，让领域与数据解耦，从业务需求出发，从领域出发，分析领域内模型及它们之间的关系，并进行领域建模，设计核心业务逻辑，进而实现技术细节</strong>。DDD起到了承前启后的关键作用，其不仅<strong>将业务人员和技术人员连接起来</strong>，还把系统从需求、设计、开发、部署、运维整个生命周期环节有效地串接起来，DDD更多地<strong>从总体和顶层设计，从问题域、解决方案域、业务模型角度，不深度干预其他环节细节，边界清晰，关注点分离</strong>。</p>
+<h2 id="扩展阅读"><a class="header" href="#扩展阅读">扩展阅读</a></h2>
+<ul>
+<li><a href="https://learn.microsoft.com/zh-cn/azure/architecture/microservices/model/domain-analysis">使用域分析为微服务建模 - Microsoft</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/azure/architecture/microservices/model/tactical-ddd">使用战术 DDD 设计微服务 - Microsoft</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../app-arch/strategies.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../app-arch/design-methods.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../app-arch/strategies.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../app-arch/design-methods.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/simple-lightbox.min.js"></script>
+        <script type="text/javascript" src="../theme/theme.js"></script>
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+
+
+    </body>
+</html>

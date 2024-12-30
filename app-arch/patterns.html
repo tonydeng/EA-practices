@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>应用架构常用模式 - 企业架构设计方法与实践</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="关于如何进行企业架构设计的一些方法和实践">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/simple-lightbox.css">
+        <link rel="stylesheet" href="../theme/theme.css">
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 企业架构设计方法与实践</a></li><li class="chapter-item "><a href="introduction.html"><strong aria-hidden="true">2.</strong> 前言</a></li><li class="chapter-item "><a href="ea-theory/index.html"><strong aria-hidden="true">3.</strong> 企业架构理论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-theory/zachman.html"><strong aria-hidden="true">3.1.</strong> Zachman</a></li><li class="chapter-item "><a href="ea-theory/togaf.html"><strong aria-hidden="true">3.2.</strong> TOGAF</a></li><li class="chapter-item "><a href="ea-theory/feaf.html"><strong aria-hidden="true">3.3.</strong> FEAF</a></li><li class="chapter-item "><a href="ea-theory/dodaf.html"><strong aria-hidden="true">3.4.</strong> DoDAF</a></li><li class="chapter-item "><a href="ea-theory/etom.html"><strong aria-hidden="true">3.5.</strong> eTOM</a></li><li class="chapter-item "><a href="ea-theory/archimate.html"><strong aria-hidden="true">3.6.</strong> ArchiMate</a></li><li class="chapter-item "><a href="ea-theory/gartner.html"><strong aria-hidden="true">3.7.</strong> Gartner</a></li></ol></li><li class="chapter-item "><a href="ea-methods/index.html"><strong aria-hidden="true">4.</strong> 企业架构方法论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-methods/overview.html"><strong aria-hidden="true">4.1.</strong> 企业架构方法论概述</a></li><li class="chapter-item "><a href="ea-methods/strategical-planning.html"><strong aria-hidden="true">4.2.</strong> 企业战略计划</a></li><li class="chapter-item "><a href="ea-methods/ea-planning.html"><strong aria-hidden="true">4.3.</strong> 企业架构规划</a></li><li class="chapter-item "><a href="ea-methods/project-management.html"><strong aria-hidden="true">4.4.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="ea-methods/ea-governance.html"><strong aria-hidden="true">4.5.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="ea-methods/ea-implementation.html"><strong aria-hidden="true">4.6.</strong> 企业架构实施参考</a></li></ol></li><li class="chapter-item "><a href="biz-arch/index.html"><strong aria-hidden="true">5.</strong> 业务架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="biz-arch/overview.html"><strong aria-hidden="true">5.1.</strong> 业务架构概述</a></li><li class="chapter-item "><a href="biz-arch/theory.html"><strong aria-hidden="true">5.2.</strong> 业务架构的理论参考</a></li><li class="chapter-item "><a href="biz-arch/framework.html"><strong aria-hidden="true">5.3.</strong> 业务架构的内容框架</a></li><li class="chapter-item "><a href="biz-arch/value.html"><strong aria-hidden="true">5.4.</strong> 业务架构的价值</a></li><li class="chapter-item "><a href="biz-arch/elements.html"><strong aria-hidden="true">5.5.</strong> 业务架构的关键要素</a></li><li class="chapter-item "><a href="biz-arch/methods.html"><strong aria-hidden="true">5.6.</strong> 业务架构的设计方法</a></li><li class="chapter-item "><a href="biz-arch/points.html"><strong aria-hidden="true">5.7.</strong> 业务架构的设计关键点</a></li><li class="chapter-item "><a href="biz-arch/reference.html"><strong aria-hidden="true">5.8.</strong> 业务架构的参考设计</a></li></ol></li><li class="chapter-item "><a href="app-arch/index.html"><strong aria-hidden="true">6.</strong> 应用架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="app-arch/it-arch-overview.html"><strong aria-hidden="true">6.1.</strong> 企业IT架构概述</a></li><li class="chapter-item "><a href="app-arch/overview.html"><strong aria-hidden="true">6.2.</strong> 应用架构概述</a></li><li class="chapter-item "><a href="app-arch/framework.html"><strong aria-hidden="true">6.3.</strong> 应用架构设计框架</a></li><li class="chapter-item "><a href="app-arch/patterns.html"><strong aria-hidden="true">6.4.</strong> 应用架构常用模式</a></li><li class="chapter-item "><a href="app-arch/strategies.html"><strong aria-hidden="true">6.5.</strong> 应用架构核心策略</a></li><li class="chapter-item "><a href="app-arch/domain-driven-design.html"><strong aria-hidden="true">6.6.</strong> 领域驱动设计</a></li><li class="chapter-item "><a href="app-arch/design-methods.html"><strong aria-hidden="true">6.7.</strong> 应用架构的设计方法</a></li><li class="chapter-item "><a href="app-arch/design-principles.html"><strong aria-hidden="true">6.8.</strong> 应用架构的设计原则</a></li><li class="chapter-item "><a href="app-arch/relations.html"><strong aria-hidden="true">6.9.</strong> 应用架构与周边概念的关系</a></li><li class="chapter-item "><a href="app-arch/reference-design.html"><strong aria-hidden="true">6.10.</strong> 应用架构参考设计</a></li></ol></li><li class="chapter-item "><a href="data-arch/index.html"><strong aria-hidden="true">7.</strong> 数据架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="data-arch/overview.html"><strong aria-hidden="true">7.1.</strong> 数据架构概述</a></li><li class="chapter-item "><a href="data-arch/framework.html"><strong aria-hidden="true">7.2.</strong> 数据架构的设计框架</a></li><li class="chapter-item "><a href="data-arch/planning.html"><strong aria-hidden="true">7.3.</strong> 数据架构规划</a></li><li class="chapter-item "><a href="data-arch/methods.html"><strong aria-hidden="true">7.4.</strong> 数据架构设计方法</a></li><li class="chapter-item "><a href="data-arch/steps.html"><strong aria-hidden="true">7.5.</strong> 数据架构设计步骤</a></li><li class="chapter-item "><a href="data-arch/technology.html"><strong aria-hidden="true">7.6.</strong> 数据架构技术</a></li><li class="chapter-item "><a href="data-arch/principle.html"><strong aria-hidden="true">7.7.</strong> 数据架构原则和规范</a></li><li class="chapter-item "><a href="data-arch/practice.html"><strong aria-hidden="true">7.8.</strong> 数据架构参考实践</a></li><li class="chapter-item "><a href="data-arch/cloud-native.html"><strong aria-hidden="true">7.9.</strong> 云原生时代的数据架构技术体系</a></li></ol></li><li class="chapter-item "><a href="tech-arch/index.html"><strong aria-hidden="true">8.</strong> 技术架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tech-arch/overview.html"><strong aria-hidden="true">8.1.</strong> 技术架构概述</a></li><li class="chapter-item "><a href="tech-arch/framework.html"><strong aria-hidden="true">8.2.</strong> 技术架构设计框架</a></li><li class="chapter-item "><a href="tech-arch/patterns.html"><strong aria-hidden="true">8.3.</strong> 技术架构常用模式</a></li><li class="chapter-item "><a href="tech-arch/principles.html"><strong aria-hidden="true">8.4.</strong> 技术架构设计原则</a></li><li class="chapter-item "><a href="tech-arch/diagram.html"><strong aria-hidden="true">8.5.</strong> 技术架构制图</a></li><li class="chapter-item "><a href="tech-arch/cloud.html"><strong aria-hidden="true">8.6.</strong> 技术基础设施上云</a></li><li class="chapter-item "><a href="tech-arch/technology.html"><strong aria-hidden="true">8.7.</strong> 技术架构典型技术选型</a></li><li class="chapter-item "><a href="tech-arch/best-practice.html"><strong aria-hidden="true">8.8.</strong> 技术架构最佳实践</a></li></ol></li><li class="chapter-item "><a href="ea-practice/index.html"><strong aria-hidden="true">9.</strong> 企业架构实践</a></li><li class="chapter-item "><a href="governance/index.html"><strong aria-hidden="true">10.</strong> 架构治理演进</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/project/index.html"><strong aria-hidden="true">10.1.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="governance/arch-governance/index.html"><strong aria-hidden="true">10.2.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="governance/assessment/index.html"><strong aria-hidden="true">10.3.</strong> 架构评估方法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/assessment/atam.html"><strong aria-hidden="true">10.3.1.</strong> ATAM软件架构评估方法</a></li></ol></li><li class="chapter-item "><a href="governance/maturity-model/index.html"><strong aria-hidden="true">10.4.</strong> 架构成熟度模型</a></li><li class="chapter-item "><a href="governance/governance-model/index.html"><strong aria-hidden="true">10.5.</strong> 架构治理模型</a></li><li class="chapter-item "><a href="governance/org-arch/index.html"><strong aria-hidden="true">10.6.</strong> 组织架构</a></li></ol></li><li class="chapter-item "><a href="architect/index.html"><strong aria-hidden="true">11.</strong> 架构师的自我成长</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="architect/what-is-architect.html"><strong aria-hidden="true">11.1.</strong> 什么是架构师</a></li><li class="chapter-item "><a href="architect/character.html"><strong aria-hidden="true">11.2.</strong> 架构师的特质</a></li><li class="chapter-item "><a href="architect/capability.html"><strong aria-hidden="true">11.3.</strong> 企业架构师的能力</a></li><li class="chapter-item "><a href="architect/growth.html"><strong aria-hidden="true">11.4.</strong> 架构师的成长建议</a></li><li class="chapter-item "><a href="architect/mindset.html"><strong aria-hidden="true">11.5.</strong> 架构师的思维模式</a></li></ol></li><li class="chapter-item "><a href="appendix/index.html"><strong aria-hidden="true">12.</strong> 附录</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/what-is-architecture.html"><strong aria-hidden="true">12.1.</strong> 什么是架构</a></li><li class="chapter-item "><a href="appendix/architecture-principles.html"><strong aria-hidden="true">12.2.</strong> 架构设计原则</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">企业架构设计方法与实践</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/tonydeng/EA-practices" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="应用架构常用模式"><a class="header" href="#应用架构常用模式">应用架构常用模式</a></h1>
+<p>应用架构常用模式主要有以下几种。</p>
+<h2 id="集中式架构"><a class="header" href="#集中式架构">集中式架构</a></h2>
+<p>集中式架构又称单体架构，传统企业根据各个业务部门的需求，开发了多个“烟囱式”系统，这种架构模式有很多弊端，在一些传统企业中还存在。</p>
+<h2 id="soa面向服务架构"><a class="header" href="#soa面向服务架构">SOA（面向服务架构）</a></h2>
+<p>企业采用企业服务总线（ESB）来解决多系统之间复杂的接口交互模式，也就是传统的SOA模式。而随着互联网企业的发展，采用去中心化、去IOE的分布式服务架构，不需要ESB作为中心节点，而是进行直接发现和调用，以解决中心化服务扩展难、不适合互联网大流量要求快速响应的痛点。</p>
+<p><a href="https://www.opengroup.org.cn/service-oriented-architecture-soa-working-group">The Open Group的面向服务架构 (SOA) 工作组</a>提出了一个<a href="http://www.opengroup.org/soa/source-book/soa_refarch/index.htm">SOA架构的参考模型</a>，主要包括：</p>
+<p><img src="images/SOA-refers-to-application-architecture.png" alt="SOA参考应用架构" /></p>
+<blockquote>
+<p>图例：SOA参考应用架构</p>
+</blockquote>
+<p>SOA参考应用架构，具体包括以下几个层面。</p>
+<ul>
+<li><strong>基础设施服务</strong>：由操作系统和后台的应用系统组成，能够被系统组件调用，实现IT系统服务功能，并确保服务的质量，为各层次的系统提供数据支持。</li>
+<li><strong>服务总线</strong>：：通常由ESB系统提供路由、多协议、转换等,服务在这里注册和发现，也可以通过组合形成组合服务,并且通过对服务的服务组合和编排实现业务流程。</li>
+<li><strong>关键服务组件</strong>：由服务使用者组成，构建前台的访问应用。</li>
+<li><strong>开发工具</strong>：提供SOA的相关开工具，如WSDL等</li>
+<li><strong>管理工具</strong>：提供服务质量（QoS）服务，包括安全、管理和基础设施监控等。</li>
+</ul>
+<p><strong>SOA并不是推倒重建企业的系统，而是在现有的系统之上进行包装服务，建立标准结构，方便互通和调用</strong>。SOA也使得架构设计的过程从面向对象、面向组件的设计方法过渡到面向服务的设计方法，其强调以服务为中心的设计理念，接口和实现分离、服务提供和服务使用分层的设计思想。</p>
+<h2 id="事件驱动架构"><a class="header" href="#事件驱动架构">事件驱动架构</a></h2>
+<p>事件驱动架构（Event Driven Architecture，EDA）以SOA为基础，以事件为单位进行各种处理。事件驱动的核心是事件，事件是历史，是事实，是已经发生的事。</p>
+<p><img src="images/event-driven-architecture-diagram.svg" alt="事件驱动架构示意图" /></p>
+<blockquote>
+<p>图例：事件驱动架构示意</p>
+</blockquote>
+<p>事件由事件源生成，并通过事件管理器进行发布，各种事件的订阅方根据需要进行订阅消费，可以直接处理该事件，或者即时转给其他订阅方，同时事件作为一种业务数据的载体，可以进行存储，从而在以后进行处理。</p>
+<p><img src="images/EDA-architecture-schematic.png" alt="EDA概念示意" /></p>
+<blockquote>
+<p>图例：事件驱动概念示意</p>
+</blockquote>
+<p>事件驱动系统通常是异步的，事件生产者向事件管理器发布事件，如果事件消费者不可用，事件管理器将保留这个事件，之后再次转给事件消费者。</p>
+<p>事件生产者与事件消费者相对独立且解耦，事件生产者不需要知道哪个消费者会接收消息。事件消费者彼此之间也互相解耦，每个消费者都可以接收全部或者部分消息。因此，事件驱动架构的系统更适用于包含较多未知因素的环境或者异步的环境，通过构建分布式高可用架构，提供事件生产者和事件消费者相对灵活解耦的能力。事件驱动架构适用于多种场景，比如有多个子应用且处理相同事件，需要实时处理大量数据，有复杂的事件处理等。</p>
+<p><img src="images/EDA-domain-events.png" alt="EDA领域事件" /></p>
+<blockquote>
+<p>图例: EDA领域事件</p>
+</blockquote>
+<p>从领域设计角度，事件驱动架构也有广泛应用，比如基于事件风暴的分析方法。其中，事件源和订阅者都是具体的领域实体，事件管理器可以作为基础设施的一部分技术组件，这个过程会借助消息中间件来进行能力提供。</p>
+<h2 id="微服务架构"><a class="header" href="#微服务架构">微服务架构</a></h2>
+<p>随着互联网技术的发展，SOA技术进一步进化为以微服务为主流的分布式服务架构。微服务是一种分布式架构模式，微服务架构凭借其简单清晰、灵活可扩展、独立部署等优势，逐渐成为分布式架构的主流。微服务将大型复杂软件应用拆分成多个微小的服务，服务之间是松耦合的，每个服务描述一个小业务，可以独立地进行升级、部署、扩展和重新启动等流程，并通过接口契约、标准协议等保持彼此互通。</p>
+<p>微服务架构由SOA演化而来，是SOA的一种特殊实现方式，突出将服务划分为更细粒度的微服务，按照业务领域划分，强调服务编排、服务治理、自动化运维，并具备高可用、性能要求、分布式事务一致等特点。</p>
+<p>关于微服务是什么，转述<a href="https://www.martinfowler.cn/microservices/">Martin Flower 大神的系统阐述</a>：</p>
+<ul>
+<li>微服务是一种架构风格，也是一种服务</li>
+<li>微服务的颗粒比较小，一个大型复杂软件应用由多个微服务组成，比如Netflix目前由500多个的微服务组成</li>
+<li>微服务采用UNIX设计的哲学，每种服务只做一件事，是一种松耦合的能够被独立开发和部署的无状态化服务（独立扩展、升级和可替换）。</li>
+</ul>
+<p><img src="images/Sample-microservice-architecture.jpeg" alt="微服务架构示例" /></p>
+<blockquote>
+<p>图例：微服务架构示例</p>
+</blockquote>
+<p>与集中式架构相比，微服务有降低系统复杂度、提高迭代效率、促进团队沟通、弹性扩展、容错能力、独立部署、可扩展性、跨语言编程等很多优点，这里挑选几个进行说明。</p>
+<ul>
+<li><strong>提高迭代效率</strong>：支持细粒度的独立迭代和发布，速度快。由于微服务架构中的每个小型服务是独立部署的，可以单个服务进行缺陷修复或者特性变更，无须重新部署整个应用程序，一旦发现缺陷，就立刻回滚服务。</li>
+<li><strong>促进团队沟通</strong>：单个小型服务仅需要一个小的开发团队就可以完成开发、测试和部署工作。相比之下，更大的团队通常意味着更低的沟通效率、更高的管理开销。</li>
+<li><strong>容错能力</strong>：当系统出现问题时，将仅影响单个小型服务，不一定导致整个应用程序中断；同时对应的数据也将会进行隔离，风险明显降低。</li>
+<li><strong>可扩展性</strong>：每个小型服务都支持独立水平扩展，无须扩展整个应用程序，资源的利用率高，扩展快速。每个小型服务都可以独立进行服务升级，并且结合持续集成工具可以进行持续发布，快速完成服务升级和发布流程。</li>
+</ul>
+<p>微服务架构有很多好处，不过也存在以下一些挑战。</p>
+<ul>
+<li><strong>设计的复杂性</strong>：与传统架构的应用程序相比，微服务架构的组件更多。服务数量多意味着部署和管理的工作量更大，还需要考虑分布式系统的复杂性和分布式事务的处理难度。</li>
+<li><strong>开发、测试、部署难度</strong>：当服务拆分后，几乎所有功能都会涉及多个服务，所依赖的其他独立服务增多，此时处理好服务间的依赖关系成为关键。原本单个程序的测试会变为服务间调用的测试。测试变得更加复杂。</li>
+<li><strong>运维难度</strong>：由于可能采用不同的语言和框架，应用程序可能变得难以维护。整个应用分散成多个小型服务，这导致问题定位更加困难，同时可能增加服务间的通信量。</li>
+<li><strong>数据一致性</strong>：每个小型服务都仅负责各自相关的数据持久性，因此不同服务间的数据一致性很难达到。</li>
+</ul>
+<h2 id="云原生架构"><a class="header" href="#云原生架构">云原生架构</a></h2>
+<p>分布式架构的出现是为了解决应用难以开发和维护的问题。</p>
+<ul>
+<li><strong>垂直拆分</strong>：把按业务领域拆分为<strong>多个松耦合的独立应用</strong>，各自独立部署和维护。</li>
+<li><strong>水平拆分</strong>：把<strong>通用的、共性</strong>的应用进行分层沉淀，<strong>形成共享的服务能力</strong>，这样可以对性能稳定性等问题进行统一处理和优化，防止重复开发。</li>
+</ul>
+<p>如今，架构朝着越来越轻量化、能力越来越下沉、应用越来越灵活的方向发展，到云原生时代达到了新的高度。</p>
+<p><strong>云原生将云应用中的非业务代码进行最大化的剥离，关注点分离，让云来负责原有的大量非功能特性需求，如可靠性、扩展性、可观测性、弹性、轻量、敏捷、自动化等</strong>。</p>
+<p>同时，有很多企业也在尝试“双IT架构”，即以云原生架构来应对敏态业务的快速变化，以及传统的基于ESB方式的架构应对稳态内部系统的管理，二者相互结合并互补。</p>
+<h2 id="扩展阅读"><a class="header" href="#扩展阅读">扩展阅读</a></h2>
+<ul>
+<li><a href="https://learn.microsoft.com/zh-cn/azure/architecture/microservices/">微服务体系结构设计 - Microsoft</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/azure/architecture/guide/technology-choices/microservices-assessment">微服务评估和准备情况 - Microsoft</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/azure/architecture/microservices/design/">设计微服务体系结构 - Microsoft</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/azure/architecture/microservices/ci-cd">适用于微服务体系结构的 CI/CD - Microsoft</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/azure/architecture/microservices/migrate-monolith">使用域驱动设计将整体应用程序迁移到微服务 - Microsoft</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/azure/architecture/example-scenario/logging/unified-logging">微服务应用程序的统一日志记录 - Microsoft</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../app-arch/framework.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../app-arch/strategies.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../app-arch/framework.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../app-arch/strategies.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/simple-lightbox.min.js"></script>
+        <script type="text/javascript" src="../theme/theme.js"></script>
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+
+
+    </body>
+</html>

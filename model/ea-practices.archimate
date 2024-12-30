@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="ea-practices" id="id-ca9d67aec47243b292a5b427fcb72bba" version="4.9.0">
+  <folder name="Strategy" id="id-9a271cc82b7b4512b8723889d2c4debf" type="strategy">
+    <element xsi:type="archimate:ValueStream" name="企业战略" id="id-4e9dc7aca8674b3a81c9e24fcf1ab0fe"/>
+    <element xsi:type="archimate:ValueStream" name="IT战略" id="id-e4fa4df4d4b44b8183f9ba0cbbe11194"/>
+  </folder>
+  <folder name="Business" id="id-a178815f3b8d42c8adb2f7ad78ecca38" type="business"/>
+  <folder name="Application" id="id-f0d6fbaf7d1a413ca69aa9e30f43d195" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-604bb5289f9e4224b3a281a5e82c0b33" type="technology"/>
+  <folder name="Motivation" id="id-5e6d0f69de224d388118b3f97c477496" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-934a2484de364bf7af60f192b7293403" type="implementation_migration"/>
+  <folder name="Other" id="id-6d1c504d36064d32a1ddb4c8032bb8cf" type="other"/>
+  <folder name="Relations" id="id-68b4145b9438481cb1ff3930bcd4515f" type="relations">
+    <element xsi:type="archimate:AssociationRelationship" id="id-15dd8998ea8c4922b610e64a2232136d" source="id-4e9dc7aca8674b3a81c9e24fcf1ab0fe" target="id-e4fa4df4d4b44b8183f9ba0cbbe11194"/>
+  </folder>
+  <folder name="Views" id="id-9d5d8a3e572b4f47afd9bc65b5971370" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Overview" id="id-5ae991f7da9440cc941cb6721663d5a0">
+      <child xsi:type="archimate:DiagramObject" id="id-fb3334fed7184187a1f6d9810d4f5093" archimateElement="id-4e9dc7aca8674b3a81c9e24fcf1ab0fe">
+        <bounds x="504" y="222" width="180" height="97"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-d7cae540079b451887102cb982c1e51c" source="id-fb3334fed7184187a1f6d9810d4f5093" target="id-f19f1856506c49c89e3d91497870ff0a" archimateRelationship="id-15dd8998ea8c4922b610e64a2232136d"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-f19f1856506c49c89e3d91497870ff0a" targetConnections="id-d7cae540079b451887102cb982c1e51c" archimateElement="id-e4fa4df4d4b44b8183f9ba0cbbe11194">
+        <bounds x="840" y="228" width="229" height="85"/>
+      </child>
+    </element>
+  </folder>
+</archimate:model>

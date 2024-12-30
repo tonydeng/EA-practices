@@ -1,0 +1,727 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>技术架构典型技术选型 - 企业架构设计方法与实践</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="关于如何进行企业架构设计的一些方法和实践">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/simple-lightbox.css">
+        <link rel="stylesheet" href="../theme/theme.css">
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 企业架构设计方法与实践</a></li><li class="chapter-item "><a href="introduction.html"><strong aria-hidden="true">2.</strong> 前言</a></li><li class="chapter-item "><a href="ea-theory/index.html"><strong aria-hidden="true">3.</strong> 企业架构理论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-theory/zachman.html"><strong aria-hidden="true">3.1.</strong> Zachman</a></li><li class="chapter-item "><a href="ea-theory/togaf.html"><strong aria-hidden="true">3.2.</strong> TOGAF</a></li><li class="chapter-item "><a href="ea-theory/feaf.html"><strong aria-hidden="true">3.3.</strong> FEAF</a></li><li class="chapter-item "><a href="ea-theory/dodaf.html"><strong aria-hidden="true">3.4.</strong> DoDAF</a></li><li class="chapter-item "><a href="ea-theory/etom.html"><strong aria-hidden="true">3.5.</strong> eTOM</a></li><li class="chapter-item "><a href="ea-theory/archimate.html"><strong aria-hidden="true">3.6.</strong> ArchiMate</a></li><li class="chapter-item "><a href="ea-theory/gartner.html"><strong aria-hidden="true">3.7.</strong> Gartner</a></li></ol></li><li class="chapter-item "><a href="ea-methods/index.html"><strong aria-hidden="true">4.</strong> 企业架构方法论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-methods/overview.html"><strong aria-hidden="true">4.1.</strong> 企业架构方法论概述</a></li><li class="chapter-item "><a href="ea-methods/strategical-planning.html"><strong aria-hidden="true">4.2.</strong> 企业战略计划</a></li><li class="chapter-item "><a href="ea-methods/ea-planning.html"><strong aria-hidden="true">4.3.</strong> 企业架构规划</a></li><li class="chapter-item "><a href="ea-methods/project-management.html"><strong aria-hidden="true">4.4.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="ea-methods/ea-governance.html"><strong aria-hidden="true">4.5.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="ea-methods/ea-implementation.html"><strong aria-hidden="true">4.6.</strong> 企业架构实施参考</a></li></ol></li><li class="chapter-item "><a href="biz-arch/index.html"><strong aria-hidden="true">5.</strong> 业务架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="biz-arch/overview.html"><strong aria-hidden="true">5.1.</strong> 业务架构概述</a></li><li class="chapter-item "><a href="biz-arch/theory.html"><strong aria-hidden="true">5.2.</strong> 业务架构的理论参考</a></li><li class="chapter-item "><a href="biz-arch/framework.html"><strong aria-hidden="true">5.3.</strong> 业务架构的内容框架</a></li><li class="chapter-item "><a href="biz-arch/value.html"><strong aria-hidden="true">5.4.</strong> 业务架构的价值</a></li><li class="chapter-item "><a href="biz-arch/elements.html"><strong aria-hidden="true">5.5.</strong> 业务架构的关键要素</a></li><li class="chapter-item "><a href="biz-arch/methods.html"><strong aria-hidden="true">5.6.</strong> 业务架构的设计方法</a></li><li class="chapter-item "><a href="biz-arch/points.html"><strong aria-hidden="true">5.7.</strong> 业务架构的设计关键点</a></li><li class="chapter-item "><a href="biz-arch/reference.html"><strong aria-hidden="true">5.8.</strong> 业务架构的参考设计</a></li></ol></li><li class="chapter-item "><a href="app-arch/index.html"><strong aria-hidden="true">6.</strong> 应用架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="app-arch/it-arch-overview.html"><strong aria-hidden="true">6.1.</strong> 企业IT架构概述</a></li><li class="chapter-item "><a href="app-arch/overview.html"><strong aria-hidden="true">6.2.</strong> 应用架构概述</a></li><li class="chapter-item "><a href="app-arch/framework.html"><strong aria-hidden="true">6.3.</strong> 应用架构设计框架</a></li><li class="chapter-item "><a href="app-arch/patterns.html"><strong aria-hidden="true">6.4.</strong> 应用架构常用模式</a></li><li class="chapter-item "><a href="app-arch/strategies.html"><strong aria-hidden="true">6.5.</strong> 应用架构核心策略</a></li><li class="chapter-item "><a href="app-arch/domain-driven-design.html"><strong aria-hidden="true">6.6.</strong> 领域驱动设计</a></li><li class="chapter-item "><a href="app-arch/design-methods.html"><strong aria-hidden="true">6.7.</strong> 应用架构的设计方法</a></li><li class="chapter-item "><a href="app-arch/design-principles.html"><strong aria-hidden="true">6.8.</strong> 应用架构的设计原则</a></li><li class="chapter-item "><a href="app-arch/relations.html"><strong aria-hidden="true">6.9.</strong> 应用架构与周边概念的关系</a></li><li class="chapter-item "><a href="app-arch/reference-design.html"><strong aria-hidden="true">6.10.</strong> 应用架构参考设计</a></li></ol></li><li class="chapter-item "><a href="data-arch/index.html"><strong aria-hidden="true">7.</strong> 数据架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="data-arch/overview.html"><strong aria-hidden="true">7.1.</strong> 数据架构概述</a></li><li class="chapter-item "><a href="data-arch/framework.html"><strong aria-hidden="true">7.2.</strong> 数据架构的设计框架</a></li><li class="chapter-item "><a href="data-arch/planning.html"><strong aria-hidden="true">7.3.</strong> 数据架构规划</a></li><li class="chapter-item "><a href="data-arch/methods.html"><strong aria-hidden="true">7.4.</strong> 数据架构设计方法</a></li><li class="chapter-item "><a href="data-arch/steps.html"><strong aria-hidden="true">7.5.</strong> 数据架构设计步骤</a></li><li class="chapter-item "><a href="data-arch/technology.html"><strong aria-hidden="true">7.6.</strong> 数据架构技术</a></li><li class="chapter-item "><a href="data-arch/principle.html"><strong aria-hidden="true">7.7.</strong> 数据架构原则和规范</a></li><li class="chapter-item "><a href="data-arch/practice.html"><strong aria-hidden="true">7.8.</strong> 数据架构参考实践</a></li><li class="chapter-item "><a href="data-arch/cloud-native.html"><strong aria-hidden="true">7.9.</strong> 云原生时代的数据架构技术体系</a></li></ol></li><li class="chapter-item "><a href="tech-arch/index.html"><strong aria-hidden="true">8.</strong> 技术架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tech-arch/overview.html"><strong aria-hidden="true">8.1.</strong> 技术架构概述</a></li><li class="chapter-item "><a href="tech-arch/framework.html"><strong aria-hidden="true">8.2.</strong> 技术架构设计框架</a></li><li class="chapter-item "><a href="tech-arch/patterns.html"><strong aria-hidden="true">8.3.</strong> 技术架构常用模式</a></li><li class="chapter-item "><a href="tech-arch/principles.html"><strong aria-hidden="true">8.4.</strong> 技术架构设计原则</a></li><li class="chapter-item "><a href="tech-arch/diagram.html"><strong aria-hidden="true">8.5.</strong> 技术架构制图</a></li><li class="chapter-item "><a href="tech-arch/cloud.html"><strong aria-hidden="true">8.6.</strong> 技术基础设施上云</a></li><li class="chapter-item "><a href="tech-arch/technology.html"><strong aria-hidden="true">8.7.</strong> 技术架构典型技术选型</a></li><li class="chapter-item "><a href="tech-arch/best-practice.html"><strong aria-hidden="true">8.8.</strong> 技术架构最佳实践</a></li></ol></li><li class="chapter-item "><a href="ea-practice/index.html"><strong aria-hidden="true">9.</strong> 企业架构实践</a></li><li class="chapter-item "><a href="governance/index.html"><strong aria-hidden="true">10.</strong> 架构治理演进</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/project/index.html"><strong aria-hidden="true">10.1.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="governance/arch-governance/index.html"><strong aria-hidden="true">10.2.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="governance/assessment/index.html"><strong aria-hidden="true">10.3.</strong> 架构评估方法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/assessment/atam.html"><strong aria-hidden="true">10.3.1.</strong> ATAM软件架构评估方法</a></li></ol></li><li class="chapter-item "><a href="governance/maturity-model/index.html"><strong aria-hidden="true">10.4.</strong> 架构成熟度模型</a></li><li class="chapter-item "><a href="governance/governance-model/index.html"><strong aria-hidden="true">10.5.</strong> 架构治理模型</a></li><li class="chapter-item "><a href="governance/org-arch/index.html"><strong aria-hidden="true">10.6.</strong> 组织架构</a></li></ol></li><li class="chapter-item "><a href="architect/index.html"><strong aria-hidden="true">11.</strong> 架构师的自我成长</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="architect/what-is-architect.html"><strong aria-hidden="true">11.1.</strong> 什么是架构师</a></li><li class="chapter-item "><a href="architect/character.html"><strong aria-hidden="true">11.2.</strong> 架构师的特质</a></li><li class="chapter-item "><a href="architect/capability.html"><strong aria-hidden="true">11.3.</strong> 企业架构师的能力</a></li><li class="chapter-item "><a href="architect/growth.html"><strong aria-hidden="true">11.4.</strong> 架构师的成长建议</a></li><li class="chapter-item "><a href="architect/mindset.html"><strong aria-hidden="true">11.5.</strong> 架构师的思维模式</a></li></ol></li><li class="chapter-item "><a href="appendix/index.html"><strong aria-hidden="true">12.</strong> 附录</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/what-is-architecture.html"><strong aria-hidden="true">12.1.</strong> 什么是架构</a></li><li class="chapter-item "><a href="appendix/architecture-principles.html"><strong aria-hidden="true">12.2.</strong> 架构设计原则</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">企业架构设计方法与实践</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/tonydeng/EA-practices" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="技术架构典型技术选型"><a class="header" href="#技术架构典型技术选型">技术架构典型技术选型</a></h1>
+<p>技术架构由多种技术组成，过程中可能涉及非常多的具体技术</p>
+<p><img src="images/Technology-architecture-core-technology.png" alt="技术架构核心技术" /></p>
+<blockquote>
+<p>图例：技术架构核心技术</p>
+</blockquote>
+<p>下面我们就技术架构中核心的流量调度、服务治理、监控体系、消息列队、微服务技术框架等进一步展开介绍。</p>
+<h2 id="流量调度"><a class="header" href="#流量调度">流量调度</a></h2>
+<p>流量调度是技术架构中的核心技术，包括负载均衡、API网关、配置中心，以及一些高级特性，如容灾。</p>
+<h3 id="负载均衡"><a class="header" href="#负载均衡">负载均衡</a></h3>
+<p>负载均衡（<code>Load Balance</code>）是将请求分摊到多个操作单元上执行。</p>
+<p><img src="images/load-balancing.png" alt="负载均衡" /></p>
+<p>来自客户端的请求通过负载均衡被分发到各个服务器，根据分发策略的不同产生不同的分发结果。</p>
+<ul>
+<li>负载均衡不仅对流量进行了再次分配，还可以起到<strong>类似队列的作用，作为请求和服务之间的缓冲区</strong>，来缓解请求的压力，进而实现削峰填谷。</li>
+<li>负载均衡可以<strong>帮助扩展服务器的处理能力、增加吞吐量、提高系统的灵活性</strong>。</li>
+<li>负载均衡的<strong>本质是对流量的管理，在系统可容纳的前提下，把资源留给最优质的流量使用，在节省成本的同时确保系统不会被冲击崩溃</strong>。</li>
+</ul>
+<p>负载均衡解决方案已经是业界比较成熟的方案，通常分为硬件负载均衡和软件负载均衡。</p>
+<ul>
+<li>硬件负载均衡需要在服务器节点之间安装专门的负载均衡设备，常见的有交换机、F5等。</li>
+<li>软件负载均衡的解决方案很多，常见的有LVS、Nginx等，我们通常会针对特定业务在不同环境中进行优化。</li>
+</ul>
+<blockquote>
+<p>以Nginx为例，它提供一个成熟的、可扩展的、高性能Web服务器和反向代理，Nginx便于部署、配置和二次开发，并可管理授权、权限控制、负载均衡、缓存及提供应用健康检查和监控。</p>
+</blockquote>
+<p><strong>负载均衡的网络消息转发一般集中在传输层和应用层</strong>。</p>
+<ul>
+<li>传输层在OSI七层模型中位于第四层，业界也常称之为四层负载均衡，它是<strong>基于IP地址和端口号进行负载均衡</strong>的，常见的有F5和LVS等产品。</li>
+<li>应用层在OSI七层模型中位于第七层，因此集中在应用层的负载均衡是<strong>基于URL和请求头等应用层信息进行负载均衡</strong>的，常见的有Nginx，过程中还会包括SSL、Web应用防火墙等特性。</li>
+</ul>
+<p>在云服务广泛使用的今天，<strong>还有一种负载均衡的策略是把资源尽可能向消费者侧分布，这里的典型代表是内容分发网络（Content Delivery Network，CDN）</strong>，这是一种用于内容分发的虚拟网络。依靠部署在各地的边缘服务器，CDN通过负载均衡、内容分发、调度，可以让用户就近获取所需内容，从而缓解网络拥塞，提高访问速度和命中率。</p>
+<p>负载均衡算法有很多，大体上分为静态的和动态的两大类。</p>
+<ol>
+<li><strong>静态负载均衡算法</strong>：随机算法、轮询算法、加权轮询算法。</li>
+<li><strong>动态负载均衡算法</strong>：最少连接数算法、服务调用时延算法、源地址哈希算法。</li>
+</ol>
+<h3 id="api网关"><a class="header" href="#api网关">API网关</a></h3>
+<p>API网关一般作为后台服务的入口，企业需要特别关注，API网关主要具有以下作用。</p>
+<ul>
+<li><strong>门户功能</strong>：提供统一服务入口。</li>
+<li><strong>隔离作用</strong>：作为服务的应用边界，防止腐化。</li>
+<li><strong>解耦作用</strong>：使微服务各方独立、自由、高效、灵活。</li>
+<li><strong>路由功能</strong>：应对外部应用，提供前端应用的路由能力。</li>
+<li><strong>封装功能</strong>：封装服务内部结构，为各个客户端提供API。</li>
+<li><strong>脚手架功能</strong>：提供便于扩展的注入点，包括授权、过滤、流量控制、监控、负载均衡等。</li>
+</ul>
+<p>在进行API网关设计时需要考虑如下能力。</p>
+<ol>
+<li>需要考虑流量调度的问题，比如如何将入口的流量路由到后段，如何从后段服务中进行负载均衡，如何将流量在多个实例间按比例或者按其他策略分发。</li>
+<li>需要考虑调用轨迹与调用监控，这样可以及时发现问题。</li>
+<li>需要考虑安全问题，要有良好的安全策略，从而把非法访问拦截在外，比如采取认证鉴权、黑白名单等。</li>
+<li>需要考虑一些流量控制手段，比如限流机制、熔断机制、流量染色等。基于此，一个良好设计的API网关内部可能由多种能力组件构成，比如服务路由组件、协议转换组件、流量控制组件、负载均衡组件、认证监控组件、数据缓存组件、超时熔断组件、自动告警组件、API网关管理台等。</li>
+<li>需要关注高可用、安全性、高性能、扩展性、服务目录管理、API全生命周期管理。</li>
+</ol>
+<p>API目前设计是将RESTful作为约定规范，RESTful主要基于HTTP定义API，有以下常见的HTTP请求方法。</p>
+<ul>
+<li><strong>Get</strong>：用于检索并获取位于指定URI处的资源。</li>
+<li><strong>Post</strong>：用于在指定的URI处更新资源。</li>
+<li><strong>Put</strong>：用于在指定的URI处创建或更新资源。</li>
+<li><strong>Delete</strong>：用于删除指定URI处的资源。</li>
+<li><strong>Patch（Update）</strong>：对资源局部进行更新。</li>
+<li><strong>Head</strong>：获取资源的元数据。</li>
+</ul>
+<p>其中，Post、Put和Patch很容易弄混。Post请求用于创建资源，Put请求用于创建资源或更新现有资源，Patch请求用于对现有资源的局部进行更新。Put请求必须是幂等的，如果客户端多次提交同一个Put请求，那么结果应始终相同，而Post和Patch请求没有这样的要求。</p>
+<p>常用的API网关产品如下所示。</p>
+<ul>
+<li><a href="https://cloud.google.com/apigee">Apigee</a>：提供API管理软件，包括API平台管理、API分析、开发者工具、数据分析等。</li>
+<li><a href="https://aws.amazon.com/api-gateway/">Amazon API Gateway</a>：Amazon托管式服务，提供二次开发平台，让开发者创建、发布、维护、监控和保护任意规模的API。</li>
+<li><a href="https://www.aliyun.com/product/apigateway">阿里云API网关</a>：提供API托管服务，覆盖设计、开发、测试、发布、售卖、运维监测、安全管控、下线等API各个生命周期阶段。</li>
+<li><a href="https://github.com/Netflix/zuul">Zuul</a>：Spring Cloud体系中的API网关。</li>
+<li><a href="https://konghq.com/">Mashape Kong</a>：可扩展的开源API层工具。</li>
+</ul>
+<h3 id="配置中心"><a class="header" href="#配置中心">配置中心</a></h3>
+<p>一般在系统的配置管理中，会有以下几个问题。</p>
+<ul>
+<li>在分布式系统中，应用和机器的数目众多，单个应用的不同配置需要分发在多台机器上，各应用之间存在复杂的配置依赖，如系统启动时所需要的启动数据和预加载信息、数据库连接信息、连接池信息、权限管理数据、用户信息等。</li>
+<li>各种配置的存储方式和版本不同，比如<code>XML</code>、<code>YML</code>、<code>Property</code>文件，注册表，数据库等。</li>
+<li>在传统架构的应用发布过程中，修改一个应用配置需要将整个应用重新打包发布，过程烦琐且容易出错。</li>
+</ul>
+<p>配置中心的目的就是解决上述问题，统一集中管理系统和服务的配置。</p>
+<p><img src="images/Configuration-center.png" alt="配置中心" /></p>
+<blockquote>
+<p>图例：配置中心</p>
+</blockquote>
+<p>配置的三要素：</p>
+<ul>
+<li>快速传播</li>
+<li>变更不频繁</li>
+<li>与环境相关</li>
+</ul>
+<p>在配置管理的过程中，为了优化配置中心的质量，可以考虑以下方案</p>
+<ul>
+<li>为了增加读的性能，有时使用本地缓存或者集中式缓存，不过需要注意数据的一致性；</li>
+<li>为了提高实时性，企业可以使用心跳监听和定时同步的机制；</li>
+<li>为了提高可用性，可以使用冗余服务、缓存等机制。</li>
+</ul>
+<p>配置中心的非功能性需求是配置的安全性、实时性、动态管理、版本管理、环境与应用解耦、高可用、灵活性、可靠性、可用性、审计功能。</p>
+<p>配置中心一般包含以下组件。</p>
+<ul>
+<li><strong>配置中心端</strong>：提供配置获取、更新接口，以及动态异步推送接口，支持配置更新的实时化通知。</li>
+<li><strong>客户端</strong>：管理客户端配置响应，比如自动Reload、动态上报等。</li>
+<li><strong>配置管理界面</strong>：提供配置管理界面，包括配置的修改、发布等，配置存储，响应的上传、下载、更新等，以及实时通知客户端等。</li>
+</ul>
+<p>常用的配置中心技术产品如下所示。</p>
+<ul>
+<li><a href="https://nacos.io/en-us/">Nacos</a>：开源技术，致力于打造一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。目前，Nacos主要包含分布式配置中心、服务注册与发现能力。</li>
+<li><a href="https://www.aliyun.com/product/acm">应用配置管理（ACM）</a>：Nacos的商业化版本，是一款在分布式架构环境中对应用配置进行集中管理和推送的产品。与Nacos相比，其具备高可用与高性能、敏感配置的安全保障、支持灰度发布等。</li>
+</ul>
+<h2 id="服务治理"><a class="header" href="#服务治理">服务治理</a></h2>
+<p>服务治理主要包括服务注册与发现、弹性伸缩、流量控制、灰度发布、任务调度等。</p>
+<h3 id="服务注册与发现"><a class="header" href="#服务注册与发现">服务注册与发现</a></h3>
+<p>服务注册与发现指的是使用一个注册中心来记录分布式系统的全部服务信息，以便让其他服务能够快速找到这些已注册的服务。</p>
+<p>服务注册与发现的本质是服务路由。服务路由可以分为直接路由和间接路由。</p>
+<ul>
+<li><strong>直接路由需要服务消费者感知服务提供者的地址信息</strong>，比如基于配置中心或者数据库来存储目标服务的具体地址。直接路由的<strong>缺点是消费者直接依赖提供者的地址，增加了彼此的耦合度</strong>，同时配置中心或者数据库本身需要额外的维护成本。</li>
+<li><strong>间接路由体现了解耦的思想，本质是一种发布-订阅模式</strong>。</li>
+</ul>
+<p><img src="images/service-registration.png" alt="服务注册与发现示意图" /></p>
+<blockquote>
+<p>图例：服务注册与发现示意图</p>
+</blockquote>
+<ul>
+<li>在服务注册的过程中，<strong>服务实例将自己的服务信息（如端口、服务名等）注册到服务注册中心</strong>，服务注册中心将服务信息及服务健康状态通过API暴露出来。</li>
+<li><strong>服务消费者通过服务注册中心获取到服务实例信息，去请求服务提供者提供服务</strong>。当服务地址发生变化时，服务注册中心将服务变化推送给服务消费者，同时服务消费者会配置缓存机制以加速服务路由，特别是当服务注册中心不可用时通过本地缓存实现服务的可靠调用。</li>
+<li>此外，服务注册与发现还需要<strong>对服务实例的健康状态进行实时监控</strong>，当服务实例不可用时，将通知各服务消费者移除无效服务实例。</li>
+<li>另外，一个服务可能存在多个服务实例，需要根据<strong>不同的负载均衡算法来保持均衡</strong>。</li>
+</ul>
+<p>服务发现主要包括以下组件。</p>
+<ul>
+<li><strong>服务注册中心</strong>：进行服务注册、销毁等。</li>
+<li><strong>服务发现组件</strong>：服务目录查询、服务地址查询。</li>
+<li><strong>本地服务缓存库</strong>：一般在客户端，暂时缓存获取的服务信息。</li>
+<li><strong>注册中心服务存储库</strong>：存储服务信息，如KV存储服务配置信息。</li>
+<li><strong>服务管理平台</strong>：后台管理服务集群的状态，监控服务异常，检查服务注册信息，进行统计分析等。</li>
+</ul>
+<p>服务注册与发现需要考虑以下因素。</p>
+<ul>
+<li><strong>高可用问题</strong>：服务注册中心需要保持7×24小时的稳定运行，特别是当新增、移除服务时应避免对其他服务造成影响，同时需要消除单点故障，采用数据库持久化和服务集群方式。</li>
+<li><strong>数据一致性</strong>：注册中心的节点维护已注册的服务列表，同一份数据不能出现读写数据不一致的情况。</li>
+<li><strong>实时性</strong>：对注册的服务进行心跳检测，确保在注册中心的服务信息是实时的、准确的，如有数据变更及时通知服务消费者。</li>
+<li><strong>高性能</strong>：服务提供者根据不同的算法来平衡负载。</li>
+<li><strong>监控性</strong>：提供监控负载能力，监听注册中心服务器的状态、资源情况、负载程度。</li>
+<li><strong>兼容性</strong>：比如与其他组件的兼容能力，提供统一的注册中心，如<a href="https://dubbo.apache.org/">Dubbo</a>、<a href="https://spring.io/projects/spring-cloud">Spring Cloud</a>、<a href="https://kubernetes.io/">Kubernetes</a>、<a href="https://istio.io/latest/about/service-mesh/">Service Mesh</a>等。</li>
+</ul>
+<p>对于常见的服务注册与发现技术组件，业界已经有了很多成熟的方案。</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System">DNS</a>：最早的服务发现实现，适用于小规模单体应用，如<a href="https://engineering.atspotify.com/2013/02/in-praise-of-boring-technology/">Spotify</a>(<a href="https://www.infoq.cn/article/2013/03/spotify-on-boring-technologies">中文链接</a>)。</li>
+<li><a href="https://spring.io/projects/spring-cloud-netflix">Eureka</a>：Spring Cloud体系，自定义构建，具有最终一致性，Java体系。</li>
+<li><a href="https://nacos.io/en-us/">Nacos</a>：除了具备配置中心能力，也提供服务注册与发现的能力。</li>
+<li><a href="https://zookeeper.apache.org/">Zookeeper</a>：通用注册中心能力，配置存储方案，Java体系。</li>
+<li><a href="https://github.com/hashicorp/consul">Consul</a>：支持跨数据中心，具备KV模型存储和健康检查能力。</li>
+</ul>
+<h3 id="弹性伸缩"><a class="header" href="#弹性伸缩">弹性伸缩</a></h3>
+<p><strong>弹性伸缩指的是在分布式集群中，通过服务探针、监控应用、服务状态，以及一些系统的指标，根据指定的规则自动调整服务实例的数量</strong>。</p>
+<blockquote>
+<p>在传统的方式中，如果需要增加机器资源，需要找运维人员申请机器，然后部署好软件服务接入集群，整个过程依赖的是运维人员的自身经验，容易出错。比较理想的方式是通过一定的机制和工具，辅助我们自动进行弹性伸缩。</p>
+</blockquote>
+<p>在弹性伸缩中，有<strong>两个核心，即扩容和缩容</strong>。</p>
+<ul>
+<li>扩容指的是在监控到服务容器出现瓶颈，包括负载、CPU、RT指标紧张时，能够自动将服务实例增加到集群中。</li>
+<li>缩容指的是在监控到服务容器负载减少，出现资源浪费时，自动释放服务实例，从而降低成本。</li>
+</ul>
+<p>在扩容和缩容的过程中，需要结合很多服务的信息，充分结合应用的入口流量进行控制，让系统的入口流量和系统的负载达到一个平衡，一些扩容和缩容的指标参考如下。</p>
+<ul>
+<li><strong>Load</strong>：当系统Load超过阈值，并且系统当前的并发线程数超过预计的系统容量时触发。</li>
+<li><strong>CPU使用率</strong>：当系统CPU使用率超过阈值时触发。</li>
+<li><strong>RT</strong>：当单台机器上所有入口流量的平均RT达到阈值时触发。</li>
+<li><strong>线程数</strong>：当单台机器上所有入口流量的并发线程数达到阈值时触发。</li>
+<li><strong>入口QPS</strong>：当单台机器上所有入口流量的QPS达到阈值时触发。</li>
+</ul>
+<p>在弹性伸缩的过程中，需要<strong>密切关注系统的稳定性</strong>，系统能够稳定地处理潜在的故障并从故障中恢复。在分布式系统中，瞬态和更永久性故障都是有可能的。为了保持弹性，必须快速、有效地检测故障并进行恢复，比如隔离、重试、限流降级、故障恢复等。</p>
+<h3 id="流量控制"><a class="header" href="#流量控制">流量控制</a></h3>
+<p>流量控制（<code>Flow Control</code>）简称流控，根据流量、并发线程数、响应时间等指标，把随机到来的流量调整成合适的形状（流量塑形），从而提高系统的高可用防护能力。流控可能包括系统的不同层次，比如对网关入口、应用级别、服务依赖、系统资源等各个方面加以控制。</p>
+<p><strong>流控的根本目的是高可用</strong>，大型分布式系统对高可用有很高的要求，客户始终希望系统能提供7×24小时不间断服务。高可用（<code>Availability</code>）的计算公式如下所示。</p>
+<blockquote>
+<p>Availability = MTTF/(MTTF + MTTR)</p>
+</blockquote>
+<p>影响系统可用性的指标主要有两个：</p>
+<ul>
+<li><code>MTTF</code>（<code>Mean Time to Failure</code>，不出故障的时间）</li>
+<li><code>MTTR</code>（<code>Mean Time to Recovery</code>，出故障后的恢复时间）</li>
+</ul>
+<p>因此要提高系统的可用性，可以从两个方面入手：</p>
+<ol>
+<li>尽量增加无故障时间</li>
+<li>尽量缩短出故障后的恢复时间</li>
+</ol>
+<p>业界通常用N个9来量化可用性，如“4个9（也就是99.99%）”的可用性，也就是，一年下来网站不可用时间约为53分钟（也就是不足1小时）。</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">可用性(通俗叫法)</th><th style="text-align: left">可用性比率</th><th style="text-align: left">年度停机时间</th></tr></thead><tbody>
+<tr><td style="text-align: left">2个9</td><td style="text-align: left">99%</td><td style="text-align: left">87.6小时</td></tr>
+<tr><td style="text-align: left">3个9</td><td style="text-align: left">99.9%</td><td style="text-align: left">8.76小时</td></tr>
+<tr><td style="text-align: left">4个9</td><td style="text-align: left">99.99%</td><td style="text-align: left">53.6分钟</td></tr>
+<tr><td style="text-align: left">5个9</td><td style="text-align: left">99.999%</td><td style="text-align: left">5.36分钟</td></tr>
+</tbody></table>
+</div>
+<p>分布式系统是由不同组件构成的，包括复杂均衡、应用、缓存、消息、配置、数据库、存储、基础设施等；每个组件又有不同的技术，比如分布式应用可以使用<code>SpringCloud</code>、<code>Dubbo</code>或者<code>HSF</code>；每种技术又有自己的特点，如性能、自动扩展、恢复、容灾。</p>
+<p>总体来说，从流量控制角度，提高高可用的方法可以大致分为冗余、自愈、限流、降级等。</p>
+<ol>
+<li>
+<p><strong>冗余</strong>。提升高可用<strong>最主要的方法是冗余，增加机器，分担压力，降低风险</strong>。同一服务部署在多台服务器上；同一数据存储在多台服务器上互相备份。当任何一台服务器宕机或出现不可预期的问题时，就将相应的服务切换到其他可用的服务器上。这样，即使单个机器出现问题，也不影响系统的整体可用性，从而保证业务数据不丢失。</p>
+<ul>
+<li>冗余的方式可以是双机或集群。
+<ul>
+<li>双机有主备、主从和双主模式</li>
+<li>集群在双机的基础上，增加了备机、从机或其他主机的个数（比如一主多从、一主多备、多主等）</li>
+</ul>
+</li>
+<li>冗余高可用的关键点是考虑多机器之间的数据复制、状态检测、调度分配、选主切换等。</li>
+</ul>
+</li>
+<li>
+<p><strong>自愈</strong>。自愈主要体现在<strong>系统出现问题时，系统快速恢复，不影响业务的可用性</strong>。自愈通用的方式是超时、重试、回滚、数据恢复等。</p>
+<ul>
+<li><strong>超时</strong>：当调用服务时，调用方不可能无限制地等待提供者接口的返回，一般会设置一个时间阈值，如果超过了时间阈值，就不再继续等待。</li>
+<li><strong>重试</strong>：超时时间的配置是为了保护调用方，避免因为服务提供者不可用而导致调用方也不可用。但也有可能提供者只是偶尔“失灵”，在这种场景下，我们可以在超时后重试一下，保证服务的正常调用。重试需要考虑两个方面：一方面，可以采取一些策略，比如考虑切换一台机器来调用，避免原机器出现性能问题；另一方面，需要考虑幂等，即同一个请求被客户多次调用，对“失灵”产生的影响（这里的影响一般指某些与写入相关的操作）是一致的，而且这个幂等应该是服务级别的，而不应是某台机器层面的，重试调用任何一台机器，都应该做到幂等。</li>
+<li><strong>回滚</strong>：通过版本控制进行稳定版本的回滚恢复，包括应用回滚、基线回滚、版本回滚等。在应用回滚之前需要保护好故障现场，以便排查原因；在应用回滚后，代码基线也需要回到前一版本。整体回滚需要服务编排，通过大版本号对集群进行回滚。</li>
+<li><strong>数据恢复</strong>：在故障发生后，系统保证数据不丢失。比如数据节点从一台机器切换到另一台，需要保证节点之间的数据一致。当然根据实际业务高可用的SLA，可以保证最终一致，比如在主备数据复制过程中，允许短暂的主备数据不一致，但最终保证一致性。数据恢复有时对机器磁盘有要求，比如尽量做RAID（磁盘阵列），使用SSD/SAS，保证容量充足，避免因硬件因素造成数据丢失。</li>
+</ul>
+</li>
+<li>
+<p><strong>限流</strong>。<strong>限流类似于我们日常生活中的排队</strong>，比如在上下班高峰期的地铁站，上班族通过“蚊香”式排队等待地铁。<strong>限流的策略可分为限制访问的绝对数量和控制流速</strong>。限制总数可通过设置规则来实现，目前<strong>常见的限流算法有计数器限流算法、漏桶算法和令牌桶算法</strong>。在分布式系统中，限流可通过服务限流和资源隔离等方式实现。</p>
+<ul>
+<li><strong>服务限流</strong>：为了保护系统应用提供者，监控入口流量的QPS或线程数，当达到阈值时立即拦截流量，以避免被瞬时的流量高峰冲垮，从而保障应用的高可用性。在限流后可以采取以下方式：直接给调用方返回缓存、固定数据或直接拒绝；需要实时写入数据库的，先缓存到队列里，后续或异步写入数据库。</li>
+<li><strong>资源隔离</strong>：隔离是对问题故障的有效控制，可以防止故障恶意扩散。类似于病毒隔离，在分布式系统中，可以通过不同角度进行隔离，可以是机器角度，分为线程、进程、容器、单机、集群、分区等；也可以是功能角度，比如读写隔离等。</li>
+</ul>
+</li>
+<li>
+<p><strong>降级</strong>。限流主要从应用服务提供者的角度进行保护，而<strong>降级主要从应用服务调用者的角度进行保护</strong>，因为调用者可能依赖后端很多服务，但有可能某一个服务经常异常、超时或出现数据错误，为了保护调用者，则对有异常的提供者进行降级。降级的具体实施既可以是代码自动判断，也可以是人工根据突发情况切换，一般可采用关闭非核心服务、降低一致性约束、简化功能等方式。具体地，降级可分为依赖降级和熔断降级。</p>
+<ul>
+<li><strong>依赖降级</strong>：调用者<strong>监控到下游依赖异常（如响应时间、错误率），并且达到指定的阈值，立即降低下游依赖的优先级，采用备用逻辑（如错误页面、固定返回值），避免应用受到影响</strong>，从而保障应用的高可用性。在此过程中，建议<strong>集中管理降级开关，并尽量前置化</strong>。</li>
+<li><strong>熔断降级</strong>：熔断降级是<strong>在依赖降级的基础上执行的，当服务提供者调用大量服务超时或失败时，应该熔断该服务的所有调用，并且将后续调用服务直接返回，从而快速释放资源</strong>，确保在目标服务不可用的这段时间内，所有对它的调用都为立即返回。<strong>熔断降级可以理解为依赖降级的升级，是系统可用性的“保险丝”</strong>。
+<ul>
+<li>熔断可分为三个状态：
+<ul>
+<li>第一，<strong>Closed（闭合）状态</strong>，这是正常状态，系统需要一个基于时间线的错误计数器，如果错误累计达到阈值则切换至Open状态</li>
+<li>第二，<strong>Open（断开）状态</strong>，对所有服务请求立即返回错误，不用调用后端服务进行计算</li>
+<li>第三，<strong>Half-Open（半开）状态</strong>，允许部分请求流量进入并进行处理，如果请求成功则按照某种策略切换到Closed状态。</li>
+</ul>
+</li>
+<li>熔断的<strong>设计要点是需要定义错误类型、有标准的日志输出、有服务诊断及自动恢复能力、设置开关（用于三种状态的切换）</strong>、做到业务隔离。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>在流量控制的过程中，需要<strong>把握一个总体原则，即“恢复业务优先原则”</strong>。线上业务故障，需要优先恢复业务，再分析问题。<strong>如果系统不能自动恢复，则应想尽一切办法进行限流、隔离或降级，比如下线有问题机器，对问题业务进行降级或资源隔离，在恢复业务后，再进行信息搜集（如日志、堆栈、抓包、截屏等），后续分析根因并优化系统</strong>。</p>
+<p>为了更自动化地进行流量控制，可以构建统一的服务治理平台，一般包含以下几个部分。</p>
+<ul>
+<li><strong>服务管理平台</strong>：比如管理服务依赖，通过关系图的形式展现，涉及相关的负责人，服务上下线的审批管理，服务的SLA管理，调用统计，白名单管理等。</li>
+<li><strong>服务稳定性平台</strong>：比如冗余、自愈、限流、降级等相应的配置，流量控制的分流管理，请求堆积的处理，通过熔断配置防止服务雪崩等。</li>
+<li><strong>稳定性故障演练</strong>：比如全链路压测、大促秒杀活动、稳定性预案处理，在特殊情况下，还需要做一些故障演练、快速恢复等稳定性综合能力建设。故障大概可以分为依赖服务故障（如依赖的中间件、数据库、缓存等实施一些网络丢包、网络延时）、应用层故障（应用本身故障，如宕机、假死、重启等）、系统层故障（如系统CPU、内存、磁盘、网络）等。</li>
+</ul>
+<p>流量控制常用的一些技术如下所示。</p>
+<ul>
+<li><a href="https://github.com/alibaba/Sentinel">Sentinel</a>：开源限流系统，基于QPS限流，支持多种降级策略和数据源类型，系统自适应保护，支持控制台。</li>
+<li><a href="https://github.com/Netflix/Hystrix">Hystrix</a>：Spring Cloud体系，基于线程池和信号量隔离，提供简单的控制台能力。</li>
+<li><a href="https://github.com/resilience4j/resilience4j">Resilience4j</a>：基于信号量隔离，通过Rate Limiter模型限流，不提供控制台能力。</li>
+<li><a href="https://www.aliyun.com/product/ahas">AHAS</a>：Sentinel的商业化版本，专注于提高应用及业务高可用的工具平台，提供应用架构探测感知、故障注入式高可用能力评测和流控降级高可用防护三大核心能力。</li>
+</ul>
+<h3 id="灰度发布"><a class="header" href="#灰度发布">灰度发布</a></h3>
+<p>在分布式系统中，发布非常频繁，其中<strong>灰度发布是一种发布策略</strong>，其让我们的发布按照一定的策略和节奏进行。灰度发布技术适用于两个不同版本同时在线上并行的场景，既可用于业务试错，也可用于版本发布。</p>
+<p>灰度发布需要解决两个方面的问题：</p>
+<ul>
+<li>一是多版本部署，分为客户端部署和服务端部署</li>
+<li>二是流量切分，包括入口流量切分（服务器权重、IP地址段或用户标签）和服务流量切分（服务发现机制、植入流量切分规则、控制流量方向）
+￼
+<img src="images/Gated-Launch.png" alt="灰度发布示意" /></li>
+</ul>
+<blockquote>
+<p>图例：灰度发布示意</p>
+</blockquote>
+<p>灰度发布是一种部署策略，从不同版本发布节奏及流量状态方面，我们也常用一些其他的术语来表达，比如停机部署、滚动发布、蓝绿部署、A/B测试等，这些术语有所不同，这里不做详细说明，但本质都是对不同版本应用服务升级的部署策略。</p>
+<h3 id="任务调度"><a class="header" href="#任务调度">任务调度</a></h3>
+<p>任务调度是分布式系统不可缺少的一个环节，传统的方式是在Linux机器上配置定时任务或者直接在业务代码里面完成调度业务，现在多用成熟的中间件来代替。</p>
+<p>任务调度需要支持灵活的任务处理能力，定时的调度器，比如Cron规则、固定延迟、时区、日历等；支持可视化的任务编排，解决任务有前后依赖的情况；支持多种语言（如Java、Python），同时支持静态分片，提供Java动态分片，支持失败自动重试，还可以在控制台手动原地重试，并且具备丰富的报警功能，比如任务失败报警、超时报警、服务缺失报警。</p>
+<p>一些通用的任务调度中间件如下所示。</p>
+<ul>
+<li><a href="https://spring.io/projects/spring-batch">Spring Batch</a>：Spring体系的轻量级批处理框架，支持记录/跟踪、事务管理、作业处理统计、作业重启和资源管理。</li>
+<li><a href="https://www.aliyun.com/aliware/schedulerx">SchedulerX</a>：阿里巴巴自研的基于Akka架构的新一代分布式任务调度平台，具有高可靠、秒级调度及可运维等能力。</li>
+</ul>
+<h2 id="监控体系"><a class="header" href="#监控体系">监控体系</a></h2>
+<h3 id="监控分层"><a class="header" href="#监控分层">监控分层</a></h3>
+<p>分布式系统是由多个机器共同协作的，同时网络无法保证时刻可用，因此需要建设一套能够监控的系统，从底层到业务各个层面进行监控，并基于监控及时修复故障。监控一般包括收集、处理和汇总，并且显示关于某个系统的实时量化数据，如请求的数量和类型、错误的数量和类型，以及处理用时、应用服务器的存活时间等。</p>
+<p>从监控能力层次上，一般我们可以从以下方面对系统进行监控。</p>
+<ul>
+<li><strong>基础监控</strong>：基础监控是对容器资源的监控，包含各个硬件指标的负载情况，比如CPU、I/O、内存、线程、吞吐量等。</li>
+<li><strong>中间件监控</strong>：如中间件、缓存、数据库等组件的相关QPS、RT、成功率等。</li>
+<li><strong>服务监控</strong>：比如应用的性能监控，对核心应用服务的实时指标（QPS、RT、成功率、异常数）、上下游依赖等进行监控，以及监控服务画像、服务拓扑关系、服务调用链、版本信息、服务组件内部状态等。</li>
+<li><strong>业务监控</strong>：除了应用本身的监控程度，业务监控也是保证系统正常的关键。企业可以根据业务规则对异常情况做报警设置，基于日志、异常、错误码Top N等统计和告警；或者进行业务层面的统计，比如分钟级下单数量。</li>
+<li><strong>数据监控</strong>：基于数据查询、数据一致性和稳定性的监控，包括超时、积压、资损对账等方面，确保业务和应用数据层面的稳定和一致。</li>
+</ul>
+<p><strong>日志（Logging）、指标（Metrics）、追踪（Tracing）是监控体系的核心元素。</strong></p>
+<ul>
+<li><strong>日志</strong>：描述的是一些不连续的离散事件，包括日志采集、日志分析和告警通知。例如，有些业务系统采用ELK（Elasticsearch+Logstash+Kibana）或类似技术栈的日志收集系统，它们是分布式监控系统的早期形态，借鉴了传统的解决问题方式。</li>
+<li><strong>指标</strong>：可以累加，具有原子性，包括指标监控、健康检查和告警通知。每个指标都有一个逻辑计量单元，体现了一段时间内相关指标的状态。</li>
+<li><strong>追踪</strong>：也就是分布式调用链路，指在单次请求范围内处理信息，数据和信息都被绑定到系统的单次链路上，包括分布式调用和告警通知。调用链路近年来格外受人们关注。</li>
+</ul>
+<p>日志、指标、追踪的关系如图7-15所示。这三个概念并不是相互独立的，往往一个监控体系都会涉及一些。<strong>APM（应用性能管理）系统便是三者一体化的解决方案</strong>，充分理解三者的关系，可以更好地理解监控的本质，以及更好地定位开源和商业化监控工具。</p>
+<p><img src="images/Logs-metrics-tracking-relationships.png" alt="日志、指标、追踪的关系" /></p>
+<p>监控系统的一些通用原则如下所示。</p>
+<ol>
+<li><strong>关注业务黄金指标</strong>：比如延迟、流量、错误、饱和度，以及相关的QPS、成功率、RT。</li>
+<li><strong>留意系统基础指标</strong>：系统基础指标包括CPU、Load、内存、流量、网络丢包、重传率、磁盘I/O等，以及JVM的GC次数和时间、Java线程数、Java堆内存使用情况等。</li>
+<li><strong>告警阈值设计合理</strong>：监控系统信噪比高，发出紧急警报的组件简单且可靠，可以防止大量无效告警。</li>
+<li><strong>简化监控告警</strong>：监控规则应该越简单越好，可预测性强，非常可靠。</li>
+<li><strong>监控系统长期优化</strong>：随着业务系统和架构的升级，需要对监控系统进行相应的优化。</li>
+</ol>
+<p>基础监控常用的技术工具如下。</p>
+<ul>
+<li><a href="https://www.zabbix.com/">Zabbix</a>：基于Web界面的分布式系统监视及网络监视功能，提供企业级开源解决方案。</li>
+<li><a href="https://newrelic.com/">Newrilic</a>：提供功能Rails性能检测服务的网站，提供不同级别的监测功能。</li>
+<li><a href="https://github.com/alibaba/tsar">Tsar</a>：系统信息跟踪工具，主要用来收集服务器的系统信息（如CPU、I/O等）及应用数据（如Squid、Haproxy、Nginx等）。</li>
+</ul>
+<h3 id="日志分析"><a class="header" href="#日志分析">日志分析</a></h3>
+<p>企业系统每天会产生海量日志，日志信息增长迅速。为了解决信息存储容量、数据安全、日志搜索分析等问题，需要分布式日志监控系统来进行发掘、分析、判断并形成定性或定量描述。</p>
+<p>日志系统一般需要包含以下组成部分。</p>
+<ul>
+<li><strong>日志收集</strong>：收集各类日志，发送到日志中心，并形成不同类型的日志。</li>
+<li><strong>日志缓冲</strong>：不同类型的日志需要有不同的目录空间，形成不同的主题。</li>
+<li><strong>日志处理</strong>：对从原始数据到检索格式进行转化，从日志中抓取关键字，判断并写入索引中。</li>
+<li><strong>日志存储</strong>：存储到数据库中，并对存储结构进行定义。</li>
+<li><strong>日志展示</strong>：UI展示日志统计、查询结果等。</li>
+</ul>
+<p>一些常用的日志分析工具如下。</p>
+<ul>
+<li><a href="https://www.elastic.co/elasticsearch">Elasticsearch</a>：ELK组成之一，是基于Lucene的搜索服务器，提供一个分布式多用户的全文搜索引擎，基于RESTful Web接口。</li>
+<li><a href="https://www.elastic.co/logstash">Logstash</a>：ELK组成之一，是一个应用程序日志和事件传输、处理、管理和搜索的平台，可以统一对应用程序日志进行收集和管理，并提供统一接口查询。</li>
+<li><a href="https://www.elastic.co/kibana">Kibana</a>：ELK组成之一，是一个开源的分析和可视化平台，提供搜索、查看，并与存储在ES中数据进行交互，以及提供各种图标、表格和地图等工具。</li>
+</ul>
+<h3 id="链路追踪"><a class="header" href="#链路追踪">链路追踪</a></h3>
+<p>针对分布式系统复杂的调用链路，如何快速、准确地定位服务异常位置？如何跟踪处理结果？如何将技术与业务异常高效结合？这需要分布式调用链路的监控。</p>
+<p>分布式调用链路把调用过程记录下来，关注各个调用的性能指标，比如吞吐量、响应时间及错误记录等。调用链路从整体维度到局部维度展示各项指标，将跨应用的所有调用链性能信息集中展现，方便度量整体和局部性能，找到故障产生的原因，缩短故障排查时间。</p>
+<p>在链路追踪的历史中，关键事件是2010年Google Dapper论文的发表，之后各个厂商依据Dapper纷纷研发了自己的调用链监控工具，比如携程的CTrace，韩国公司Naver的PinPoint，Twitter的Zipkin，阿里巴巴的Eagleye，京东的Hydra。接着产生了调用链监控的标准规范<a href="https://opentracing.io/">Open Tracing</a>，目的是通过兼容、统一的API来进行链路追踪，Uber的Jaeger、Apache SkyWalking也均符合Open Tracing规范。</p>
+<p>调用链每个请求生成一个全局TraceID，通过TraceID可以连接起整个调用链。此外，SpanID用于记录调用复杂关系，整个调用过程中每个请求都要透传TraceID和SpanID。所有这些ID可用全局唯一的64位整数表示。每个服务将该次请求附带的TraceID和附带的SpanID作为Parent ID，并且记录自己生成的SpanID。要查看某次完整的调用只要根据TraceID查出所有调用记录即可。</p>
+<p><img src="images/tracing.png" alt="调用链示意图" /></p>
+<blockquote>
+<p>图例: 调用链示意图</p>
+</blockquote>
+<p>一个通用的链路处理，一般采用这样的架构和技术组件。整个过程是对调用链数据定义、生成、采集、计算、存储的过程。</p>
+<p><img src="images/Generic-call-chain-component-architecture.png" alt="通用的调用链组件架构" /></p>
+<blockquote>
+<p>图例: 通用的调用链组件架构</p>
+<p>比如采用ELK和HBase，通过Agent生成调用链日志，通过Logstash采集日志到MQ；MQ负责提供数据给下游消费，Storm计算汇聚指标交给Elasticsearch，Logstash将MQ的数据明细给到HBase中，根据TraceID作为行键进行快速查询。
+￼
+常用的链路最终方案如下所示。</p>
+</blockquote>
+<ul>
+<li><a href="https://zipkin.io/">Zipkin</a>：Twitter公司的Zipkin是Google Dapper的开源实现，采用Scala编写，集成到Twitter的分布式服务Finagle中，涵盖信息的收集、处理和展现。</li>
+<li><a href="https://pinpoint-apm.github.io/pinpoint/">Pinpoint</a>：Naver开源的Pinpoint是一款用Java编写的大规模分布式调用链系统，追踪每个请求的完整调用链路，收集性能数据，支持大规模服务器集群。</li>
+</ul>
+<h3 id="应用性能监控"><a class="header" href="#应用性能监控">应用性能监控</a></h3>
+<p><code>APM</code>的全称是<code>Application Performance Management</code>，指的是对应用程序的性能和可用性的监控管理。</p>
+<ul>
+<li>狭义上的APM单指应用程序的监控，如应用的各接口性能和错误监控，分布式调用链路跟踪，以及其他各类用于诊断（内存、线程等）的监控信息等</li>
+<li>广义上的APM除了包括应用程序的监控，还包括移动端App监控，页面端监控，容器、服务器监控，以及其他平台组件（如数据库）等层面的监控</li>
+</ul>
+<p>APM是伴随着云技术、微服务架构发展起来的一个新兴监控领域。</p>
+<blockquote>
+<p>在国内外，无论是开源的Apache SkyWalking、云厂商（如AWS、Azure等），还是独立的公司（Dynatrace、Appdynamics等），都有着非常优秀的APM产品，比如阿里云的ARMS。</p>
+</blockquote>
+<p>目前，人们对APM的要求越来越高，比如分布式追踪、非侵入式的语言探针、轻量化、低延时分析，这些是对APM提出的进一步要求。</p>
+<p>展示了APM的主要能力，一般包括以下几项。</p>
+<p><img src="images/APM.png" alt="APM示意图" /></p>
+<ul>
+<li>应用一般对外提供两种客户端访问模式：移动端App访问，基于浏览器的页面访问。</li>
+<li>部署相应的业务探针，通过API来直接测试服务性能或进行健康检测。</li>
+<li>对客户端直接提供服务的为后端应用服务程序。</li>
+<li>后端应用一般运行在容器里，进一步使用容器技术来优化开发和运维。</li>
+<li>应用还会直接依赖各类的PaaS/SaaS云服务，对应用提供相应平台服务，从而简化应用的运维成本。</li>
+</ul>
+<h3 id="性能分析"><a class="header" href="#性能分析">性能分析</a></h3>
+<p>分布式系统的性能指标，一般包括以下几个方面。</p>
+<ul>
+<li>从广义上来讲，可能有多个方面，比如<strong>QPS、高可用（如99.99%）、响应时间、客户体验、数据一致性、可扩展性、容错性</strong>等；</li>
+<li>从狭义上来讲，我们常用业务QPS来表达系统性能，<strong>即在满足一定客户体验的前提下，在一定机器资源环境下，系统所能够承载的最大业务处理能力，通常用每秒处理的事务数QPS来表示</strong>。</li>
+</ul>
+<p>性能优化是一个系统工程，是<strong>无止境</strong>的，需要有明确的目的和思路，并结合实际的业务来进行，这里给出一些通用的参考。</p>
+<ul>
+<li><strong>梳理业务目标</strong>：重点分析核心的业务流程和应用功能，比如秒杀大促、交易链路等的GMV（商品交易总额）、DAU（日活跃用户数量）、订单数等。不同的业务目标，系统所承载的压力不同。</li>
+<li><strong>梳理系统架构</strong>：总体把控系统架构，比如产品、组件、组网、技术选型等多方面架构。</li>
+<li><strong>确定性能问题</strong>：明确要优化的问题及其指标，比如QPS、RT。</li>
+<li><strong>确定优化目标</strong>：明确现状和目标。</li>
+<li><strong>确定解决方案</strong>：方案可能有多种，需要综合分析各方案的优缺点，多方评审和讨论并选择一个，比如可以有如下的优化思路：
+<ul>
+<li>从<strong>拆分</strong>角度，可以有垂直拆分、水平拆分、分库分表、读写分离；</li>
+<li>从<strong>QPS</strong>角度，可以有异步化、批量化、拆分；</li>
+<li>从<strong>高并发</strong>角度，可以有伸缩扩容、拆分、异步、缓存、限流降级；</li>
+<li>从<strong>可扩展</strong>角度，可以有无状态设计、伸缩、拆分等。</li>
+</ul>
+</li>
+<li><strong>测试解决方案</strong>：综合测试方案，为整个应用程序创建性能测试套件。</li>
+<li><strong>分析调优结果</strong>：综合分析，调优也是个循环过程，逐步优化，达到目标。</li>
+</ul>
+<p>从技术角度，性能问题可能发生在系统的网络、服务端（基础设施、操作系统、中间件、数据库）、客户端，可以采用如图7-19所示的方法。</p>
+<ul>
+<li><strong>网络</strong>：一般指的是防火墙、动态负载均衡器、交换机等设备。很多情况是因为网络不同，比如SLB、WAF、CDN加速，VPN等配置问题，或者更为粗暴的网络光缆切断。</li>
+<li><strong>客户端</strong>：主要是客户应用与服务端的版本或通信问题。</li>
+<li><strong>服务端</strong>：分布式系统大部分问题发生在服务端。
+<ul>
+<li>在硬件层面，比如基础设施中常见的CPU满、内存满、磁盘满，操作系统的参数配置等。</li>
+<li>在软件层面，
+<ul>
+<li>一是<strong>业务应用问题</strong>，主要是<strong>业务逻辑</strong>（多数情况是程序本身设计问题，比如大对象调用、多层嵌套循环、串行处理、请求的处理线程不够、无缓冲、无缓存）和<strong>应用配置</strong>问题（JVM、线程池、连接池配置不足）；</li>
+<li>二是<strong>系统平台问题</strong>，比如中间件方面的服务框架、消息异步设计、服务注册与发现性能、日志采集异常等，以及数据库的缓存、SQL等配置优化（如<code>JDBC</code>）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/performance-analysis.png" alt="性能优化分析方法" /></p>
+<blockquote>
+<p>图例：性能优化分析方法</p>
+</blockquote>
+<p>性能优化的一些通用工具如下。</p>
+<ol>
+<li><strong>压力测试工具JMeter</strong>。JMeter是Apache组织开发的基于Java的压力测试工具。它可以用于测试静态和动态资源，如静态文件、Java服务程序、CGI脚本、Java对象、数据库、FTP服务器等。JMeter可用于对服务器、网络或对象模拟巨大的负载，在来自不同压力类别下测试它们的强度和分析整体性能。另外，还可以尝试阿里云的SaaS性能测试平台PTS，简化业务场景的构建，为性能问题定位、容量最佳配比、全链路压测的流量构造提供帮助。</li>
+<li><strong>Dapper调用链分析</strong>。分布式系统中的服务很多，也有很多跨进程、跨线程的场景，汇总收集并分析海量日志尤为重要。分布式调用链分析的目的是追踪每个请求的完整调用链路，收集调用链路上每个服务的性能数据，计算性能数据并比对性能指标，甚至在更远的未来能够反馈到服务治理中。相关的调用链分析可参考前文，比如EagleEye工具。</li>
+<li><strong>Arthas应用在线诊断工具</strong>。Arthas是阿里巴巴中间件团队基于Greys开发的全新在线诊断工具，采用命令行交互模式，使得在定位、分析、诊断问题时看每一个操作都非常便捷，可以跟踪到每一行代码的执行时间，有助于查找定位系统的性能瓶颈。
+<ul>
+<li><code>Dashboard</code>——当前系统的实时数据面板。</li>
+<li><code>Monitor</code>——方法执行监控。</li>
+<li><code>Trace</code>——方法内部调用路径，并输出方法路径上的每个节点上耗时。</li>
+<li><code>Stack</code>——输出当前方法被调用的路径。</li>
+<li><code>tt</code>——方法执行数据的时空隧道，记录下指定方法每次调用的入参和返回信息，并能对这些不同的时间下调用进行观测。</li>
+</ul>
+</li>
+</ol>
+<h2 id="消息队列"><a class="header" href="#消息队列">消息队列</a></h2>
+<p>分布式消息队列系统是<strong>消除异步带来一系列复杂步骤的一大利器</strong>，通过消息队列<strong>既可以解耦系统，又可以削峰填谷</strong>等。在消息服务中，消息是由生产者创建的数据，并且会被分发出去，由消费者接收并进行进一步处理。</p>
+<p>生产者和消费者之间通过消息代理（又称消息传递中间件）进行通信。</p>
+<p><img src="images/to_msArchitecture2.gif" alt="消息服务示意图" /></p>
+<blockquote>
+<p>图例：消息服务示意图</p>
+</blockquote>
+<p>消息队列使用的应用场景如下所示。</p>
+<ul>
+<li><strong>削峰填谷</strong>：诸如秒杀、抢红包、企业开门红等大型活动时皆会带来较高的流量脉冲。</li>
+<li><strong>异步解耦</strong>：交易系统中每笔交易订单数据的产生会引起数十个或者上百个下游业务系统的关注，包括物流、购物车、积分、流计算分析等，整体业务系统庞大且复杂，通过消息服务实现异步通信和应用解耦，确保主站业务的连续性。</li>
+<li><strong>顺序收发</strong>：企业中需要保证顺序的应用场景非常多，例如证券交易过程的时间优先原则，交易系统中的订单创建、支付、退款等流程，航班中的旅客登机消息处理等。顺序收发与先进先出（First In First Out，FIFO）原理类似。</li>
+<li><strong>分布式事务一致性</strong>：交易系统、支付红包等场景需要确保数据的最终一致性，大量引入消息队列的分布式事务，既可以实现系统之间的解耦，又可以保证数据的最终一致性。</li>
+<li><strong>大数据分析</strong>：数据在“流动”中产生价值，传统数据分析大多基于批量计算模型，而无法做到实时的数据分析，将消息队列与流式计算引擎相结合，可以实现业务数据的实时分析。</li>
+</ul>
+<p>从技术角度，消息服务具备高性能、高可用、高可靠等特点。</p>
+<ol>
+<li><strong>高性能</strong>：消息发送方将耗时较长且无须实时处理的操作封装为消息，并将消息发送给消息队列服务。发送方无须等待消息被消费方处理完，就可以继续做其他事情，从而提高性能。</li>
+<li><strong>高可用</strong>：消息队列服务及集群的方式部署，常见的有一主多备或双主双备等。当一台消息队列服务“挂掉”后，另一台消息备份服务可以及时对外提供服务。</li>
+<li><strong>高可靠</strong>：消息队列服务提供了极高的可靠性，保证消息集群可靠和稳定，同时可以通过进一步的服务幂等性，进一步提高整体的可靠性。此外，消息队列服务会执行消息的持久化，包括同步双写和异步复制，保证了数据的高可靠性。</li>
+</ol>
+<p>一些常见的消息队列技术或产品如下。</p>
+<ul>
+<li><a href="https://kafka.apache.org/">Kafka</a>：由Scala编写的分布式、分区的、多副本的、多订阅者的分布式MQ系统，可用于Web/Ngnix日志、搜索日志、监控日志、访问日志等，具备提供消息的持久化、高吞吐量等特点。</li>
+<li><a href="https://www.rabbitmq.com/">RabbitMQ</a>：由Erlang开发的高级消息队列协议（AMQP）的开源实现，具备可靠性、灵活路由、消息集群、高可用、多种协议等特点。</li>
+<li><a href="https://rocketmq.apache.org/">RocketMQ</a>：基于Apache RocketMQ构建的低延迟、高并发、高可用、高可靠的分布式消息中间件，支撑千万级并发、万亿级数据洪峰。</li>
+<li><a href="https://activemq.apache.org/">ActiveMQ</a>：Apache下开源项目，支持多语言Client，支持JMS和J2EE规范、支持多种传输协议，支持Spring、Ajax、Axis等的整合。</li>
+<li><a href="https://www.ibm.com/products/mq">IBM MQ Series</a>：广泛应用在硬件和软件平台，提供确定、异步、一次性数据发送的通信系统。</li>
+<li><a href="https://learn.microsoft.com/en-us/previous-versions/windows/desktop/msmq/ms711472(v=vs.85)">Microsoft MQ</a>：微软消息队列，提供应用间互相通信的异步传输服务。</li>
+<li><a href="http://zeromq.org/">ZeroMQ</a>：一个开源的高性能、异步、分布式的消息队列，支持多种语言，具备高性能、可靠性、可扩展性等特点。</li>
+</ul>
+<h2 id="微服务技术框架"><a class="header" href="#微服务技术框架">微服务技术框架</a></h2>
+<p>微服务框架本身是一个体系的框架，包括负载均衡、配置管理、服务注册与发现、服务安全、分布式监控、流量调度与容错、弹性伸缩、任务调度等多方面，一个稳定的微服务框架可以简化开发管理和技术选型，一些常用的微服务框架如下。</p>
+<ul>
+<li><a href="https://spring.io/projects/spring-cloud">Spring Cloud</a>：基于Spring Boot实现的应用开发工具，提供微服务开发所需的配置管理、服务发现、断路器、路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等组件，是微服务框架的标准。它由很多子项目组合而成，应用开发者可以根据自己的需求灵活地将各种组件搭配使用。Spring Cloud遵循如下设计理念：约定优于配置，建议在熟悉的约定前提下，简单、标准化地构建应用；提供声明式的元注解配置方式，屏蔽组件具体的实现复杂度；提供丰富的组件，比如与大量的服务治理相关的组件，同时相对中立，有不同的实现方案；灵活的解耦。各种服务组件完全解耦，企业可根据需要灵活组合和替换。</li>
+<li><a href="https://spring.io/projects/spring-cloud-netflix">Netflix</a>：是对Spring Cloud框架的一种实现，包括服务注册与发现框架Eureka、API网关Zuul、服务端框架Karyon、客户端框架Ribbon、服务容错组件Hystrix、配置中心Config/Vault、服务容错Hystris、分布式追踪Sleuth等。</li>
+<li><a href="https://spring.io/projects/spring-cloud-alibaba">Spring Cloud Alibaba</a>：也是对Spring Cloud框架的一种实现，比如服务发现与配置管理Nacos、限流降级Sentinel、分布式消息系统RocketMQ、分布式事务Seata、动态追踪工具Arthas等。</li>
+<li><a href="https://dubbo.apache.org/">Dubbo</a>：Alibaba开源的分布式服务框架，基于RPC方式，基于分布式服务调用简化服务提供方和调用方的开发，同时具有注册中心、协议支持、服务监控等能力。</li>
+<li><a href="https://www.alibabacloud.com/product/edas">企业级分布式应用服务（Enterprise Distributed Application Service，EDAS）</a>：是一个应用托管和微服务管理的云原生PaaS，提供应用开发、部署、监控、运维等全栈式解决方案，同时支持Spring Cloud和Dubbo等微服务运行环境。</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../tech-arch/cloud.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../tech-arch/best-practice.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../tech-arch/cloud.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../tech-arch/best-practice.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/simple-lightbox.min.js"></script>
+        <script type="text/javascript" src="../theme/theme.js"></script>
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>企业架构方法论概述 - 企业架构设计方法与实践</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="关于如何进行企业架构设计的一些方法和实践">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/simple-lightbox.css">
+        <link rel="stylesheet" href="../theme/theme.css">
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 企业架构设计方法与实践</a></li><li class="chapter-item "><a href="introduction.html"><strong aria-hidden="true">2.</strong> 前言</a></li><li class="chapter-item "><a href="ea-theory/index.html"><strong aria-hidden="true">3.</strong> 企业架构理论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-theory/zachman.html"><strong aria-hidden="true">3.1.</strong> Zachman</a></li><li class="chapter-item "><a href="ea-theory/togaf.html"><strong aria-hidden="true">3.2.</strong> TOGAF</a></li><li class="chapter-item "><a href="ea-theory/feaf.html"><strong aria-hidden="true">3.3.</strong> FEAF</a></li><li class="chapter-item "><a href="ea-theory/dodaf.html"><strong aria-hidden="true">3.4.</strong> DoDAF</a></li><li class="chapter-item "><a href="ea-theory/etom.html"><strong aria-hidden="true">3.5.</strong> eTOM</a></li><li class="chapter-item "><a href="ea-theory/archimate.html"><strong aria-hidden="true">3.6.</strong> ArchiMate</a></li><li class="chapter-item "><a href="ea-theory/gartner.html"><strong aria-hidden="true">3.7.</strong> Gartner</a></li></ol></li><li class="chapter-item "><a href="ea-methods/index.html"><strong aria-hidden="true">4.</strong> 企业架构方法论</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ea-methods/overview.html"><strong aria-hidden="true">4.1.</strong> 企业架构方法论概述</a></li><li class="chapter-item "><a href="ea-methods/strategical-planning.html"><strong aria-hidden="true">4.2.</strong> 企业战略计划</a></li><li class="chapter-item "><a href="ea-methods/ea-planning.html"><strong aria-hidden="true">4.3.</strong> 企业架构规划</a></li><li class="chapter-item "><a href="ea-methods/project-management.html"><strong aria-hidden="true">4.4.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="ea-methods/ea-governance.html"><strong aria-hidden="true">4.5.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="ea-methods/ea-implementation.html"><strong aria-hidden="true">4.6.</strong> 企业架构实施参考</a></li></ol></li><li class="chapter-item "><a href="biz-arch/index.html"><strong aria-hidden="true">5.</strong> 业务架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="biz-arch/overview.html"><strong aria-hidden="true">5.1.</strong> 业务架构概述</a></li><li class="chapter-item "><a href="biz-arch/theory.html"><strong aria-hidden="true">5.2.</strong> 业务架构的理论参考</a></li><li class="chapter-item "><a href="biz-arch/framework.html"><strong aria-hidden="true">5.3.</strong> 业务架构的内容框架</a></li><li class="chapter-item "><a href="biz-arch/value.html"><strong aria-hidden="true">5.4.</strong> 业务架构的价值</a></li><li class="chapter-item "><a href="biz-arch/elements.html"><strong aria-hidden="true">5.5.</strong> 业务架构的关键要素</a></li><li class="chapter-item "><a href="biz-arch/methods.html"><strong aria-hidden="true">5.6.</strong> 业务架构的设计方法</a></li><li class="chapter-item "><a href="biz-arch/points.html"><strong aria-hidden="true">5.7.</strong> 业务架构的设计关键点</a></li><li class="chapter-item "><a href="biz-arch/reference.html"><strong aria-hidden="true">5.8.</strong> 业务架构的参考设计</a></li></ol></li><li class="chapter-item "><a href="app-arch/index.html"><strong aria-hidden="true">6.</strong> 应用架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="app-arch/it-arch-overview.html"><strong aria-hidden="true">6.1.</strong> 企业IT架构概述</a></li><li class="chapter-item "><a href="app-arch/overview.html"><strong aria-hidden="true">6.2.</strong> 应用架构概述</a></li><li class="chapter-item "><a href="app-arch/framework.html"><strong aria-hidden="true">6.3.</strong> 应用架构设计框架</a></li><li class="chapter-item "><a href="app-arch/patterns.html"><strong aria-hidden="true">6.4.</strong> 应用架构常用模式</a></li><li class="chapter-item "><a href="app-arch/strategies.html"><strong aria-hidden="true">6.5.</strong> 应用架构核心策略</a></li><li class="chapter-item "><a href="app-arch/domain-driven-design.html"><strong aria-hidden="true">6.6.</strong> 领域驱动设计</a></li><li class="chapter-item "><a href="app-arch/design-methods.html"><strong aria-hidden="true">6.7.</strong> 应用架构的设计方法</a></li><li class="chapter-item "><a href="app-arch/design-principles.html"><strong aria-hidden="true">6.8.</strong> 应用架构的设计原则</a></li><li class="chapter-item "><a href="app-arch/relations.html"><strong aria-hidden="true">6.9.</strong> 应用架构与周边概念的关系</a></li><li class="chapter-item "><a href="app-arch/reference-design.html"><strong aria-hidden="true">6.10.</strong> 应用架构参考设计</a></li></ol></li><li class="chapter-item "><a href="data-arch/index.html"><strong aria-hidden="true">7.</strong> 数据架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="data-arch/overview.html"><strong aria-hidden="true">7.1.</strong> 数据架构概述</a></li><li class="chapter-item "><a href="data-arch/framework.html"><strong aria-hidden="true">7.2.</strong> 数据架构的设计框架</a></li><li class="chapter-item "><a href="data-arch/planning.html"><strong aria-hidden="true">7.3.</strong> 数据架构规划</a></li><li class="chapter-item "><a href="data-arch/methods.html"><strong aria-hidden="true">7.4.</strong> 数据架构设计方法</a></li><li class="chapter-item "><a href="data-arch/steps.html"><strong aria-hidden="true">7.5.</strong> 数据架构设计步骤</a></li><li class="chapter-item "><a href="data-arch/technology.html"><strong aria-hidden="true">7.6.</strong> 数据架构技术</a></li><li class="chapter-item "><a href="data-arch/principle.html"><strong aria-hidden="true">7.7.</strong> 数据架构原则和规范</a></li><li class="chapter-item "><a href="data-arch/practice.html"><strong aria-hidden="true">7.8.</strong> 数据架构参考实践</a></li><li class="chapter-item "><a href="data-arch/cloud-native.html"><strong aria-hidden="true">7.9.</strong> 云原生时代的数据架构技术体系</a></li></ol></li><li class="chapter-item "><a href="tech-arch/index.html"><strong aria-hidden="true">8.</strong> 技术架构设计</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tech-arch/overview.html"><strong aria-hidden="true">8.1.</strong> 技术架构概述</a></li><li class="chapter-item "><a href="tech-arch/framework.html"><strong aria-hidden="true">8.2.</strong> 技术架构设计框架</a></li><li class="chapter-item "><a href="tech-arch/patterns.html"><strong aria-hidden="true">8.3.</strong> 技术架构常用模式</a></li><li class="chapter-item "><a href="tech-arch/principles.html"><strong aria-hidden="true">8.4.</strong> 技术架构设计原则</a></li><li class="chapter-item "><a href="tech-arch/diagram.html"><strong aria-hidden="true">8.5.</strong> 技术架构制图</a></li><li class="chapter-item "><a href="tech-arch/cloud.html"><strong aria-hidden="true">8.6.</strong> 技术基础设施上云</a></li><li class="chapter-item "><a href="tech-arch/technology.html"><strong aria-hidden="true">8.7.</strong> 技术架构典型技术选型</a></li><li class="chapter-item "><a href="tech-arch/best-practice.html"><strong aria-hidden="true">8.8.</strong> 技术架构最佳实践</a></li></ol></li><li class="chapter-item "><a href="ea-practice/index.html"><strong aria-hidden="true">9.</strong> 企业架构实践</a></li><li class="chapter-item "><a href="governance/index.html"><strong aria-hidden="true">10.</strong> 架构治理演进</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/project/index.html"><strong aria-hidden="true">10.1.</strong> 项目实施管理</a></li><li class="chapter-item "><a href="governance/arch-governance/index.html"><strong aria-hidden="true">10.2.</strong> 架构运营治理</a></li><li class="chapter-item "><a href="governance/assessment/index.html"><strong aria-hidden="true">10.3.</strong> 架构评估方法</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="governance/assessment/atam.html"><strong aria-hidden="true">10.3.1.</strong> ATAM软件架构评估方法</a></li></ol></li><li class="chapter-item "><a href="governance/maturity-model/index.html"><strong aria-hidden="true">10.4.</strong> 架构成熟度模型</a></li><li class="chapter-item "><a href="governance/governance-model/index.html"><strong aria-hidden="true">10.5.</strong> 架构治理模型</a></li><li class="chapter-item "><a href="governance/org-arch/index.html"><strong aria-hidden="true">10.6.</strong> 组织架构</a></li></ol></li><li class="chapter-item "><a href="architect/index.html"><strong aria-hidden="true">11.</strong> 架构师的自我成长</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="architect/what-is-architect.html"><strong aria-hidden="true">11.1.</strong> 什么是架构师</a></li><li class="chapter-item "><a href="architect/character.html"><strong aria-hidden="true">11.2.</strong> 架构师的特质</a></li><li class="chapter-item "><a href="architect/capability.html"><strong aria-hidden="true">11.3.</strong> 企业架构师的能力</a></li><li class="chapter-item "><a href="architect/growth.html"><strong aria-hidden="true">11.4.</strong> 架构师的成长建议</a></li><li class="chapter-item "><a href="architect/mindset.html"><strong aria-hidden="true">11.5.</strong> 架构师的思维模式</a></li></ol></li><li class="chapter-item "><a href="appendix/index.html"><strong aria-hidden="true">12.</strong> 附录</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="appendix/what-is-architecture.html"><strong aria-hidden="true">12.1.</strong> 什么是架构</a></li><li class="chapter-item "><a href="appendix/architecture-principles.html"><strong aria-hidden="true">12.2.</strong> 架构设计原则</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">企业架构设计方法与实践</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/tonydeng/EA-practices" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="企业架构方法论概述"><a class="header" href="#企业架构方法论概述">企业架构方法论概述</a></h1>
+<h2 id="什么是方法论"><a class="header" href="#什么是方法论">什么是方法论</a></h2>
+<blockquote>
+<p>百度百科对方法论的定义：方法论，就是关于人们认识世界、改造世界的方法的理论。</p>
+</blockquote>
+<p><strong>方法论，即“方法”+“论”</strong>。</p>
+<ul>
+<li>首先，它是<strong>解决某种问题领域的方法的方法</strong>，这个方法更加<strong>体系化</strong>、<strong>全面化</strong>，并且有足够的<strong>通用性</strong>和<strong>普适性</strong>，如前文提到的<a href="../ea-theory/zachman.html">Zachman</a>、<a href="../ea-theory/togaf.html">TOGAF</a>等框架理论</li>
+<li>其次，它是对<strong>事物讨论、分析、总结的过程</strong>，除了照搬公式，更重要的是<strong>讨论的过程</strong>，是可以基于此指导具体参考、可适配和实践的，如设计模式、最佳实践等</li>
+</ul>
+<p><strong>一个好的方法论要对解决问题的方法高度总结和提炼，探讨问题的本质，通过体系化地分析问题，重复讨论内部各种因素的关系和矛盾，并通过相关的指引可以适配到具体子问题领域</strong>。这么看，方法论既抽象又具体。</p>
+<h3 id="方法论的三种策略模式"><a class="header" href="#方法论的三种策略模式">方法论的三种策略模式</a></h3>
+<p>方法论需要参考架构的思维模式，如抽象思维、分层思维、多维思维和演化思维。此外，我们可以通过以下三种策略模式来进行分析。</p>
+<ul>
+<li><strong>自上而下</strong>：<strong>总体规划，分步实</strong>施。这是一种<strong>演绎的方式</strong>，经过从宏观上把握顶层方向，洞察客户背后的本质需求，定义问题，分析问题，然后将具体问题分解为子系统工程实施。</li>
+<li><strong>自下而上</strong>：<strong>由点到面，步步为营</strong>。这是一种<strong>归纳的方式</strong>，通过用例堆积，分类归纳，逐步扩大范围，在实践中通过试点工程，场景聚焦，积累经验，由个性形成共性，全面推广。</li>
+<li><strong>上下结合</strong>：<strong>将自上而下的演绎分解和自下而上的试点规划相结合</strong>。这是我十分推荐的一种方式，自上而下关注战略层面，从全局出发，从业务痛点和诉求出发，高屋建瓴；而自下而上关注战术层面，从具体的试点工程进行落地验证，反复迭代并优化整个过程。这是一个<strong>动态的过程</strong>，两个步骤相辅相成，可以交替或者同时进行。</li>
+</ul>
+<h2 id="企业架构方法论的内容"><a class="header" href="#企业架构方法论的内容">企业架构方法论的内容</a></h2>
+<p>企业架构涉及整个企业，是一个系统过程，是对企业多层面、多角度地规划和描述，包括企业的关键业务、应用、数据和技术战略，以及对业务功能和流程的影响。</p>
+<p>我们可以看出，企业架构可以帮助企业<strong>分析业务与技术的相互影响</strong>，使企业采取适当的行动，帮助企业建立快速响应变化的能力。企业架构可以系统地描述、分析、改变企业的结构和组成，从而达到企业战略目标。在构建企业架构的方法论时，我们需要结合经典的企业架构框架及先进的云原生技术。这里给出企业架构方法论参考，主要包括四个部分。</p>
+<p><img src="images/EA-Methods.png" alt="企业架构方法论" /></p>
+<blockquote>
+<p>图例：企业架构方法论</p>
+</blockquote>
+<h3 id="企业战略规划"><a class="header" href="#企业战略规划">企业战略规划</a></h3>
+<p>企业战略进一步可以<strong>分解为业务战略和IT战略，二者之间互相影响</strong>。</p>
+<p>根据这些战略的分析和设计，形成企业战略计划，包括企业的基本<strong>组织框架</strong>、<strong>流程框架</strong>、<strong>业务逻辑框架</strong>，帮助企业找到最为紧迫的业务和信息化痛点、瓶颈问题，并将企业战略计划作为指导<strong>企业架构和项目的重要顶层指导方针</strong>。</p>
+<h3 id="企业架构规划"><a class="header" href="#企业架构规划">企业架构规划</a></h3>
+<p>企业架构是<strong>连接企业战略计划和项目的桥梁</strong>，有承上启下的重要作用。</p>
+<ul>
+<li>业务架构用来落实业务战略，包括业务能力、业务流程、业务逻辑等。</li>
+<li>IT架构用来落实IT战略，包括应用架构、数据架构、技术架构。
+<ul>
+<li>应用架构涉及<strong>对应业务的领域分析、功能识别、服务分析等</strong>，包括相关的应用、产品、系统和组件等的规划和设计；</li>
+<li>数据架构突出<strong>数据模型</strong>，相关的实体、属性、关系等，以及相关的<strong>数据分布和管理</strong>，还包括与<strong>大数据相关的数据分析和运营</strong>；</li>
+<li>技术架构是<strong>支撑整个架构体系的技术部分</strong>，包括技术选型、技术体系、研发体系、运维体系等，并以云原生技术架构为指引，支撑整个架构的快速、敏捷、稳定和高效。</li>
+</ul>
+</li>
+</ul>
+<h3 id="项目实施管理"><a class="header" href="#项目实施管理">项目实施管理</a></h3>
+<p><strong>项目实施管理承接企业架构，关系到战略能否成功落地</strong>。</p>
+<p>依据企业架构的设计，结合战略计划，分解出若干项目。项目还可以进一步分为管理咨询类项目和IT项目，并根据项目的轻重缓急分阶段实施。</p>
+<p>在项目实施过程中，要<strong>分析各项目实施的前提条件、风险、投入和成效</strong>，采用先进的软件工程和项目管理方法，最终实现企业战略和企业架构的落地。</p>
+<blockquote>
+<p>如最小可行性产品（Minimum Viable Product，MVP）理念、敏捷开发、DevOps、持续交付等。</p>
+</blockquote>
+<h3 id="架构运营治理"><a class="header" href="#架构运营治理">架构运营治理</a></h3>
+<p><strong>日常运营是架构实施的保障</strong>，企业需要通过运营指标和相关机制来驱动架构的持续演进，并优化和完善架构体系。</p>
+<p>架构运营治理需要<strong>建立治理机制，构建架构成熟度模型和评估机制、架构委员会管理机制、架构原则规范制约机制</strong>等。</p>
+<p>此外，企业还需要指导企业组织适配，包括相关的能力框架、绩效激励、人员培养，并且需要构建企业架构持续演进的机制，包括架构过渡、架构扩展、持续演进和运营管理。</p>
+<p><strong>架构运营治理既是整个战略计划和企业架构的重要保障，也是企业架构动态化的体现。</strong></p>
+<h3 id="方法论内容小结"><a class="header" href="#方法论内容小结">方法论内容小结</a></h3>
+<p>虽然各个部分的内容不尽相同，但企业架构遵循以下基本的指导思想。</p>
+<ul>
+<li>识别并定义高层的策略、目标及驱动力。</li>
+<li>创建针对架构的高层的期望和战略计划。</li>
+<li>细化战略计划，在业务、数据、应用和技术等层面进行详细描述。</li>
+<li>对当前架构和目标架构进行差距分析。</li>
+<li>将差距分析转化为解决方案，进而形成项目规划。</li>
+<li>应用云原生等先进技术实施并管理这些架构项目。</li>
+<li>在所有过程中监控内外部环境的变化，通过日常运营和架构治理将变化反馈到架构建设过程中。</li>
+</ul>
+<h2 id="各部分的关系"><a class="header" href="#各部分的关系">各部分的关系</a></h2>
+<p><img src="images/Stakeholders-and-their-concerns.png" alt="企业架构中各部分的干系人及其关注点" /></p>
+<blockquote>
+<p>图例：企业架构中各部分的干系人及其关注点</p>
+</blockquote>
+<p>企业架构向上衔接企业战略，向下连接数字化项目。</p>
+<ul>
+<li>企业高层关注企业战略</li>
+<li>部门经理关注业务架构</li>
+<li>IT架构师关注云原生IT架构</li>
+<li>IT开发人员关注数字化项目</li>
+<li>运营师和架构师等关注架构的运营治理</li>
+</ul>
+<p>从运营治理的视角来看，各个层次需要通过数字化运营及相关指标来驱动。</p>
+<blockquote>
+<p>举个例子，如果企业战略是<strong>营收增加20%</strong>，那么<strong>实现该目标需要对业务架构进行改造和升级</strong>，比如：</p>
+<ul>
+<li>增加销售渠道20%</li>
+<li>链路成本优化30%</li>
+<li>增加创新产品投入30%</li>
+<li>......</li>
+</ul>
+<p>进而<strong>通过IT架构和具体的数字化项目进行转化和落地</strong>，比如经过云原生体系上云</p>
+<ul>
+<li>IT成本优化40%</li>
+<li>应用研发效率提升30%</li>
+<li>核心链路稳定性提高到99.99%</li>
+<li>......</li>
+</ul>
+</blockquote>
+<p>需要注意的是，企业架构需要关注业务与IT之间的转化关系，<strong>这种转化通过业务架构来进行驱动。日常运作的流程、IT系统、项目都应该在业务架构的指导下进行</strong>。</p>
+<blockquote>
+<p>如果没有业务架构而直接从企业战略到IT系统，就会出现运营与战略脱节、各个业务环节缺乏统一协调等问题。</p>
+</blockquote>
+<p>当然，协调好业务和IT的关系，让业务和IT协调一致，是数字化项目成功的关键。</p>
+<p>企业架构中涉及很多领域和概念，覆盖企业活动的整个过程。企业架构中四种架构之间有着紧密的联系。</p>
+<p><img src="images/Connections-between-architectures.png" alt="企业架构中四种架构之间的联系" /></p>
+<h3 id="业务架构是企业架构的基础"><a class="header" href="#业务架构是企业架构的基础">业务架构是企业架构的基础</a></h3>
+<p><strong>业务架构描述了企业的价值链、业务能力、业务流程等。</strong></p>
+<p>业务架构也涉及企业组织和治理间的结构和交互关系；同时关注内外部协作关系，描述企业如何满足客户需求，进行市场竞争，与合作伙伴合作，建立生态体系和运营模式等。</p>
+<p><strong>业务架构是描述从战略计划到企业各部分如何运转的工具。</strong></p>
+<p>业务架构的<strong>输入主要包括企业战略计划、愿景目标、需求痛点、商业模式</strong>等，主要<strong>输出包括业务能力、业务流程</strong>等。</p>
+<h3 id="应用架构是企业架构的缩影"><a class="header" href="#应用架构是企业架构的缩影">应用架构是企业架构的缩影</a></h3>
+<p><strong>应用架构描述了对应的应用及系统的规划和设计。</strong></p>
+<p>应用架构包括应用间的相互关系及核心流程的呈现，应用架构一般通过领域建模来识别领域模型、服务模型，<strong>核心是将业务架构的业务流程和服务翻译成人们可以看懂的应用服务和服务流程</strong>。</p>
+<p>此外，应用架构还包括系统、产品、解决方案等层面的系统级抽象。</p>
+<h3 id="数据架构是企业架构的核心"><a class="header" href="#数据架构是企业架构的核心">数据架构是企业架构的核心</a></h3>
+<p><strong>数据架构描述了企业架构的数据模型、数据分布、数据资产之间的结构和关系。</strong></p>
+<p>数据架构以业务架构为基础，而反过来业务又通过数据得以体现，也就是“一切业务数据化，一切数据业务化”，<strong>数据通过应用架构进行承载，应用通过数据进行关联</strong>，所以说数据架构是企业架构的核心。</p>
+<h3 id="技术架构是企业架构的支撑"><a class="header" href="#技术架构是企业架构的支撑">技术架构是企业架构的支撑</a></h3>
+<p><strong>技术架构描述了技术体系，包括开发体系、部署体系、运维体系等。</strong></p>
+<p>技术架构包括<strong>业务、数据、应用对应的软硬件能力</strong>，包括IT基础设施、中间件、网络、通信等。</p>
+<blockquote>
+<p>技术架构经历了从单体架构、分布式架构、微服务架构到现在的云原生架构模式，支撑整个架构的快速、敏捷、稳定和高效。</p>
+</blockquote>
+<h3 id="云原生it架构提供先进的it基础设施和技术支撑"><a class="header" href="#云原生it架构提供先进的it基础设施和技术支撑">云原生IT架构提供先进的IT基础设施和技术支撑</a></h3>
+<p>云原生IT架构应用先进的云原生核心技术，如容器、微服务、<code>Service Mesh</code>、<code>Serverless</code>、<code>DevOps</code>等，<strong>让整体企业IT架构享受云原生技术红利</strong>，并提供云原生应用平台和对应的基础设施，通过相关的设计模式和技术最佳实践指导企业开展云原生上云及应用升级。</p>
+<h2 id="业务和it的关系"><a class="header" href="#业务和it的关系">业务和IT的关系</a></h2>
+<p><strong>在不同类型或相同类型但不同阶段的企业，其业务和IT在企业中的定位不同</strong>，促使业务和IT之间的关系也有比较大的区别，业务和IT之间的关系大体上可以分为四种模式。</p>
+<p><img src="images/The-relationship-between-business-and-IT.png" alt="业务与IT之间的关系" /></p>
+<blockquote>
+<p>图例：业务与IT之间的关系</p>
+</blockquote>
+<p>目前，<strong>越来越多的企业向后两种模式进行转型，突出技术竞争力</strong>。</p>
+<ul>
+<li>企业高层如果不了解最新技术的发展和应用，则会错失更多的商业机会；而更好地结合业务发展和IT，形成“双螺旋”提升，将赋予企业新的“DNA”，使得企业在数字化时代脱颖而出。</li>
+<li>IT管理者也需要积极、主动推进信息技术的应用，做好业务创新和IT创新的桥梁，提升在管理层中的话语权，助力企业数字化时代转型成功。</li>
+</ul>
+<h3 id="模式一传统业务推进模式"><a class="header" href="#模式一传统业务推进模式">模式一：传统业务推进模式</a></h3>
+<p><img src="images/%E4%BC%A0%E7%BB%9F%E4%B8%9A%E5%8A%A1%E6%8E%A8%E8%BF%9B%E6%A8%A1%E5%BC%8F.png" alt="传统业务推进模式" /></p>
+<p>此种模式是常见的模式，<strong>企业发展由业务推动，IT支持业务发展落地。组织形态上也体现如此</strong>，如集团、各业务线、IT部门等。传统的零售业、制造业、鞋服业等大部分采用此种模式。</p>
+<h3 id="模式二双战略推进模式"><a class="header" href="#模式二双战略推进模式">模式二：双战略推进模式</a></h3>
+<p><img src="images/%E5%8F%8C%E6%88%98%E7%95%A5%E6%8E%A8%E8%BF%9B%E6%A8%A1%E5%BC%8F.png" alt="双战略推进模式" /></p>
+<p>此种模式是<strong>业务战略和IT战略并进的模式，是IT作为核心竞争力之一的模式，突出IT战略对业务战略的支撑，强调IT和系统的能力，使IT成为行业竞争的优势，重视IT</strong>。电商行业、新零售行业、金融行业等普遍采用此种模式。</p>
+<h3 id="模式三技术竞争力模式"><a class="header" href="#模式三技术竞争力模式">模式三：技术竞争力模式</a></h3>
+<p><img src="images/%E6%8A%80%E6%9C%AF%E7%AB%9E%E4%BA%89%E5%8A%9B%E6%A8%A1%E5%BC%8F.png" alt="技术竞争力模式" /></p>
+<p>此种模式是企业<strong>把创新IT作为主要竞争力，IT战略影响企业战略，从而影响业务架构模式</strong>。强调科技的互联网企业（如美团、百度、腾讯等）都属于这个阵营。</p>
+<h3 id="模式四服务竞争力模式"><a class="header" href="#模式四服务竞争力模式">模式四：服务竞争力模式</a></h3>
+<p><img src="images/%E6%9C%8D%E5%8A%A1%E7%AB%9E%E4%BA%89%E5%8A%9B%E6%A8%A1%E5%BC%8F.png" alt="服务竞争力模式" /></p>
+<p>当<strong>企业IT成为核心业务，并成熟稳定后，IT能力和服务（包括产品及相关的解决方案）可以满足其他企业业务和技术的需求，成为技术服务提供模式</strong>。互联网技术公司大多采用此种模式，如阿里云、腾讯云、AWS、Azure等。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../ea-methods/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../ea-methods/strategical-planning.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../ea-methods/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../ea-methods/strategical-planning.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/simple-lightbox.min.js"></script>
+        <script type="text/javascript" src="../theme/theme.js"></script>
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+
+
+    </body>
+</html>
