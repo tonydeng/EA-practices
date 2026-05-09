@@ -11,3 +11,13 @@
 > 图例：企业架构整体结构
 
 企业架构整体结构从**战略层**、**规划层**、**落地层**这三层来分别对应企业架构中**业务**、**架构**和**实施**的各种重要活动和产出。
+
+## Star History
+
+<a href="https://www.star-history.com/tonydeng/ea-practices#history">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=tonydeng/EA-practices&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=tonydeng/EA-practices&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=tonydeng/EA-practices&type=Date" />
+ </picture>
+</a>
