@@ -3,7 +3,6 @@ title = "企业架构设计方法与实践"
 description = "关于如何进行企业架构设计的一些方法和实践"
 authors = ["Tony Deng"]
 language = "zh-CN"
-multilingual = true
 src = "."
 
 [preprocessor.theme]
